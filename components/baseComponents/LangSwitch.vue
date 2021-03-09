@@ -20,6 +20,7 @@
     <div class="dropdown-menu" id="dropdown-menu6" role="menu">
       <div class="dropdown-content">
         <nuxt-link
+          @click.native="dropdown()"
           v-for="locale in availableLocales"
           :key="locale.code"
           class="dropdown-item"
