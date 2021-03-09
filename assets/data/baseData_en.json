@@ -1,4 +1,15 @@
 {
-    "topic": "Interactive Digital Learning Material",
-    "lessonData": ""
+    "topic": "Nature's Contributions to People",
+    "lesson1": "Food",
+    "description1": "Learn more about Food.",
+    "lesson2": "Inspiration & Learning",
+    "description2": "Learn more about Inspiration & Learning",
+    "lesson3": "Pollination",
+    "description3": "Learn more about Pollination",
+    "lesson4": "Regulation of Air Quality",
+    "description4": "Learn more about Regulation of Air Quality.",
+    "lesson5": "Companionship",
+    "description5": "Learn more about Companionship.",
+    "lesson6": "Something",
+    "description6": "Learn more about Something"
 }

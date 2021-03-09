@@ -1,19 +1,64 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        {{ $t("topic") }}
-      </h1>
-      <lesson />
-    </div>
+  <div :class="$style.cardContainer">
+    <LessonCard
+      v-for="lesson in lessons"
+      :key="lesson.title"
+      :filename="lesson.filename"
+      :title="lesson.title"
+      :description="lesson.description"
+      :alt="lesson.title"
+      :link="lesson.link"
+    />
   </div>
 </template>
 
 <script>
-import lesson from "@/components/lesson.vue"
+import LessonCard from "@/components/indexPage/LessonCard.vue";
 export default {
   components: {
-    lesson
+    LessonCard,
+  },
+  data() {
+    return {
+      lessons: [
+        {
+          title: this.$t("lesson1"),
+          description: this.$t("description1"),
+          filename: "index/food.png",
+          link: "/pollination",
+        },
+        {
+          title: this.$t("lesson2"),
+          description: this.$t("description2"),
+          filename: "index/hiking.png",
+          link: "/pollination",
+        },
+        {
+          title: this.$t("lesson3"),
+          description: this.$t("description3"),
+          filename: "index/pollination.png",
+          link: "/pollination",
+        },
+        {
+          title: this.$t("lesson4"),
+          description: this.$t("description4"),
+          filename: "index/pollution.jpg",
+          link: "/pollination",
+        },
+        {
+          title: this.$t("lesson5"),
+          description: this.$t("description5"),
+          filename: "index/companion.jpg",
+          link: "/pollination",
+        },
+        {
+          title: this.$t("lesson6"),
+          description: this.$t("description6"),
+          filename: "index/jump.svg",
+          link: "/pollination",
+        }
+      ],
+    };
   },
   mounted() {
     // console.log(this.$i18n.messages)
@@ -21,37 +66,16 @@ export default {
 };
 </script>
 
-<style  scoped>
-.container {
+<style  module>
+.cardContainer {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  text-align: center;
-}
-.ttt {
-  height: 900px;
-  background-color: wheat;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-size: 2.5rem;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  flex-wrap: wrap;
 }
 </style>

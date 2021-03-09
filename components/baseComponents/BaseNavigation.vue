@@ -1,0 +1,51 @@
+<template>
+  <div :class="$style.titleBar">
+    <div :class="$style.titleDiv">
+      <nuxt-link to="/"
+        ><h1 :class="$style.title">{{ $t("topic") }}</h1></nuxt-link
+      >
+    </div>
+    <LangSwitch />
+  </div>
+</template>
+
+<script>
+import LangSwitch from "@/components/baseComponents/LangSwitch.vue";
+export default {
+  components: {
+    LangSwitch,
+  },
+};
+</script>
+
+<style module>
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.titleBar {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 7%);
+}
+
+.titleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 2rem;
+}
+
+.titleDiv a {
+  text-decoration: none;
+}
+.title {
+  font-size: 2rem;
+  color: #10247C;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+</style>

@@ -20,7 +20,7 @@
 <script>
 import enData from "@/assets/data/pollution/en.json";
 import npData from "@/assets/data/pollution/np.json";
-import enGlossary from "@/assets/data/pollution/glossary/glossary_en.json";
+import enGlossary from "@/assets/data/pollution/glossary/glossary.json";
 
 import BaseText from "@/components/baseComponents/BaseText.vue";
 
