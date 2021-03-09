@@ -1,0 +1,108 @@
+{
+
+    "pollute": {
+        "english_word": "pollute",
+        "engmeaning": "contaminate (air, water, land) with harmful substances",
+        "nepali_word": "",
+        "nepmeaning": "प्रदुषण गर्नु",
+        "image": ""
+    },
+    "spoiling": {
+        "english_word": "spoil",
+        "engmeaning": "destroy the quality",
+        "nepali_word": "",
+        "nepmeaning": "बिगार्नु",
+        "image": ""
+    },
+    "tyres": {
+        "english_word": "tyres ",
+        "engmeaning": "a ring shaped rubber that surronds wheels of vehicles",
+        "nepali_word": "",
+        "nepmeaning": "चक्का",
+        "image": ""
+    },
+    "kerosene": {
+        "english_word": "kerosene",
+        "engmeaning": "a type of fuel ",
+        "nepali_word": "",
+        "nepmeaning": "मट्टिटेल",
+        "image": ""
+    },
+    "harmful": {
+        "english_word": "harm",
+        "engmeaning": "",
+        "nepali_word": "",
+        "nepmeaning": "हानिकारक",
+        "image": ""
+    },
+    "rotten": {
+        "english_word": "rot",
+        "engmeaning": "decay",
+        "nepali_word": "",
+        "nepmeaning": "कुहिनु",
+        "image": ""
+    },
+    "pneumonia": {
+        "english_word": "pneumonia",
+        "engmeaning": "a type of disease related to lungs ",
+        "nepali_word": "",
+        "nepmeaning": "निमोनिया",
+        "image": ""
+    },
+    "bronchitis": {
+        "english_word": "bronchitis",
+        "engmeaning": "a type of disease related to lungs ",
+        "nepali_word": "",
+        "nepmeaning": "",
+        "image": ""
+    },
+    "skin disorders": {
+        "english_word": "skin disorders",
+        "engmeaning": "a type of disease related to skin",
+        "nepali_word": "",
+        "nepmeaning": "छालाको रोग",
+        "image": ""
+    },
+    "minimize": {
+        "english_word": "minimize",
+        "engmeaning": "to reduce the effect of something",
+        "nepali_word": "",
+        "nepmeaning": "कम पार्नु, घटाउनु",
+        "image": ""
+    },
+    "essential": {
+        "english_word": "essential",
+        "engmeaning": "",
+        "nepali_word": "",
+        "nepmeaning": "महत्त्वपूर्ण",
+        "image": ""
+    },
+    "livelihood": {
+        "english_word": "livelihood",
+        "engmeaning": "means of getting necessery things for life",
+        "nepali_word": "",
+        "nepmeaning": "जीविकोपार्जन",
+        "image": ""
+    },
+    "Dumping": {
+        "english_word": "dump",
+        "engmeaning": "to throw",
+        "nepali_word": "",
+        "nepmeaning": "फाल्नु",
+        "image": ""
+    },
+    "contaminate": {
+        "english_word": "contaminate",
+        "engmeaning": "make something impure by mixing harmful substances",
+        "nepali_word": "",
+        "nepmeaning": "दूषित पार्नु",
+        "image": ""
+    },
+    "unpleasant": {
+        "english_word": "unpleasant",
+        "engmeaning": "discomfort, unhappiness",
+        "nepali_word": "",
+        "nepmeaning": "अप्रिय, नमिठो",
+        "image": ""
+    }
+}
