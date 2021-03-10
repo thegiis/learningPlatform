@@ -1,6 +1,10 @@
 {
     "topic": "Nature's Contributions to People",
-    "quiz-time": "Quiz Time",
+    "quizTime": "Quiz Time",
+    "next": "Next",
+    "submit": "Submit",
+    "overview": "Overview",
+
     "lesson1": "Food",
     "description1": "Learn more about Food.",
     "lesson2": "Inspiration & Learning",

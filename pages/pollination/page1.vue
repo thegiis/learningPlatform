@@ -23,7 +23,7 @@
       :class="$style.nextButton"
       @click="goNext()"
     >
-      Next
+      {{ $t("next") }}
     </button>
   </div>
 </template>

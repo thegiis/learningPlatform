@@ -14,7 +14,7 @@
       @click="checkAns"
       :disabled="!isSelected || correctlyAnswered"
     >
-      Submit
+      {{$t("submit")}}
     </button>
   </div>
 </template>

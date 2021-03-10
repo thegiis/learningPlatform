@@ -1,0 +1,21 @@
+{
+    "title": "pollination",
+    "pages": [
+        "page1",
+        "quiz"
+    ],
+    "en": {
+        "title": "Pollination",
+        "pageNames": [
+            "Parts of a Flower",
+            "Test Time"
+        ]
+    },
+    "np": {
+        "title": "परागकण",
+        "pageNames": [
+            "फूलका विभिन्‍न भागहरू",
+            "परिक्षण समय"
+        ]
+    }
+}

@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.quizSection">
     <section class="container is-max-desktop">
-      <h1 :class="$style.quizTitle">{{$t("quiz-time")}}</h1>
+      <h1 :class="$style.quizTitle">{{$t("quizTime")}}</h1>
       <QuestionList :questionList="quizData" />
     </section>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 import enData from '@/assets/data/pollination/quiz/quiz_en.json'
-import npData from '@/assets/data/pollination/quiz/quiz_en.json'
+import npData from '@/assets/data/pollination/quiz/quiz_np.json'
 import QuestionList from '@/components/interactiveActivity/QuestionList.vue'
 
 const msg = {
@@ -28,7 +28,7 @@ export default {
   },
   computed:{
       quizData() {
-          return this.$i18n.messages
+          return this.$i18n.messages[this.$i18n.locale].questions
       }
   },
   i18n: {

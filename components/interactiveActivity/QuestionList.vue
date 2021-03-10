@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.questionListDiv">
+    <p>{{'question ' + questionNum + ' out of ' + questionCount}}</p>
     <div :class="$style.questionContainer">
       <MCQQuestionItem :question="getQuestion" :questionNum="questionNum" />
     </div>
@@ -17,18 +18,19 @@ export default {
   props: {
     questionList: {
       required: true,
-      type: Object,
+      type: Array,
     },
   },
   data() {
     return {
-      questions: this.questionList[this.$i18n.locale].questions,
       questionNum: 1,
+      answers: [],
+      questionCount: this.questionList.length
     };
   },
   computed: {
     getQuestion() {
-      return this.questions[this.questionNum - 1];
+      return this.questionList[this.questionNum - 1];
     },
   },
 };
