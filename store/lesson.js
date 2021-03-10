@@ -2,6 +2,7 @@ export const state = () => ({
     glossary: {},
     selectors: [],
     currentWord: {},
+    vocabLocale: 'en',
     showVocab: false,
     vocabPosition: {}
 })
@@ -19,6 +20,9 @@ export const mutations = {
     toggleVocab(state) {
         state.showVocab = !state.showVocab
     },
+    setVocabLocale(state, local) {
+        state.vocabLocale = local
+    },
     setVocabPosition(state, position) {
         state.vocabPosition = position
     }
@@ -26,11 +30,15 @@ export const mutations = {
 
 export const actions = {
     setGlossary(context, glossary) {
-        context.commit('setGlossary', glossary)
-        context.commit('setSelectors', Object.keys(glossary))
+        let currentGlossary = glossary[context.state.vocabLocale]
+        context.commit('setGlossary', currentGlossary)
+        context.commit('setSelectors', Object.keys(currentGlossary))
     },
     setCurrentWord(context, word) {
         context.commit('setCurrentWord', word)
+    },
+    setVocabLocale(context, locale) {
+        context.commit('setVocabLocale', locale)
     },
     toggleVocab(context) {
         context.commit('toggleVocab')

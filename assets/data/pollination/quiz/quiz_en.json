@@ -1,0 +1,28 @@
+{
+    "questions": [{
+        "id": "q001",
+        "type": "MCQ",
+        "question": "Pollination can occur within the same flower.",
+        "options": [{
+            "option": "True",
+            "isCorrect": true
+        }, {
+            "option": "False",
+            "isCorrect": false
+        }],
+        "difficulty": 1
+    }, {
+        "id": "q002",
+        "type": "MCQ",
+        "question": "Pollination can occur between flowers of the different plants of the same species.",
+        "options": [{
+            "option": "True",
+            "isCorrect": true
+        }, {
+            "option": "False",
+            "isCorrect": false
+        }],
+        "difficulty": 1
+    }]
+
+}

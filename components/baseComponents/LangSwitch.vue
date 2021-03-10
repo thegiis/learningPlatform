@@ -20,7 +20,7 @@
     <div class="dropdown-menu" id="dropdown-menu6" role="menu">
       <div class="dropdown-content">
         <nuxt-link
-          @click.native="dropdown()"
+          @click.native="setVocabLocale(locale.code)"
           v-for="locale in availableLocales"
           :key="locale.code"
           class="dropdown-item"
@@ -59,6 +59,11 @@ export default {
         return "normalLink";
       }
     },
+    // change locale for vocab in store as well
+    setVocabLocale(locale){
+      this.dropdown()
+      this.$store.dispatch("lesson/setVocabLocale", locale);
+    }
   },
 };
 </script>

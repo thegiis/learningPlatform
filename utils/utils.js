@@ -52,7 +52,23 @@ function getVocabPosition(rect) {
     return position
 }
 
+function arraysEqual(a, b) {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;
+
+    // sort arrays
+    a.sort();
+    b.sort();
+
+    for (var i = 0; i < a.length; ++i) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
+}
+
 export {
     isAlphaNumeric,
-    getVocabPosition
+    getVocabPosition,
+    arraysEqual
 }

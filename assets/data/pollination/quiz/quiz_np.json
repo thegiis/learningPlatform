@@ -1,0 +1,28 @@
+{
+    "questions": [{
+        "id": "q001",
+        "type": "MCQ",
+        "question": "परागकण एकै फूलमा हुन सक्छ।",
+        "options": [{
+            "option": "सही",
+            "isCorrect": true
+        }, {
+            "option": "गलत",
+            "isCorrect": false
+        }],
+        "difficulty": 1
+    }, {
+        "id": "q002",
+        "type": "MCQ",
+        "question": "परागकण समान प्रजातिका बिभिन्न बोटबिरुवाको फूलहरू बीच हुन सक्छ।",
+        "options": [{
+            "option": "सही",
+            "isCorrect": true
+        }, {
+            "option": "गलत",
+            "isCorrect": false
+        }],
+        "difficulty": 1
+    }]
+
+}
