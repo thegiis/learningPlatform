@@ -22,7 +22,6 @@ export default {
 
 <style module>
 .paddedContainer{
-  padding: 2rem;
-  background-color: #F5F5F5;
+  position: relative;
 }
 </style>

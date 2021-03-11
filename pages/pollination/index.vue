@@ -1,5 +1,6 @@
 <template>
   <div class="container is-max-desktop" :class="$style.indexPage">
+    <LessonBreadcrumbs :data="bcData" />
     <h1 :class="$style.title">{{ $t("title") }}</h1>
     <h2 :class="$style.contentsHeader">{{ $t("overview") }}</h2>
     <div :class="$style.lessonContent">
@@ -15,7 +16,7 @@
 
         <p :class="$style.index">{{ idx + "." }}</p>
         <nuxt-link :to="getLink(page)" :class="$style.sectionName">
-          <p >
+          <p>
             {{ $t("pageNames")[idx] }}
           </p>
         </nuxt-link>
@@ -26,6 +27,7 @@
 
 <script>
 import data from "@/assets/data/pollination/index.json";
+import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
 
 const msg = {
   en: data.en,
@@ -33,26 +35,25 @@ const msg = {
 };
 
 export default {
+  components: {
+    LessonBreadcrumbs,
+  },
   i18n: {
     messages: msg,
   },
   data() {
     return {
+      bcData: [{ name: this.$i18n.t("title"), link: { name: "pollination___" + this.$i18n.locale }}],
       title: data.title,
       pages: data.pages,
     };
   },
-  created() {
-    console.log(this.pages);
-  },
+  created() {},
   methods: {
-    goNext() {
-      this.$router.push({ name: "pollination-quiz___" + this.$i18n.locale });
-    },
     getLink(page) {
-        const name = this.title+ '-'+page + '___' + this.$i18n.locale
-        return { name: name }
-    }
+      const name = this.title + "-" + page + "___" + this.$i18n.locale;
+      return { name: name };
+    },
   },
 };
 </script>
@@ -60,6 +61,8 @@ export default {
 <style module>
 .indexPage {
   position: relative;
+  padding: 2rem;
+  background-color: #efefef;
 }
 .lessonContent {
   position: relative;
@@ -89,11 +92,11 @@ export default {
   width: 100%;
   margin: 1rem;
 }
-.contentItem:hover .indexContainer{
-    background-color: #22C688;
+.contentItem:hover .indexContainer {
+  background-color: #22c688;
 }
-.contentItem:hover p{
-    color: orange;
+.contentItem:hover p {
+  color: orange;
 }
 .indexContainer {
   position: relative;

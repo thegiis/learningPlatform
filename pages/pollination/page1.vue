@@ -1,5 +1,6 @@
 <template>
-  <div class="container" :class="$style.lesson">
+  <div class="container is-max-desktop" :class="$style.lesson">
+    <LessonBreadcrumbs :data="bcData" />
     <h1 :class="$style.title">{{ $t("title") }}</h1>
     <div :class="$style.imgContainer">
       <img src="@/assets/images/pollination/flower1.png" alt="" />
@@ -18,22 +19,19 @@
         :highlightClass="$style.testClass"
       />
     </div>
-    <button
-      class="button is-primary"
-      :class="$style.nextButton"
-      @click="goNext()"
-    >
-      {{ $t("next") }}
-    </button>
+    <LessonNextButton :navlink="nextLink" />
   </div>
 </template>
 
 <script>
 import enData from "@/assets/data/pollination/en.json";
 import npData from "@/assets/data/pollination/np.json";
+import data from "@/assets/data/pollination/index.json";
 import Glossary from "@/assets/data/pollination/glossary/glossary.json";
 
 import BaseText from "@/components/baseComponents/BaseText.vue";
+import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
+import LessonNextButton from "@/components/baseComponents/LessonNextButton.vue";
 
 const msg = {
   en: enData,
@@ -43,6 +41,22 @@ const msg = {
 export default {
   components: {
     BaseText,
+    LessonBreadcrumbs,
+    LessonNextButton,
+  },
+  data() {
+    return {
+      bcData: [
+        {
+          name: data[this.$i18n.locale]["title"],
+          link: { name: "pollination___" + this.$i18n.locale },
+        },
+        {
+          name: data[this.$i18n.locale]["pageNames"][0],
+          link: { name: "pollination-page1___" + this.$i18n.locale },
+        },
+      ],
+    };
   },
   i18n: {
     messages: msg,
@@ -50,13 +64,15 @@ export default {
   created() {
     this.$store.dispatch("lesson/setGlossary", Glossary);
   },
+  computed: {
+    nextLink() {
+      return { name: "pollination-quiz___" + this.$i18n.locale };
+    },
+  },
   methods: {
     getText(id) {
       id = "data." + id;
       return this.$i18n.t(id);
-    },
-    goNext() {
-      this.$router.push({ name: "pollination-quiz___" + this.$i18n.locale })
     },
   },
 };
@@ -64,6 +80,8 @@ export default {
 
 <style module>
 .lesson {
+  padding: 2rem;
+  background-color: #efefef;
   position: relative;
 }
 .nextButton {

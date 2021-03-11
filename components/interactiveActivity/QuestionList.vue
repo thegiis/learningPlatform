@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.questionListDiv">
-    <p>{{'question ' + questionNum + ' out of ' + questionCount}}</p>
+    <p>{{questionNum + ' / ' + questionCount}}</p>
     <div :class="$style.questionContainer">
       <MCQQuestionItem :question="getQuestion" :questionNum="questionNum" />
     </div>
