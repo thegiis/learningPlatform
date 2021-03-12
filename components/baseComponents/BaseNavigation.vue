@@ -1,19 +1,24 @@
 <template>
   <div :class="$style.titleBar">
     <div :class="$style.titleDiv">
-      <nuxt-link :to='{ name: "index___"+this.$i18n.locale}'
+      <nuxt-link :to="{ name: 'index___' + this.$i18n.locale }"
         ><h1 :class="$style.title">{{ $t("topic") }}</h1></nuxt-link
       >
     </div>
-    <LangSwitch />
+    <div :class="$style.rightIcons">
+      <GlossaryLangSwitch />
+      <LangSwitch />
+    </div>
   </div>
 </template>
 
 <script>
 import LangSwitch from "@/components/baseComponents/LangSwitch.vue";
+import GlossaryLangSwitch from "@/components/baseComponents/GlossaryLangSwitch.vue";
 export default {
   components: {
     LangSwitch,
+    GlossaryLangSwitch,
   },
 };
 </script>
@@ -47,5 +52,8 @@ export default {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
+}
+.rightIcons{
+  position: relative;
 }
 </style>

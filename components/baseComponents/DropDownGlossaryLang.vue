@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown" :class="{ 'is-active': isActive }">
     <div class="select is-info">
-      <select @change="hello($event)">
+      <select @change="setGlossaryLocale($event)">
         <option 
           v-for="locale in availableLocales"
           :key="locale.code"
@@ -44,7 +44,7 @@ export default {
     // console.log(this.$store.state.lesson.vocabLocale);
   },
   methods: {
-    hello(event){
+    setGlossaryLocale(event){
       const selectedLocale = this.$i18n.locales.filter((i) => i.name === event.target.value)[0].code;
       this.$cookiz.set("glossaryLang", selectedLocale);
       this.$store.dispatch("lesson/setVocabLocale", selectedLocale);
@@ -62,11 +62,6 @@ export default {
       } else {
         return "normalLink";
       }
-    },
-    // change locale for vocab in store as well
-    setGlossaryLocale(locale) {
-      this.$store.dispatch("lesson/setVocabLocale", locale);
-      this.dropdown();
     },
   },
 };
