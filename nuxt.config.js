@@ -32,7 +32,9 @@ export default {
     buildModules: [],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: ['nuxt-i18n'],
+    modules: [
+        'nuxt-i18n', ['cookie-universal-nuxt', { alias: 'cookiz' }],
+    ],
 
     i18n: {
         locales: [{

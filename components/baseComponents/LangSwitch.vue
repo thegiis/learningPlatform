@@ -14,13 +14,13 @@
             />
           </svg>
         </span>
-        <span class="lang-dropdown">{{$i18n.locale}}</span>
+        <span class="lang-dropdown">{{ $i18n.locale }}</span>
       </button>
     </div>
     <div class="dropdown-menu" id="dropdown-menu6" role="menu">
       <div class="dropdown-content">
         <nuxt-link
-          @click.native="setVocabLocale(locale.code)"
+          @click.native="setLocale(locale.code)"
           v-for="locale in availableLocales"
           :key="locale.code"
           class="dropdown-item"
@@ -60,19 +60,21 @@ export default {
       }
     },
     // change locale for vocab in store as well
-    setVocabLocale(locale){
-      this.dropdown()
-      this.$store.dispatch("lesson/setVocabLocale", locale);
-    }
+    setLocale(locale) {
+      this.dropdown();
+      this.$cookiz.set("lang", locale, {
+        maxAge: 60 * 60 * 24 * 365 * 10,
+      });
+    },
   },
 };
 </script>
 
 <style scoped>
-#icon-language{
+#icon-language {
   fill: orange;
 }
-.lang-dropdown{
+.lang-dropdown {
   margin-left: 0.5rem;
   color: orange;
   text-transform: uppercase;

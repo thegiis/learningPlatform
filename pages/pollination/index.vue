@@ -48,7 +48,10 @@ export default {
       pages: data.pages,
     };
   },
-  created() {},
+  created() {
+    // console.log(this.$cookiz.get('lang'))
+    console.log(this.$store.state.lesson.vocabLocale)
+  },
   methods: {
     getLink(page) {
       const name = this.title + "-" + page + "___" + this.$i18n.locale;

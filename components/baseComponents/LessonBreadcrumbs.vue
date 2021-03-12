@@ -35,7 +35,7 @@ export default {
     },
   },
   created() {
-    console.log(this.data[0].link);
+    // console.log(this.data[0].link);
   },
   data() {
     return {};
