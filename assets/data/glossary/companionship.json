@@ -1,0 +1,28 @@
+{
+    "en": {
+        "word1en": {
+            "en": {
+                "word": "word1",
+                "meaning": "some meaning"
+            },
+            "np": {
+                "word": "",
+                "meaning": "word 1 nep meaning"
+            },
+            "image": ""
+        }
+    },
+    "np": {
+        "word2nep": {
+            "en": {
+                "word": "word 2 nep",
+                "meaning": ""
+            },
+            "np": {
+                "word": "word 2 nep",
+                "meaning": "word 2 nep meaning"
+            },
+            "image": ""
+        }
+    }
+}

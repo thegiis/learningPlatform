@@ -28,6 +28,11 @@
     <div id="navigationMenu" class="navbar-menu" ref="navMenu">
       <div class="navbar-end">
         <nuxt-link
+          :to="{ name: 'index___' + this.$i18n.locale }"
+          class="navbar-item"
+          >Modules</nuxt-link
+        >
+        <nuxt-link
           :to="{ name: 'glossaryGlobal___' + this.$i18n.locale }"
           class="navbar-item"
           >Glossary</nuxt-link

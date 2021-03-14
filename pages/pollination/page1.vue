@@ -27,7 +27,7 @@
 import enData from "@/assets/data/pollination/en.json";
 import npData from "@/assets/data/pollination/np.json";
 import data from "@/assets/data/pollination/index.json";
-import glossary from "@/assets/data/pollination/glossary/glossary.json";
+import glossary from "@/assets/data/glossary/pollination.json";
 
 import BaseText from "@/components/baseComponents/BaseText.vue";
 import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
