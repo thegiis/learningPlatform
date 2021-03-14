@@ -27,7 +27,7 @@
 import enData from "@/assets/data/pollination/en.json";
 import npData from "@/assets/data/pollination/np.json";
 import data from "@/assets/data/pollination/index.json";
-import Glossary from "@/assets/data/pollination/glossary/glossary.json";
+import glossary from "@/assets/data/pollination/glossary/glossary.json";
 
 import BaseText from "@/components/baseComponents/BaseText.vue";
 import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
@@ -62,7 +62,11 @@ export default {
     messages: msg,
   },
   created() {
-    this.$store.dispatch("lesson/setGlossary", Glossary);
+    const curLocale = this.$i18n.locale;
+    this.$store.dispatch("lesson/setGlossary", {
+      glossary: glossary,
+      locale: curLocale,
+    });
   },
   computed: {
     nextLink() {

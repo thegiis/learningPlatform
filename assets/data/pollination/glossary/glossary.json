@@ -1,19 +1,27 @@
 {
     "en": {
         "reproductive organ": {
-            "english_word": "reproductive organ",
-            "engmeaning": "",
-            "nepali_word": "",
-            "nepmeaning": "प्रजनन अङ्ग",
+            "en": {
+                "word": "reproductive organ",
+                "meaning": ""
+            },
+            "np": {
+                "word": "",
+                "meaning": "प्रजनन अङ्ग"
+            },
             "image": ""
         }
     },
     "np": {
         "प्रजनन": {
-            "english_word": "Reproduction",
-            "engmeaning": "",
-            "nepali_word": "प्रजनन",
-            "nepmeaning": "सन्तान उत्पादन गर्नु",
+            "en": {
+                "word": "Reproduction",
+                "meaning": ""
+            },
+            "np": {
+                "word": "प्रजनन",
+                "meaning": "सन्तान उत्पादन गर्नु"
+            },
             "image": ""
         }
     }

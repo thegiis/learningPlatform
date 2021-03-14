@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar "
+    class="navbar"
     role="navigation"
     aria-label="main navigation"
     :class="$style.titleBar"
@@ -27,6 +27,11 @@
 
     <div id="navigationMenu" class="navbar-menu" ref="navMenu">
       <div class="navbar-end">
+        <nuxt-link
+          :to="{ name: 'glossaryGlobal___' + this.$i18n.locale }"
+          class="navbar-item"
+          >Glossary</nuxt-link
+        >
         <GlossaryLangSwitch class="navbar-item" />
         <LangSwitch class="navbar-item" />
       </div>
@@ -67,5 +72,11 @@ export default {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: normal;
+}
+</style>
+<style scoped>
+a.nuxt-link-exact-active {
+  background-color: #fafafa;
+  color: #3273dc;
 }
 </style>

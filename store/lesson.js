@@ -29,8 +29,8 @@ export const mutations = {
 }
 
 export const actions = {
-    setGlossary(context, glossary) {
-        let currentGlossary = glossary[context.state.vocabLocale]
+    setGlossary(context, payload) {
+        let currentGlossary = payload.glossary[payload.locale]
         context.commit('setGlossary', currentGlossary)
         context.commit('setSelectors', Object.keys(currentGlossary))
     },
