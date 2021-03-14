@@ -46,7 +46,6 @@ export default {
 <style module>
 .cardContainer {
   position: relative;
-  width: 25%;
   max-width: 400px;
   margin: 1.5rem;
   transition: 0.2s linear;
@@ -67,6 +66,7 @@ export default {
 }
 .cardTitle{
     text-align: center;
+    overflow-y: hidden;
 }
 .cardDesc{
     text-align: center;
