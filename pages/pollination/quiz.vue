@@ -1,11 +1,13 @@
 <template>
   <div :class="$style.quizSection" class="container is-max-desktop">
     <LessonBreadcrumbs :data="bcData" />
-    <section>
-      <h1 :class="$style.quizTitle">{{ $t("quizTime") }}</h1>
-      <QuestionList :questionList="quizData" />
-    </section>
-    <LessonPrevButton :navlink="prevLink" />
+    <div :class="$style.quizWrapper">
+      <section class="column is-8-mobile is-6-desktop" :class="$style.bgWhite">
+        <h1 :class="$style.quizTitle">{{ $t("quizTime") }}</h1>
+        <QuestionList :questionList="quizData" />
+      </section>
+      <LessonPrevButton :navlink="prevLink" />
+    </div>
   </div>
 </template>
 
@@ -71,5 +73,12 @@ export default {
   font-size: 2.5rem;
   color: #1e4d63;
   text-align: center;
+}
+.quizWrapper{
+  display: flex;
+  justify-content: center;
+}
+.bgWhite{
+  background-color: white;
 }
 </style>

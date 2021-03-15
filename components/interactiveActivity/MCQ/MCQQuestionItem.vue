@@ -6,25 +6,25 @@
       :multiChoice="multiChoice"
       :selectedOptions="selectedOptions"
       @select="handleSelect"
-      :class="{disabledInput: correctlyAnswered}"
+      :class="{ disabledInput: correctlyAnswered }"
     />
     <button
       class="button is-primary"
       :class="getSubmitClass"
       @click="checkAns"
-      :disabled="!isSelected || correctlyAnswered"
+      :disabled="!isSelected"
     >
-      {{$t("submit")}}
+      {{ submitText }}
     </button>
   </div>
 </template>
 
 <script>
-import MCQAnswerList from '@/components/interactiveActivity/MCQ/MCQAnswerList.vue'
-import { arraysEqual } from '@/utils/utils.js'
+import MCQAnswerList from "@/components/interactiveActivity/MCQ/MCQAnswerList.vue";
+import { arraysEqual } from "@/utils/utils.js";
 
 export default {
-  name: 'MCQQuestionItem',
+  name: "MCQQuestionItem",
   components: {
     MCQAnswerList,
   },
@@ -40,11 +40,12 @@ export default {
   },
   data() {
     return {
+      submitText: this.$i18n.t("submit"),
       selectedOptions: [],
       correctOptions: [],
       multiChoice: false,
       correctlyAnswered: null,
-    }
+    };
   },
   created() {
     this.correctOptions = this.question.options.reduce(function (
@@ -52,54 +53,65 @@ export default {
       option
     ) {
       if (option.isCorrect) {
-        filtered.push(option.option)
+        filtered.push(option.option);
       }
-      return filtered
+      return filtered;
     },
-    [])
+    []);
     if (this.correctOptions.length > 1) {
-      this.multiChoice = true
+      this.multiChoice = true;
     }
   },
   computed: {
     isSelected() {
       if (this.selectedOptions.length == 0) {
-        return false
+        return false;
       }
-      return true
+      return true;
     },
     getSubmitClass() {
       if (this.correctlyAnswered == null) {
-        return ''
+        return "";
       } else if (this.correctlyAnswered == true) {
-        return 'submit-correct-answer'
+        return "submit-correct-answer";
       } else {
-        return 'submit-incorrect-answer'
+        return "submit-incorrect-answer";
       }
     },
   },
 
   methods: {
     checkAns() {
-      if (arraysEqual(this.selectedOptions, this.correctOptions)) {
-        this.correctlyAnswered = true
+      if (!this.correctlyAnswered) {
+        if (arraysEqual(this.selectedOptions, this.correctOptions)) {
+          this.submitText = this.$i18n.t("next");
+          this.correctlyAnswered = true;
+          this.$emit("answer", true);
+        } else {
+          this.submitText = this.$i18n.t("tryagain");
+          this.correctlyAnswered = false;
+          this.$emit("answer", false);
+        }
       } else {
-        this.correctlyAnswered = false
+        this.$emit("goNext", true);
+        this.selectedOptions = [];
+        this.correctlyAnswered = null;
+        this.submitText = this.$i18n.t("submit");
       }
     },
     handleSelect(val) {
-      const idx = this.selectedOptions.indexOf(val)
+      const idx = this.selectedOptions.indexOf(val);
       if (idx !== -1) {
-        this.selectedOptions.splice(idx, 1)
+        this.selectedOptions.splice(idx, 1);
       } else {
         if (!this.multiChoice) {
-          this.selectedOptions = []
+          this.selectedOptions = [];
         }
-        this.selectedOptions.push(val)
+        this.selectedOptions.push(val);
       }
     },
   },
-}
+};
 </script>
 
 <style module>
@@ -116,12 +128,12 @@ export default {
 </style>
 <style scoped>
 .submit-correct-answer {
-  background-color: greenyellow;
+  background-color: teal;
 }
 .submit-incorrect-answer {
   background-color: indianred;
 }
-.disabledInput{
+.disabledInput {
   pointer-events: none;
 }
 </style>

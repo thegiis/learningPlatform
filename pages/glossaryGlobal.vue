@@ -47,9 +47,9 @@ export default {
     return {
       all: {},
       allWords: [],
-      filtered: [],
-      query: "",
-      display: {},
+      query: "", // store search keywords
+      filtered: [], // store all matching words
+      display: {},  // store words with meanings from filtered array
     };
   },
   created() {
