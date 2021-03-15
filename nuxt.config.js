@@ -15,6 +15,7 @@ export default {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" },
             { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" }
         ]
     },
