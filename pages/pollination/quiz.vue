@@ -2,11 +2,11 @@
   <div :class="$style.quizSection" class="container is-max-desktop">
     <LessonBreadcrumbs :data="bcData" />
     <div :class="$style.quizWrapper">
-      <section class="column is-8-mobile is-6-desktop" :class="$style.bgWhite">
+      <section class="column is-11-mobile is-6-desktop" :class="$style.bgWhite">
         <h1 :class="$style.quizTitle">{{ $t("quizTime") }}</h1>
         <QuestionList :questionList="quizData" />
       </section>
-      <LessonPrevButton :navlink="prevLink" />
+      <!-- <LessonPrevButton :navlink="prevLink" /> -->
     </div>
   </div>
 </template>

@@ -5,8 +5,10 @@
       :options="question.options"
       :multiChoice="multiChoice"
       :selectedOptions="selectedOptions"
+      :correctOptions="correctOptions"
       @select="handleSelect"
-      :class="{ disabledInput: correctlyAnswered }"
+      :answered="isAnswered"
+      :class="{ disabledInput: isAnswered }"
     />
     <button
       class="button is-primary"
@@ -16,17 +18,23 @@
     >
       {{ submitText }}
     </button>
+    <HintInterface :display="showHint" hintText="this is hint" @close="closeHint()"/>
+    <HintIcon @open="openHint()"/>
   </div>
 </template>
 
 <script>
 import MCQAnswerList from "@/components/interactiveActivity/MCQ/MCQAnswerList.vue";
+import HintInterface from "@/components/interactiveActivity/HintInterface.vue";
+import HintIcon from "@/components/interactiveActivity/HintIcon.vue";
 import { arraysEqual } from "@/utils/utils.js";
 
 export default {
   name: "MCQQuestionItem",
   components: {
     MCQAnswerList,
+    HintInterface,
+    HintIcon
   },
   props: {
     question: {
@@ -45,6 +53,7 @@ export default {
       correctOptions: [],
       multiChoice: false,
       correctlyAnswered: null,
+      hint: true,
     };
   },
   created() {
@@ -63,6 +72,12 @@ export default {
     }
   },
   computed: {
+    showHint(){
+      return this.hint
+    },
+    isAnswered(){
+      return !(this.correctlyAnswered === null)
+    },
     isSelected() {
       if (this.selectedOptions.length == 0) {
         return false;
@@ -82,7 +97,7 @@ export default {
 
   methods: {
     checkAns() {
-      if (!this.correctlyAnswered) {
+      if (this.correctlyAnswered === null) {
         if (arraysEqual(this.selectedOptions, this.correctOptions)) {
           this.submitText = this.$i18n.t("next");
           this.correctlyAnswered = true;
@@ -92,8 +107,12 @@ export default {
           this.correctlyAnswered = false;
           this.$emit("answer", false);
         }
-      } else {
+      } else if(this.correctlyAnswered === true) {
         this.$emit("goNext", true);
+        this.selectedOptions = [];
+        this.correctlyAnswered = null;
+        this.submitText = this.$i18n.t("submit");
+      } else {
         this.selectedOptions = [];
         this.correctlyAnswered = null;
         this.submitText = this.$i18n.t("submit");
@@ -110,6 +129,12 @@ export default {
         this.selectedOptions.push(val);
       }
     },
+    openHint(){
+      this.hint = true
+    },
+    closeHint(){
+      this.hint = false
+    }
   },
 };
 </script>
@@ -117,7 +142,6 @@ export default {
 <style module>
 .questionDiv {
   position: relative;
-  padding: 2rem;
   width: 100%;
   margin: 0.5rem;
   display: flex;
@@ -128,10 +152,16 @@ export default {
 </style>
 <style scoped>
 .submit-correct-answer {
-  background-color: teal;
+  background-color: #B8D34F;
+}
+.submit-correct-answer:hover {
+  background-color: #84C251;
 }
 .submit-incorrect-answer {
   background-color: indianred;
+}
+.submit-incorrect-answer:hover {
+  background-color: #FF918E;
 }
 .disabledInput {
   pointer-events: none;

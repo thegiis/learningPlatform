@@ -23,10 +23,22 @@ export default {
       type: String,
       required: true,
     },
+    idx: {
+      type: Number,
+      required: false,
+    },
     selectedOptions: {
       type: Array,
       required: true,
     },
+    correctOptions: {
+      type: Array,
+      required: true
+    },
+    answered: {
+      type: Boolean,
+      required: true
+    }
   },
   computed: {
     isSelected() {

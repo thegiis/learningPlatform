@@ -5,10 +5,13 @@
       v-for="(option, idx) in options"
       :key="option.option"
     >
-      <MCQOptionItem
+      <MCQOptionItem2
         :id="'opt' + idx"
         :option="option"
+        :idx="idx + 1"
         :selectedOptions="selectedOptions"
+        :correctOptions="correctOptions"
+        :answered="answered"
         @select="handleSelect(option)"
       />
     </div>
@@ -16,12 +19,12 @@
 </template>
 
 <script>
-import MCQOptionItem from '@/components/interactiveActivity/MCQ/MCQOptionItem.vue'
+import MCQOptionItem2 from "@/components/interactiveActivity/MCQ/MCQOptionItem2.vue";
 
 export default {
-  name: 'MCQAnswerList',
+  name: "MCQAnswerList",
   components: {
-    MCQOptionItem,
+    MCQOptionItem2,
   },
   props: {
     options: {
@@ -36,27 +39,39 @@ export default {
       type: Array,
       required: true,
     },
+    correctOptions: {
+      type: Array,
+      required: true,
+    },
+    answered: {
+      type: Boolean,
+      required: true,
+    },
   },
   computed: {
     isSelected() {},
   },
   methods: {
     handleSelect(option) {
-      this.$emit('select', option.option)
+      this.$emit("select", option.option);
     },
   },
-}
+};
 </script>
 
 <style module>
 .answerDiv {
   position: relative;
-  padding: 2rem;
   width: 100%;
   margin: 0.5rem;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+}
+.optionItem {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 </style>

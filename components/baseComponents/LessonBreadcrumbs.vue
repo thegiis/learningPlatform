@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="breadcrumb has-dot-separator is-large"
+    class="breadcrumb has-dot-separator is-medium"
     :class="$style.breadcrumbContainer"
     aria-label="breadcrumbs"
   >
