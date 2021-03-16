@@ -53,7 +53,7 @@ export default {
       correctOptions: [],
       multiChoice: false,
       correctlyAnswered: null,
-      hint: true,
+      hint: false,
     };
   },
   created() {

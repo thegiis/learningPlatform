@@ -10,6 +10,7 @@
         :class="$style.closeHint"
         class="fa fa-times fa-2x"
         aria-hidden="true"
+        @click="closeHint"
       ></i>
     </div>
     <div :class="$style.hintBody">
@@ -69,9 +70,9 @@ export default {
   color: darkblue;
   cursor: pointer;
 }
-.hintBody{
-    position: relative;
-    padding: 1rem;
+.hintBody {
+  position: relative;
+  padding: 1rem;
 }
 .hintFooter {
   position: absolute;
@@ -80,12 +81,12 @@ export default {
   width: 100%;
   height: 8vh;
 }
-.gotIt{
-    float: right;
-    margin-right: 1rem;
-    color: teal;
-    font-size: 1.4rem;
-    cursor: pointer;
-    font-weight: bold;
+.gotIt {
+  float: right;
+  margin-right: 1rem;
+  color: teal;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 </style>
