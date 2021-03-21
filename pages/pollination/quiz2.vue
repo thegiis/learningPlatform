@@ -1,52 +1,13 @@
 <template>
   <div :class="$style.quizSection" class="container is-max-desktop">
     <LessonBreadcrumbs :pages="bcData" />
-    <div :class="$style.quizWrapper">
+    <div :class="$style.quizContainer">
       <section class="column is-11-mobile is-6-desktop" :class="$style.bgWhite">
-        <h1 :class="$style.quizTitle">Drag and Drop</h1>
-        <draggable
-          :disabled="!enabled"
-          :list="list"
-          class="questionList"
-          group="activity"
-          @change="checkDrop"
-        >
-          <div class="card dndItem" v-for="element in list" :key="element.name">
-            {{ element.name }}
-          </div>
-        </draggable>
-        <div class="ansDiv">
-          <draggable
-            :disabled="!enabled"
-            :list="redlist"
-            class="redList"
-            group="activity"
-            @change="checkDrop"
-          >
-            <div
-              class="card dndItem"
-              v-for="element in redlist"
-              :key="element.name"
-            >
-              {{ element.name }}
-            </div>
-          </draggable>
-          <draggable
-            :disabled="!enabled"
-            :list="bluelist"
-            class="blueList"
-            group="activity"
-            @change="checkDrop"
-          >
-            <div
-              class="card dndItem"
-              v-for="element in bluelist"
-              :key="element.name"
-            >
-              {{ element.name }}
-            </div>
-          </draggable>
-        </div>
+        <DragDrop
+          :instruction="instruction"
+          :itemList="questions"
+          :dropList="dropList"
+        />
       </section>
     </div>
   </div>
@@ -56,9 +17,9 @@
 import enData from "@/assets/data/pollination/quiz/quiz_en.json";
 import npData from "@/assets/data/pollination/quiz/quiz_np.json";
 import data from "@/assets/data/pollination/index.json";
-import draggable from "vuedraggable";
 
 import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
+import DragDrop from "@/components/interactiveActivity/DragDrop/DragDrop.vue";
 
 const msg = {
   en: enData,
@@ -68,11 +29,11 @@ const msg = {
 export default {
   components: {
     LessonBreadcrumbs,
-    draggable,
+    DragDrop,
   },
   head() {
     return {
-      title: "Quiz",
+      title: "Drag & Drop",
     };
   },
   data() {
@@ -82,14 +43,28 @@ export default {
         data[this.$i18n.locale]["pageNames"][1],
       ],
       enabled: true,
-      list: [
-        { name: "red 1", id: 0, drop: "red" },
-        { name: "red 2", id: 1, drop: "red" },
-        { name: "blue 1", id: 2, drop: "blue" },
-        { name: "blue 2", id: 3, drop: "blue" },
+      instruction: { text: "Drag and Drop", class: this.$style.instruction },
+      questions: {
+        list: [
+          { name: "red 1", id: 0, drop: "red" },
+          { name: "red 2", id: 1, drop: "red" },
+          { name: "blue 1", id: 2, drop: "blue" },
+          { name: "blue 2", id: 3, drop: "blue" },
+        ],
+        class: this.$style.questionClass,
+      },
+      dropList: [
+        {
+          list: [],
+          class: this.$style.redDrop,
+          name: "red",
+        },
+        {
+          list: [],
+          class: this.$style.blueDrop,
+          name: "blue",
+        },
       ],
-      redlist: [],
-      bluelist: [],
     };
   },
   computed: {
@@ -112,54 +87,35 @@ export default {
 </script>
 
 <style module>
+.quizContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.bgWhite {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
 .quizSection {
   padding: 2rem;
   background-color: #f8f9fa;
 }
-.quizTitle {
-  font-size: 2.5rem;
-  color: #1e4d63;
-  text-align: center;
+.instruction {
+  color: navy;
 }
-.quizWrapper {
-  display: flex;
-  justify-content: center;
-  min-height: 70vh;
-}
-.bgWhite {
-  background-color: white;
-}
-</style>
-
-<style scoped>
-.questionList {
+.questionClass {
   display: flex;
   padding: 1rem;
   cursor: pointer;
   min-height: 8vh;
   align-items: center;
 }
-.dndItem {
-  margin: 0.25rem 0.5rem;
-  padding: 0.5rem;
+.redDrop {
+  background-color: lightpink !important;
 }
-.ansDiv {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.redList {
-  background-color: lightsalmon;
-  min-height: 200px;
-  margin: 0.25rem;
-  padding: 0.25rem;
-  width: 45%;
-}
-.blueList {
-  background-color: lightskyblue;
-  min-height: 200px;
-  margin: 0.25rem;
-  padding: 0.25rem;
-  width: 45%;
+.blueDrop {
+  background-color: skyblue !important;
 }
 </style>
+
