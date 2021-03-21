@@ -64,6 +64,7 @@ export default {
       this.dropdown();
       this.$cookiz.set("lang", locale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
+        path: '/'
       });
     },
   },

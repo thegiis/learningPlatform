@@ -1,6 +1,6 @@
 <template>
   <div class="container is-max-desktop" :class="$style.indexPage">
-    <LessonBreadcrumbs :data="bcData" />
+    <LessonBreadcrumbs :pages="bcData" />
     <h1 :class="$style.title">{{ $t("title") }}</h1>
     <h2 :class="$style.contentsHeader">{{ $t("overview") }}</h2>
     <div :class="$style.lessonContent">
@@ -43,14 +43,16 @@ export default {
   },
   data() {
     return {
-      bcData: [{ name: this.$i18n.t("title"), link: { name: "pollination___" + this.$i18n.locale }}],
+      bcData: [
+          this.$i18n.t("title")
+      ],
       title: data.title,
       pages: data.pages,
     };
   },
   created() {
     // console.log(this.$cookiz.get('lang'))
-    console.log(this.$store.state.lesson.vocabLocale)
+    console.log(this.$store.state.lesson.vocabLocale);
   },
   methods: {
     getLink(page) {

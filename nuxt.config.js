@@ -49,6 +49,7 @@ export default {
         ],
         defaultLocale: 'en',
         vueI18nLoader: true,
+        silentFallbackWarn: true,
         // vuex: { moduleName: 'i18n', syncLocale: true, syncMessages: true, syncRouteParams: true },
         vueI18n: {
             fallbackLocale: 'en',

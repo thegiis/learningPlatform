@@ -23,6 +23,7 @@ export default {
   created() {
     const storedLocale = this.$cookiz.get("lang");
     const storedGlossaryLocale = this.$cookiz.get("glossaryLang");
+    
     if(storedGlossaryLocale !== undefined){
       this.$store.dispatch("lesson/setVocabLocale", storedGlossaryLocale);
     }

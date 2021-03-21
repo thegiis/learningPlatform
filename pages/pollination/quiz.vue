@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.quizSection" class="container is-max-desktop">
-    <LessonBreadcrumbs :data="bcData" />
+    <LessonBreadcrumbs :pages="bcData" />
     <div :class="$style.quizWrapper">
       <section class="column is-11-mobile is-6-desktop" :class="$style.bgWhite">
         <h1 :class="$style.quizTitle">{{ $t("quizTime") }}</h1>
@@ -39,14 +39,8 @@ export default {
   data() {
     return {
       bcData: [
-        {
-          name: data[this.$i18n.locale]["title"],
-          link: { name: "pollination___" + this.$i18n.locale },
-        },
-        {
-          name: data[this.$i18n.locale]["pageNames"][1],
-          link: { name: "pollination-quiz___" + this.$i18n.locale },
-        },
+        data[this.$i18n.locale]["title"],
+        data[this.$i18n.locale]["pageNames"][1],
       ],
     };
   },
@@ -74,11 +68,11 @@ export default {
   color: #1e4d63;
   text-align: center;
 }
-.quizWrapper{
+.quizWrapper {
   display: flex;
   justify-content: center;
 }
-.bgWhite{
+.bgWhite {
   background-color: white;
 }
 </style>

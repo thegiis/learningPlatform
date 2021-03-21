@@ -2,20 +2,23 @@
     "title": "pollination",
     "pages": [
         "page1",
-        "quiz"
+        "quiz",
+        "quiz2"
     ],
     "en": {
         "title": "Pollination",
         "pageNames": [
             "Parts of a Flower",
-            "Test Time"
+            "Test Time",
+            "Drag and Drop"
         ]
     },
     "np": {
         "title": "परागकण",
         "pageNames": [
             "फूलका विभिन्‍न भागहरू",
-            "परिक्षण समय"
+            "परिक्षण समय",
+            "Drag and Drop"
         ]
     }
 }

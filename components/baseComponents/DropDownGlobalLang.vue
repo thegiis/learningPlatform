@@ -43,6 +43,7 @@ export default {
       this.$i18n.setLocale(selectedLocale)
       this.$cookiz.set("lang", selectedLocale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
+        path: '/'
       });
       this.dropdown();
     }

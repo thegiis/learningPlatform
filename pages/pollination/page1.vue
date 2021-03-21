@@ -1,6 +1,6 @@
 <template>
   <div class="container is-max-desktop" :class="$style.lesson">
-    <LessonBreadcrumbs :data="bcData" />
+    <LessonBreadcrumbs :pages="bcData" />
     <h1 :class="$style.title">{{ $t("title") }}</h1>
     <div :class="$style.imgContainer">
       <img src="@/assets/images/pollination/flower1.png" alt="" />
@@ -46,15 +46,8 @@ export default {
   },
   data() {
     return {
-      bcData: [
-        {
-          name: data[this.$i18n.locale]["title"],
-          link: { name: "pollination___" + this.$i18n.locale },
-        },
-        {
-          name: data[this.$i18n.locale]["pageNames"][0],
-          link: { name: "pollination-page1___" + this.$i18n.locale },
-        },
+      bcData: [data[this.$i18n.locale]["title"],
+      data[this.$i18n.locale]["pageNames"][0],
       ],
     };
   },

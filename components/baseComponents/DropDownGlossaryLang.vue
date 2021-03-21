@@ -2,11 +2,14 @@
   <div class="dropdown" :class="{ 'is-active': isActive }">
     <div class="select is-info">
       <select @change="setGlossaryLocale($event)">
-        <option 
+        <option
           v-for="locale in availableLocales"
           :key="locale.code"
           class="dropdown-item"
-          :class="currentClass(locale)">{{ locale.name }}</option>
+          :class="currentClass(locale)"
+        >
+          {{ locale.name }}
+        </option>
       </select>
     </div>
   </div>
@@ -26,27 +29,33 @@ export default {
       return temp.name;
     },
     availableLocales() {
-      let current = []
-      let available = []
-      const currentLoc =  this.$store.state.lesson.vocabLocale
-      this.$i18n.locales.forEach(function(locale){
-        if(locale.code === currentLoc){
-          current.push(locale)
+      let current = [];
+      let available = [];
+      const currentLoc = this.$store.state.lesson.vocabLocale;
+      this.$i18n.locales.forEach(function (locale) {
+        if (locale.code === currentLoc) {
+          current.push(locale);
         } else {
-          available.push(locale)
+          available.push(locale);
         }
-      })
-      const all = current.concat(available)
-      return all
+      });
+      const all = current.concat(available);
+      return all;
     },
   },
   created() {
     // console.log(this.$store.state.lesson.vocabLocale);
   },
   methods: {
-    setGlossaryLocale(event){
-      const selectedLocale = this.$i18n.locales.filter((i) => i.name === event.target.value)[0].code;
-      this.$cookiz.set("glossaryLang", selectedLocale);
+    setGlossaryLocale(event) {
+      const selectedLocale = this.$i18n.locales.filter(
+        (i) => i.name === event.target.value
+      )[0].code;
+
+      this.$cookiz.set("glossaryLang", selectedLocale, {
+        maxAge: 60 * 60 * 24 * 365 * 10,
+        path: "/",
+      });
       this.$store.dispatch("lesson/setVocabLocale", selectedLocale);
       this.dropdown();
     },

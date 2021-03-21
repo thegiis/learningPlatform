@@ -11,15 +11,15 @@
         >
       </li>
       <li
-        v-for="(item, idx) in data"
+        v-for="(item, idx) in getParentLinks"
         :key="idx"
-        :class="{ 'is-active': idx == data.length - 1 }"
+        :class="{ 'is-active': idx == pages.length - 1 }"
       >
-        <nuxt-link :to="item.link" v-if="idx != data.length - 1">
-          <p>{{ item.name }}</p>
+        <nuxt-link :to="item" v-if="idx != pages.length - 1">
+          <p>{{ pages[idx] }}</p>
         </nuxt-link>
         <nuxt-link to="" v-else
-          ><p>{{ item.name }}</p></nuxt-link
+          ><p>{{ pages[idx] }}</p></nuxt-link
         >
       </li>
     </ul>
@@ -29,26 +29,34 @@
 <script>
 export default {
   props: {
-    data: {
+    pages: {
       type: Array,
       required: true,
     },
   },
-  created() {
-    // console.log(this.data[0].link);
-  },
   data() {
-    return {};
+    return {
+      parents: this.$nuxt.$route.path.split("/"),
+    };
   },
-  methods: {
-    getLink(page) {
-      const name = this.title + "-" + page + "___" + this.$i18n.locale;
-      return { name: name };
-    },
-    getText(id) {
-      return this.fulldata[this.$i18n.locale][id];
+  created() {
+    if (this.$i18n.availableLocales.indexOf(this.parents[1]) !== -1) {
+      this.parents = this.parents.slice(2);
+    } else {
+      this.parents = this.parents.slice(1);
+    }
+  },
+  computed: {
+    getParentLinks() {
+      let parLinks = [];
+      let lang = this.$i18n.locale;
+      this.parents.forEach(function (parent) {
+        parLinks.push({ name: parent + "___" + lang });
+      });
+      return parLinks;
     },
   },
+  methods: {},
 };
 </script>
 

@@ -81,7 +81,10 @@ export default {
     },
     // change locale for vocab in store as well
     setGlossaryLocale(locale) {
-      this.$cookiz.set("glossaryLang", locale);
+      this.$cookiz.set("glossaryLang", locale, {
+        maxAge: 60 * 60 * 24 * 365 * 10,
+        path: '/'
+      });
       this.$store.dispatch("lesson/setVocabLocale", locale);
       this.dropdown();
     },
