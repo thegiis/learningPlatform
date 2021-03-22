@@ -1,0 +1,27 @@
+{
+    "questions": [{
+        "id": "q001",
+        "type": "dragdrop",
+        "instruction": "Drag and Drop into correct boxes",
+        "items": [
+            { "name": "red 1", "id": 0, "drop": "red" },
+            { "name": "red 2", "id": 1, "drop": "red" },
+            { "name": "blue 1", "id": 2, "drop": "blue" },
+            { "name": "blue 2", "id": 3, "drop": "blue" }
+        ],
+
+        "dropList": [{
+                "list": [],
+                "label": "red items",
+                "name": "red"
+            },
+            {
+                "list": [],
+                "label": "blue items",
+                "name": "blue"
+            }
+        ],
+        "difficulty": 1
+    }]
+
+}

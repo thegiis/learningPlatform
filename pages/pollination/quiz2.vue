@@ -3,10 +3,11 @@
     <LessonBreadcrumbs :pages="bcData" />
     <div :class="$style.quizContainer">
       <section class="column is-11-mobile is-6-desktop" :class="$style.bgWhite">
-        <DragDrop
-          :instruction="instruction"
-          :itemList="questions"
-          :dropList="dropList"
+        <DragDropList
+          :questionList="quizData"
+          :instructionClass="$style.instruction"
+          :questionClass="$style.questionClass"
+          :dropClasses="[$style.redDrop, $style.blueDrop]"
         />
       </section>
     </div>
@@ -14,12 +15,12 @@
 </template>
 
 <script>
-import enData from "@/assets/data/pollination/quiz/quiz_en.json";
-import npData from "@/assets/data/pollination/quiz/quiz_np.json";
+import enData from "@/assets/data/pollination/dragdropquiz/quiz_en.json";
+import npData from "@/assets/data/pollination/dragdropquiz/quiz_np.json";
 import data from "@/assets/data/pollination/index.json";
 
 import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
-import DragDrop from "@/components/interactiveActivity/DragDrop/DragDrop.vue";
+import DragDropList from "@/components/interactiveActivity/DragDrop/DragDropList.vue";
 
 const msg = {
   en: enData,
@@ -29,7 +30,7 @@ const msg = {
 export default {
   components: {
     LessonBreadcrumbs,
-    DragDrop,
+    DragDropList,
   },
   head() {
     return {
@@ -41,29 +42,6 @@ export default {
       bcData: [
         data[this.$i18n.locale]["title"],
         data[this.$i18n.locale]["pageNames"][1],
-      ],
-      enabled: true,
-      instruction: { text: "Drag and Drop", class: this.$style.instruction },
-      questions: {
-        list: [
-          { name: "red 1", id: 0, drop: "red" },
-          { name: "red 2", id: 1, drop: "red" },
-          { name: "blue 1", id: 2, drop: "blue" },
-          { name: "blue 2", id: 3, drop: "blue" },
-        ],
-        class: this.$style.questionClass,
-      },
-      dropList: [
-        {
-          list: [],
-          class: this.$style.redDrop,
-          name: "red",
-        },
-        {
-          list: [],
-          class: this.$style.blueDrop,
-          name: "blue",
-        },
       ],
     };
   },
@@ -77,11 +55,6 @@ export default {
   },
   i18n: {
     messages: msg,
-  },
-  methods: {
-    checkDrop({ added, removed }) {
-      console.log(added, removed);
-    },
   },
 };
 </script>
