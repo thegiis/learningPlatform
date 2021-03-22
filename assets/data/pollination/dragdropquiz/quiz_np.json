@@ -4,10 +4,10 @@
         "type": "dragdrop",
         "instruction": "Drag and Drop into correct boxes",
         "items": [
-            { "name": "red 1", "id": 0, "drop": "red" },
-            { "name": "red 2", "id": 1, "drop": "red" },
-            { "name": "blue 1", "id": 2, "drop": "blue" },
-            { "name": "blue 2", "id": 3, "drop": "blue" }
+            { "name": "rato 1", "id": 0, "drop": "red" },
+            { "name": "rato 2", "id": 1, "drop": "red" },
+            { "name": "nilo 1", "id": 2, "drop": "blue" },
+            { "name": "nilo 2", "id": 3, "drop": "blue" }
         ],
 
         "dropList": [{
@@ -19,6 +19,29 @@
                 "list": [],
                 "label": "blue items",
                 "name": "blue"
+            }
+        ],
+        "difficulty": 1
+    }, {
+        "id": "q002",
+        "type": "dragdrop",
+        "instruction": "Drag and Drop into correct boxes",
+        "items": [
+            { "name": "cactus", "id": 0, "drop": "green" },
+            { "name": "grass", "id": 1, "drop": "green" },
+            { "name": "banana", "id": 2, "drop": "yellow" },
+            { "name": "sun", "id": 3, "drop": "yellow" }
+        ],
+
+        "dropList": [{
+                "list": [],
+                "label": "green items",
+                "name": "green"
+            },
+            {
+                "list": [],
+                "label": "yellow items",
+                "name": "yellow"
             }
         ],
         "difficulty": 1

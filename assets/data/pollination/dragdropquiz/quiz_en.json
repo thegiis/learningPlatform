@@ -22,6 +22,29 @@
             }
         ],
         "difficulty": 1
+    }, {
+        "id": "q002",
+        "type": "dragdrop",
+        "instruction": "Drag and Drop into correct boxes",
+        "items": [
+            { "name": "cactus", "id": 0, "drop": "green" },
+            { "name": "grass", "id": 1, "drop": "green" },
+            { "name": "banana", "id": 2, "drop": "yellow" },
+            { "name": "sun", "id": 3, "drop": "yellow" }
+        ],
+
+        "dropList": [{
+                "list": [],
+                "label": "green items",
+                "name": "green"
+            },
+            {
+                "list": [],
+                "label": "yellow items",
+                "name": "yellow"
+            }
+        ],
+        "difficulty": 1
     }]
 
 }

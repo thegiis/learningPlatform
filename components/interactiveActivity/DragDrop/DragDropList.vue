@@ -18,6 +18,7 @@
         :dropList="dropList"
         @answer="handleAnswer"
         @goNext="handleNext"
+        :key="componentKey"
       />
     </div>
     <div :class="$style.completedMessage" v-else>
@@ -54,6 +55,7 @@ export default {
   },
   data() {
     return {
+      componentKey: 0, //to rerender drag and drop component
       questionNum: 1,
       answers: [],
       completed: false,
@@ -105,6 +107,7 @@ export default {
       if (isNext) {
         if (this.questionNum < this.totalQuestions) {
           this.questionNum += 1;
+          this.componentKey += 1;
         } else {
           this.completed = true;
         }

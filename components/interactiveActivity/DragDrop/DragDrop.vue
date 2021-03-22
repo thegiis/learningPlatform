@@ -47,7 +47,7 @@
     </div>
 
     <button
-      class="button is-primary"
+      class="button is-primary dndSubmitBtn"
       :class="getSubmitClass"
       @click="checkAns"
       :disabled="!isSelected"
@@ -221,7 +221,10 @@ export default {
   padding: 0.25rem;
   width: 45%;
 }
-
+.dndSubmitBtn {
+  width: auto;
+  margin: 1rem auto;
+}
 .submit-correct-answer {
   background-color: #b8d34f;
 }
