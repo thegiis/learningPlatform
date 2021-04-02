@@ -26,7 +26,7 @@ export default {
 
 <style module>
 .nextButton {
-  position: fixed;
+  position: absolute;
   right: 2rem;
   width: 40px;
   height: 40px;

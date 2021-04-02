@@ -19,6 +19,14 @@
         :highlightClass="$style.testClass"
       />
     </div>
+    <div :class="$style.imgContainer">
+      <img src="@/assets/images/pollination/flower1.png" alt="" />
+      <img src="@/assets/images/pollination/flower2.png" alt="" />
+    </div>
+    <div :class="$style.imgContainer">
+      <img src="@/assets/images/pollination/flower1.png" alt="" />
+      <img src="@/assets/images/pollination/flower2.png" alt="" />
+    </div>
     <LessonNextButton :navlink="nextLink" />
   </div>
 </template>
