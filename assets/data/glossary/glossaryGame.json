@@ -1,0 +1,69 @@
+{
+    "questions": [{
+        "id": "q001",
+        "type": "MCQ",
+        "instruction": {
+            "text": "Drag the right word",
+            "highlight": null
+        },
+        "question": { "text": "select cactus", "shape": "circle", "type": "text" },
+        "options": [
+            { "name": "cactus", "isCorrect": true },
+            { "name": "grass", "isCorrect": false },
+            { "name": "banana", "isCorrect": false }
+        ]
+    }, {
+        "id": "q002",
+        "type": "MCQ",
+        "instruction": {
+            "text": "Drag the right word",
+            "highlight": null
+        },
+        "question": { "text": "select grass", "shape": "circle", "type": "text" },
+        "options": [
+            { "name": "cactus", "isCorrect": false },
+            { "name": "grass", "isCorrect": true },
+            { "name": "banana", "isCorrect": false }
+        ]
+    }, {
+        "id": "q003",
+        "type": "MCQ",
+        "instruction": {
+            "text": "Drag the right word",
+            "highlight": null
+        },
+        "question": { "text": "select banana", "shape": "circle", "type": "text" },
+        "options": [
+            { "name": "cactus", "isCorrect": false },
+            { "name": "grass", "isCorrect": false },
+            { "name": "banana", "isCorrect": true }
+        ]
+    }, {
+        "id": "q004",
+        "type": "MCQ",
+        "instruction": {
+            "text": "Drag the right word",
+            "highlight": null
+        },
+        "question": { "text": "select dog", "shape": "circle", "type": "text" },
+        "options": [
+            { "name": "cat", "isCorrect": false },
+            { "name": "dog", "isCorrect": true },
+            { "name": "rabbit", "isCorrect": false }
+        ]
+    }, {
+        "id": "q005",
+        "type": "MCQ",
+        "instruction": {
+            "text": "Drag the right word",
+            "highlight": null
+        },
+        "question": { "text": "select cat", "shape": "circle", "type": "text" },
+        "options": [
+            { "name": "cat", "isCorrect": true },
+            { "name": "dog", "isCorrect": false },
+            { "name": "rabbit", "isCorrect": false }
+        ]
+    }]
+
+}

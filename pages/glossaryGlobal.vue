@@ -1,5 +1,7 @@
 <template>
   <div :class="$style.glossaryPage" class="container is-max-desktop">
+    <nuxt-link 
+          :to="{ name: 'glossaryGame___' + this.$i18n.locale }">Game</nuxt-link>
     <h1 class="title is-1" :class="$style.mainTitle">Glossary</h1>
     <div class="panel-block">
       <p class="control has-icons-left">
