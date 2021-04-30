@@ -17,8 +17,8 @@ import npData from "@/assets/data/pollination/quiz/quiz_np.json";
 import data from "@/assets/data/pollination/index.json";
 
 import QuestionList from "@/components/interactiveActivity/QuestionList.vue";
-import LessonPrevButton from "@/components/baseComponents/LessonPrevButton.vue";
-import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
+import LessonPrevButton from "@/components/lessonComponents/LessonPrevButton.vue";
+import LessonBreadcrumbs from "@/components/lessonComponents/LessonBreadcrumbs.vue";
 
 const msg = {
   en: enData,

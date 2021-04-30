@@ -86,9 +86,65 @@ function shuffleArray(array) {
 
     return array;
 }
+
+function getPageNamesFromMap(data) {
+    // folder name for each lesson then page names inside folder in lessonsMap.json file
+    const lessonData = Object.entries(data.lessons);
+    const pageNames = lessonData.map((x) => Object.entries(x[1])[0]);
+    let pages = []
+
+    pageNames.forEach((x) => {
+        const pageCode = x[0];
+        const pageNums = x[1].pages;
+        let pageName = "";
+
+        for (let i = 0; i < pageNums.length; i++) {
+            pageName = pageCode + "-" + pageNums[i];
+            pages.push(pageName);
+        }
+    });
+    return pages
+}
+
+
+function getModulesFromMap(data) {
+    // folder name for each lesson then page names inside folder in lessonsMap.json file
+    const lessonData = Object.entries(data.lessons);
+    const pageNames = lessonData.map((x) => Object.entries(x[1])[0]);
+    let modules = []
+
+    pageNames.forEach((x) => {
+        const pageCode = x[0];
+        const pageNums = x[1].pages;
+        let pageName = "";
+        let chapterPages = [];
+
+        for (let i = 0; i < pageNums.length; i++) {
+            pageName = pageCode + "-" + pageNums[i];
+            chapterPages.push(pageName);
+        }
+        const moduleItem = {};
+        const temp = Object.entries(x[1]);
+        for (let i = 1; i < temp.length; i++) {
+            let langData = temp[i][1];
+            langData.routes = chapterPages;
+
+            const tempItem = {
+                [temp[i][0]]: langData
+            };
+            Object.assign(moduleItem, tempItem);
+        }
+        modules.push(moduleItem);
+    });
+
+    return modules
+}
+
 export {
     isAlphaNumeric,
     getVocabPosition,
     arraysEqual,
-    shuffleArray
+    shuffleArray,
+    getPageNamesFromMap,
+    getModulesFromMap
 }

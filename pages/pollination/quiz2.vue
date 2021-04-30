@@ -19,7 +19,7 @@ import enData from "@/assets/data/pollination/dragdropquiz/quiz_en.json";
 import npData from "@/assets/data/pollination/dragdropquiz/quiz_np.json";
 import data from "@/assets/data/pollination/index.json";
 
-import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
+import LessonBreadcrumbs from "@/components/lessonComponents/LessonBreadcrumbs.vue";
 import DragDropList from "@/components/interactiveActivity/DragDrop/DragDropList.vue";
 
 const msg = {

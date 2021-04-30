@@ -1,7 +1,7 @@
 <template>
   <div class="container is-max-desktop" :class="$style.lesson">
-    <LessonBreadcrumbs :pages="bcData" />
     <h1 :class="$style.title">{{ $t("title") }}</h1>
+    <LessonBreadcrumbs />
     <div :class="$style.imgContainer">
       <img src="@/assets/images/pollination/flower1.png" alt="" />
       <img src="@/assets/images/pollination/flower2.png" alt="" />
@@ -27,19 +27,18 @@
       <img src="@/assets/images/pollination/flower1.png" alt="" />
       <img src="@/assets/images/pollination/flower2.png" alt="" />
     </div>
-    <LessonNextButton :navlink="nextLink" />
+    <LessonNextButton/>
   </div>
 </template>
 
 <script>
 import enData from "@/assets/data/pollination/en.json";
 import npData from "@/assets/data/pollination/np.json";
-import data from "@/assets/data/pollination/index.json";
 import glossary from "@/assets/data/glossary/pollination.json";
 
 import BaseText from "@/components/baseComponents/BaseText.vue";
-import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
-import LessonNextButton from "@/components/baseComponents/LessonNextButton.vue";
+import LessonBreadcrumbs from "@/components/lessonComponents/LessonBreadcrumbs.vue";
+import LessonNextButton from "@/components/lessonComponents/LessonNextButton.vue";
 
 const msg = {
   en: enData,
@@ -52,13 +51,6 @@ export default {
     LessonBreadcrumbs,
     LessonNextButton,
   },
-  data() {
-    return {
-      bcData: [data[this.$i18n.locale]["title"],
-      data[this.$i18n.locale]["pageNames"][0],
-      ],
-    };
-  },
   i18n: {
     messages: msg,
   },
@@ -68,11 +60,6 @@ export default {
       glossary: glossary,
       locale: curLocale,
     });
-  },
-  computed: {
-    nextLink() {
-      return { name: "pollination-quiz___" + this.$i18n.locale };
-    },
   },
   methods: {
     getText(id) {
@@ -86,7 +73,7 @@ export default {
 <style module>
 .lesson {
   padding: 2rem;
-  background-color: #efefef;
+  /* background-color: #efefef; */
   position: relative;
 }
 .nextButton {

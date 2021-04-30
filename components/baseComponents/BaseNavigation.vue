@@ -106,6 +106,7 @@ export default {
 
 .titleBar {
   box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 7%);
+  z-index: 1100;
 }
 
 .title {

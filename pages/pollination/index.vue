@@ -1,6 +1,5 @@
 <template>
   <div class="container is-max-desktop" :class="$style.indexPage">
-    <LessonBreadcrumbs :pages="bcData" />
     <h1 :class="$style.title">{{ $t("title") }}</h1>
     <h2 :class="$style.contentsHeader">{{ $t("overview") }}</h2>
     <div :class="$style.lessonContent">
@@ -27,7 +26,6 @@
 
 <script>
 import data from "@/assets/data/pollination/index.json";
-import LessonBreadcrumbs from "@/components/baseComponents/LessonBreadcrumbs.vue";
 
 const msg = {
   en: data.en,
@@ -36,7 +34,6 @@ const msg = {
 
 export default {
   components: {
-    LessonBreadcrumbs,
   },
   i18n: {
     messages: msg,
