@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseNavigation @openGlossary="openGlossary()"/>
+    <BaseNavigation @openGlossary="openGlossary()" />
     <SideNavigation @sticky="handleSticky" @openNav="handleOpen" />
     <div
       class="container is-widescreen"
@@ -9,9 +9,10 @@
     >
       <div :class="containerClass"></div>
       <Nuxt />
-      <BaseGlossary v-if="showGlossary" @closeGlossary="closeGlossary()"/>
+      <BaseGlossary v-if="showGlossary" @closeGlossary="closeGlossary()" />
+      <!-- <CardVocab v-if="$store.state.lesson.showVocab" /> -->
+      <!-- <CardVocab :key="$store.state.lesson.showVocab" /> -->
     </div>
-    <CardVocab v-if="$store.state.lesson.showVocab" />
     <ModalLangSelect />
   </div>
 </template>
@@ -29,12 +30,12 @@ export default {
     CardVocab,
     SideNavigation,
     BaseGlossary,
-    ModalLangSelect
+    ModalLangSelect,
   },
   data() {
     return {
       showNav: false,
-      showGlossary: false
+      showGlossary: false,
     };
   },
   created() {
@@ -71,13 +72,17 @@ export default {
     },
     handleOpen(val) {
       this.showNav = val;
+      if (!val) {
+        const mainContainer = this.$refs["mainContainer"];
+        mainContainer.style.paddingTop = "0";
+      }
     },
-    closeGlossary(){
-      this.showGlossary = false
+    closeGlossary() {
+      this.showGlossary = false;
     },
-    openGlossary(){
-      this.showGlossary = true
-    }
+    openGlossary() {
+      this.showGlossary = true;
+    },
   },
 };
 </script>

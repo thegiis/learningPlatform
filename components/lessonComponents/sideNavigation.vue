@@ -3,7 +3,8 @@
     class="topBanner"
     :class="{ sticky: hasScrolled }"
     ref="sideNavbar"
-    v-if="insideLesson"
+    v-if="isInsideLesson"
+    :key="navkey"
   >
     <div :class="$style.expandContent">
       <i class="fas fa-clipboard-list" @click="openPanel()"></i>
@@ -14,7 +15,7 @@
       class="stickyPanel"
       :class="panelClass()"
       @onClose="closePanel()"
-      :key = sideNavkey
+      :key="sideNavkey"
     />
   </div>
 </template>
@@ -22,7 +23,7 @@
 <script>
 import lessonMap from "@/assets/data/lessonsMap.json";
 import sideNavigationList from "@/components/lessonComponents/sideNavigationList.vue";
-import {getPageNamesFromMap, getModulesFromMap} from "@/utils/utils.js"
+import { getPageNamesFromMap, getModulesFromMap } from "@/utils/utils.js";
 
 export default {
   components: {
@@ -31,22 +32,25 @@ export default {
   data() {
     return {
       hasScrolled: false,
-      stickyVal: 0,
+      stickyVal: 56, //height of top navbar
       pages: [],
       modules: [],
       showPanel: false,
-      sideNavkey: 0
+      sideNavkey: 0,
+      navkey: 0,
+      insideLesson: false,
     };
   },
   created() {
-    this.pages = getPageNamesFromMap(lessonMap)
-    this.modules = getModulesFromMap(lessonMap)
+    this.pages = getPageNamesFromMap(lessonMap);
+    this.modules = getModulesFromMap(lessonMap);
+    this.updateInsideLesson();
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-    if (this.insideLesson) {
-      this.stickyVal = this.$refs["sideNavbar"].offsetTop;
-    }
+    // if (this.insideLesson) {
+    //   this.stickyVal = this.$refs["sideNavbar"].offsetTop;
+    // }
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -54,38 +58,46 @@ export default {
   watch: {
     // to close menu on changing routes
     $route: function (val) {
-      this.showPanel = false
-      this.$emit('openNav', false)
-      this.sideNavkey += 1
+      this.updateInsideLesson();
+      this.showPanel = false;
+      this.$emit("openNav", false);
+      this.sideNavkey += 1;
     },
   },
   computed: {
-    insideLesson() {
-      const currentRouteName = this.$route.name.split("__")[0];
-      if (this.pages.indexOf(currentRouteName) > -1) {
-        return true;
-      }
-      return false;
+    isInsideLesson() {
+      return this.insideLesson;
     },
   },
 
   methods: {
-    handleScroll() {
-      if (window.pageYOffset >= this.stickyVal) {
-        this.hasScrolled = true;
-        this.$emit("sticky", true);
+    updateInsideLesson() {
+      const currentRouteName = this.$route.name.split("__")[0];
+      if (this.pages.indexOf(currentRouteName) > -1) {
+        this.insideLesson = true;
       } else {
-        this.hasScrolled = false;
-        this.$emit("sticky", false);
+        this.insideLesson = false;
+      }
+    },
+    handleScroll() {
+      if (this.insideLesson) {
+        console.log(window.pageYOffset, this.stickyVal)
+        if (window.pageYOffset >= this.stickyVal) {
+          this.hasScrolled = true;
+          this.$emit("sticky", true);
+        } else {
+          this.hasScrolled = false;
+          this.$emit("sticky", false);
+        }
       }
     },
     openPanel() {
       this.showPanel = true;
-      this.$emit('openNav', true)
+      this.$emit("openNav", true);
     },
     closePanel() {
       this.showPanel = false;
-      this.$emit('openNav', false)
+      this.$emit("openNav", false);
     },
     panelClass() {
       if (this.showPanel) {
