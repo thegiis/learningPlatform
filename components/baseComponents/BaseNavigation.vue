@@ -40,10 +40,10 @@
             >
           </div>
         </div>
-        <nuxt-link
-          :to="{ name: 'glossaryGlobal___' + this.$i18n.locale }"
+        <a
+          @click="openGlossary()"
           class="navbar-item"
-          >{{ $t("glossary") }}</nuxt-link
+          >{{ $t("glossary") }}</a
         >
         <GlossaryLangSwitch class="navbar-item" />
         <LangSwitch class="navbar-item" />
@@ -97,6 +97,9 @@ export default {
       navIcon.classList.toggle("is-active");
       navMenu.classList.toggle("is-active");
     },
+    openGlossary() {
+      this.$emit('openGlossary', true)
+    }
   },
 };
 </script>
@@ -106,7 +109,7 @@ export default {
 
 .titleBar {
   box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 7%);
-  z-index: 1100;
+  z-index: 2000;
 }
 
 .title {

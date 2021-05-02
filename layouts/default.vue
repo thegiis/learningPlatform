@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseNavigation />
+    <BaseNavigation @openGlossary="openGlossary()"/>
     <SideNavigation @sticky="handleSticky" @openNav="handleOpen" />
     <div
       class="container is-widescreen"
@@ -9,6 +9,7 @@
     >
       <div :class="containerClass"></div>
       <Nuxt />
+      <BaseGlossary v-if="showGlossary" @closeGlossary="closeGlossary()"/>
     </div>
     <CardVocab v-if="$store.state.lesson.showVocab" />
     <ModalLangSelect />
@@ -18,19 +19,22 @@
 <script>
 import BaseNavigation from "@/components/baseComponents/BaseNavigation.vue";
 import CardVocab from "@/components/baseComponents/CardVocab.vue";
-import ModalLangSelect from "@/components/baseComponents/ModalLangSelect.vue";
 import SideNavigation from "@/components/lessonComponents/sideNavigation.vue";
+import BaseGlossary from "@/components/glossaryOverlay/baseGlossary.vue";
+import ModalLangSelect from "@/components/baseComponents/ModalLangSelect.vue";
 
 export default {
   components: {
     BaseNavigation,
     CardVocab,
-    ModalLangSelect,
     SideNavigation,
+    BaseGlossary,
+    ModalLangSelect
   },
   data() {
     return {
       showNav: false,
+      showGlossary: false
     };
   },
   created() {
@@ -68,6 +72,12 @@ export default {
     handleOpen(val) {
       this.showNav = val;
     },
+    closeGlossary(){
+      this.showGlossary = false
+    },
+    openGlossary(){
+      this.showGlossary = true
+    }
   },
 };
 </script>
@@ -86,15 +96,19 @@ export default {
   animation: growWidth 0.2s linear forwards;
 }
 @keyframes growWidth {
-  from {width: 0px;}
+  from {
+    width: 0px;
+  }
 }
-.navOpenContainerClosed{
+.navOpenContainerClosed {
   position: relative;
   height: 100vh;
   width: 420px;
   animation: shrinkWidth 0.2s linear forwards;
 }
 @keyframes shrinkWidth {
-  to {width: 0px;}
+  to {
+    width: 0px;
+  }
 }
 </style>
