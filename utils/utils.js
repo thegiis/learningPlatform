@@ -140,11 +140,22 @@ function getModulesFromMap(data) {
     return modules
 }
 
+function isObjectEmpty(obj) {
+    if (typeof(obj) !== "object") {
+        return true
+    }
+    console.log(Object.keys(obj).length === 0)
+    console.log(obj)
+        // return true
+    return Object.keys(obj).length === 0;
+}
+
 export {
     isAlphaNumeric,
     getVocabPosition,
     arraysEqual,
     shuffleArray,
     getPageNamesFromMap,
-    getModulesFromMap
+    getModulesFromMap,
+    isObjectEmpty
 }

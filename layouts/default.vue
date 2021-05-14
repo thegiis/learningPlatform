@@ -8,9 +8,11 @@
       ref="mainContainer"
     >
       <div :class="containerClass"></div>
-      <Nuxt />
+      <div :class="$style.contentWrapper">
+        <Nuxt />
+        <CardVocab v-if="$store.state.lesson.showVocab" />
+      </div>
       <BaseGlossary v-if="showGlossary" @closeGlossary="closeGlossary()" />
-      <!-- <CardVocab v-if="$store.state.lesson.showVocab" /> -->
       <!-- <CardVocab :key="$store.state.lesson.showVocab" /> -->
     </div>
     <ModalLangSelect />
@@ -115,5 +117,8 @@ export default {
   to {
     width: 0px;
   }
+}
+.contentWrapper{
+  margin: 0 auto;
 }
 </style>

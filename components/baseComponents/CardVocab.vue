@@ -10,28 +10,40 @@
 </template>
 
 <script>
-import { getVocabPosition } from "@/utils/utils.js";
+import { getVocabPosition, isObjectEmpty } from "@/utils/utils.js";
 
 export default {
   computed: {
     getSelector() {
-      return this.$store.state.lesson.currentWord[this.$i18n.locale].word;
+      const currWord = this.$store.state.lesson.currentWord[this.$i18n.locale];
+      if (!isObjectEmpty(currWord)) {
+        return currWord.word;
+      }
+      return " ";
     },
 
     getMeaning() {
-      return this.$store.state.lesson.currentWord[this.$i18n.locale].meaning;
+      const currWord = this.$store.state.lesson.currentWord[this.$i18n.locale];
+      if (!isObjectEmpty(currWord)) {
+        return currWord.meaning;
+      }
+      return " ";
     },
 
     getTranslation() {
-      return this.$store.state.lesson.currentWord[
-        this.$store.state.lesson.vocabLocale
-      ].word;
+      const currWord = this.$store.state.lesson.currentWord;
+      if (!isObjectEmpty(currWord)) {
+        return currWord[this.$store.state.lesson.vocabLocale].word;
+      }
+      return " ";
     },
 
     getTranslatedMeaning() {
-      return this.$store.state.lesson.currentWord[
-        this.$store.state.lesson.vocabLocale
-      ].meaning;
+      const currWord = this.$store.state.lesson.currentWord;
+      if (!isObjectEmpty(currWord)) {
+        return currWord[this.$store.state.lesson.vocabLocale].meaning;
+      }
+      return " ";
     },
     isSameLocale() {
       if (this.$i18n.locale !== this.$store.state.lesson.vocabLocale) {
@@ -46,6 +58,7 @@ export default {
   methods: {
     setPosition() {
       const position = getVocabPosition(this.$store.state.lesson.vocabPosition);
+      console.log(position);
       this.$el.style["left"] = position.left;
       this.$el.style["top"] = position.top;
       this.$el.style["transform"] = position.transform;
@@ -58,7 +71,7 @@ export default {
 
 <style scoped>
 .vocab-container {
-  position: absolute;
+  position: fixed;
   max-width: 600px;
   min-width: 250px;
   width: auto;
@@ -68,7 +81,7 @@ export default {
   font-size: 1.2rem;
   color: navy;
   text-align: center;
-  z-index: 1000;
+  z-index: 900;
 }
 .vocab-selector {
   border-bottom: 1px solid blue;
