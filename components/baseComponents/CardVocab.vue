@@ -58,7 +58,7 @@ export default {
   methods: {
     setPosition() {
       const position = getVocabPosition(this.$store.state.lesson.vocabPosition);
-      console.log(position);
+      // console.log(position);
       this.$el.style["left"] = position.left;
       this.$el.style["top"] = position.top;
       this.$el.style["transform"] = position.transform;
