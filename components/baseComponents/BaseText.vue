@@ -6,11 +6,11 @@
         class="default-vocab-word"
         :class="getClass(word.isHighlight)"
         @mouseover="onOver(word.vocab, $event)"
-        @mouseleave="onLeave()"
         ref="vocabItem"
         v-bind:key="word"
-        >{{ word.text }}</span
-      >
+        >{{ word.text }}
+        <!--@mouseleave="onLeave()"-->
+      </span>
       <span v-else :class="getClass(word.isHighlight)" v-bind:key="word">{{ word.text }}</span>
     </template>
   </p>
