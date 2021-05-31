@@ -5,12 +5,13 @@
         v-if="word.hasVocab"
         class="default-vocab-word"
         :class="getClass(word.isHighlight)"
-        @mouseover="onOver(word.vocab,  $event)"
+        @mouseover="onOver(word.vocab, $event)"
         @mouseleave="onLeave()"
         ref="vocabItem"
+        v-bind:key="word"
         >{{ word.text }}</span
       >
-      <span v-else :class="getClass(word.isHighlight)">{{ word.text }}</span>
+      <span v-else :class="getClass(word.isHighlight)" v-bind:key="word">{{ word.text }}</span>
     </template>
   </p>
 </template>
@@ -133,7 +134,7 @@ export default {
     //hover function
     onOver(data, event) {
       // get word position and decide where vocab card shows up
-      const vocabItem = this.$refs.vocabItem[0]
+      const vocabItem = this.$refs.vocabItem[0];
       const rect = vocabItem.getBoundingClientRect();
       this.$store.dispatch("lesson/toggleVocab");
       this.$store.dispatch("lesson/setCurrentWord", data);
