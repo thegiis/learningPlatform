@@ -2,6 +2,7 @@ import enData from './assets/data/baseData_en.json'
 import npData from './assets/data/baseData_np.json'
 
 export default {
+    target: 'static',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'learningPlatform',
