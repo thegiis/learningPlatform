@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.20.6",
+    "vue-youtube-embed": "^2.2.2",
     "vuedraggable": "^2.24.3"
   },
   "devDependencies": {}
