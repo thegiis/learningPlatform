@@ -120,8 +120,12 @@ function getModulesFromMap(data) {
         let chapterPages = [];
 
         for (let i = 0; i < pageNums.length; i++) {
-            pageName = pageCode + "-" + pageNums[i];
-            chapterPages.push(pageName);
+            if (pageNums[i] === "") {
+                chapterPages.push(pageCode);
+            } else {
+                pageName = pageCode + "-" + pageNums[i];
+                chapterPages.push(pageName);
+            }
         }
         const moduleItem = {};
         const temp = Object.entries(x[1]);
