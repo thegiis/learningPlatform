@@ -11,7 +11,12 @@
         <p>Select the language to show in glossary</p>
         <DropDownGlossaryLang />
       </div>
-      <button class="button" :class="$style.saveBtn" aria-label="save" @click="save()">
+      <button
+        class="button"
+        :class="$style.saveBtn"
+        aria-label="save"
+        @click="save()"
+      >
         Save
       </button>
     </div>
@@ -24,15 +29,15 @@ import DropDownGlossaryLang from "@/components/baseComponents/DropDownGlossaryLa
 export default {
   components: {
     DropDownGlobalLang,
-    DropDownGlossaryLang
+    DropDownGlossaryLang,
   },
-  computed:{
+  computed: {
     display() {
-      return this.$store.state.global.isFirstVisit
-    }
+      return this.$store.state.global.isFirstVisit;
+    },
   },
   methods: {
-    save(){
+    save() {
       this.$cookiz.set("lang", this.$i18n.locale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
       });
@@ -40,7 +45,7 @@ export default {
         maxAge: 60 * 60 * 24 * 365 * 10,
       });
       this.$store.dispatch("global/setIsFirstVisit", false);
-    }
+    },
   },
 };
 </script>
