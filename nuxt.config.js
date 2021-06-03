@@ -70,6 +70,7 @@ export default {
   build: {},
   generate: {
     fallback: "404.html",
+    dir: "ncp",
   },
   router: {
     base: "/ncp",
