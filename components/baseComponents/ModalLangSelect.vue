@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" :class="$style.LangSelectContainer" v-if="display">
+  <div class="modal" :class="$style.LangSelectContainer" v-if="showModal">
     <div class="modal-background"></div>
     <div class="modal-content" :class="$style.modalContainer">
       <h1 class="title is-2">Language Selection</h1>
@@ -27,24 +27,30 @@
 import DropDownGlobalLang from "@/components/baseComponents/DropDownGlobalLang.vue";
 import DropDownGlossaryLang from "@/components/baseComponents/DropDownGlossaryLang.vue";
 export default {
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+  mounted() {
+    this.showModal = this.$store.state.global.isFirstVisit;
+  },
   components: {
     DropDownGlobalLang,
     DropDownGlossaryLang,
-  },
-  computed: {
-    display() {
-      return this.$store.state.global.isFirstVisit;
-    },
   },
   methods: {
     save() {
       this.$cookiz.set("lang", this.$i18n.locale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
+        path: "/" + process.env.modalName,
       });
       this.$cookiz.set("glossaryLang", this.$store.state.lesson.vocabLocale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
+        path: "/" + process.env.modalName,
       });
       this.$store.dispatch("global/setIsFirstVisit", false);
+      this.showModal = false;
     },
   },
 };
