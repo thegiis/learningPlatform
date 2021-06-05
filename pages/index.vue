@@ -60,6 +60,10 @@ export default {
       ],
     };
   },
+  created(){
+    // to hide sidenav
+      this.$store.dispatch("global/resetSideNavigation");
+  },
   mounted() {
     // console.log(this.$i18n.messages)
   },

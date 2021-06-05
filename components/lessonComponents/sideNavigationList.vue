@@ -43,9 +43,12 @@
                 :key="idx"
                 @click="closePanel"
               >
-                <nuxt-link :to="getLink(module.routes[idx])">{{
-                  page
-                }}</nuxt-link>
+                <nuxt-link :to="getLink(module.routes[idx])">
+                  <div v-if="checkThumb(page)">
+                    <VideoThumb :youtubeId="getVid(page)"> </VideoThumb>
+                  </div>
+                  <span v-else>{{ page }}</span>
+                </nuxt-link>
               </ul>
             </div>
           </li>
@@ -56,7 +59,12 @@
 </template>
 
 <script>
+import VideoThumb from "@/components/lessonComponents/VideoThumb.vue";
+
 export default {
+  components: {
+    VideoThumb,
+  },
   props: {
     modules: {
       type: Array,
@@ -87,7 +95,11 @@ export default {
     },
     currentChapter(pages) {
       if (pages.indexOf(this.currentPage) > -1) {
-        return [this.$style.customDropDown, this.$style.activeChapter];
+        return [
+          this.$style.customDropDown,
+          this.$style.activeChapter,
+          "is-active",
+        ];
       }
       return this.$style.customDropDown;
     },
@@ -96,6 +108,19 @@ export default {
         return [this.$style.customDropDownContent, this.$style.activeTopic];
       }
       return this.$style.customDropDownContent;
+    },
+    checkThumb(page) {
+      const splits = page.split("___");
+      if (splits.length === 1) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    getVid(page) {
+      // video id is in lessonmap as lesson name
+      const splits = page.split("___");
+      return splits[1];
     },
   },
 };

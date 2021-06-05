@@ -1,7 +1,7 @@
 <template>
   <div>
     <BaseNavigation @openGlossary="openGlossary()" />
-    <SideNavigation @sticky="handleSticky" @openNav="handleOpen" />
+    <SideNavigation @sticky="handleSticky" @openNav="handleOpen"/>
     <div
       class="container is-widescreen"
       :class="$style.paddedContainer"
@@ -53,6 +53,7 @@ export default {
     if (storedLocale !== undefined && storedGlossaryLocale !== undefined) {
       this.$store.dispatch("global/setIsFirstVisit", false);
     }
+    this.$store.dispatch("global/setSideNavigation");
   },
   computed: {
     containerClass() {
@@ -60,7 +61,7 @@ export default {
         return this.$style.navOpenContainer;
       }
       return this.$style.navOpenContainerClosed;
-    },
+    }
   },
   methods: {
     handleSticky(val) {
@@ -118,7 +119,7 @@ export default {
     width: 0px;
   }
 }
-.contentWrapper{
+.contentWrapper {
   position: relative;
   margin: 0 auto;
   width: 100%;

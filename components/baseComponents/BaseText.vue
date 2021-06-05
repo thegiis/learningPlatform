@@ -135,12 +135,12 @@ export default {
       // get word position and decide where vocab card shows up
       const vocabItem = this.$refs.vocabItem[0]
       const rect = vocabItem.getBoundingClientRect();
-      this.$store.dispatch("lesson/toggleVocab");
+      this.$store.dispatch("lesson/setVocab");
       this.$store.dispatch("lesson/setCurrentWord", data);
       this.$store.dispatch("lesson/setVocabPosition", rect);
     },
     onLeave() {
-      this.$store.dispatch("lesson/toggleVocab");
+      this.$store.dispatch("lesson/resetVocab");
     },
   },
 };
