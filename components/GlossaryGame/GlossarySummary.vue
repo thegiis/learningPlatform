@@ -141,7 +141,16 @@ export default {
       return retClass;
     },
     getShape(shape) {
-      return "circle-shape";
+      switch (shape) {
+        case "fill_blank":
+          return "fill-blank-shape";
+          break;
+        case "circle":
+          return "circle-shape";
+          break;
+        default:
+          return "circle-shape";
+      }
     },
     checkUserAns(isCorrect, val) {
       // return false if answer is correct or answered value is correct
@@ -332,6 +341,11 @@ export default {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+}
+.fill-blank-shape {
+  width: 500px;
+  height: auto;
+  padding: 30px 20px;
 }
 .optionContainer {
   position: relative;

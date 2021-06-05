@@ -27,10 +27,15 @@
         </div>
         <div
           class="selectedOption"
+          :class="questionOutineClass"
           v-for="element in dropAns"
           :key="element.name"
         >
-          <p>{{ element.name }}</p>
+          <p
+            v-if="checkFillQuestion(question.shape)"
+            v-html="fillBlanks(question.text, element.name)"
+          ></p>
+          <p v-else>{{ element.name }}</p>
         </div>
       </draggable>
     </div>
@@ -82,12 +87,13 @@ export default {
     return {
       submitText: this.$i18n.t("submit"),
       enabled: true,
-      positions: [1, 2, 3],
+      positions: [1, 2, 3, 4],
       dropAns: [],
       answers: [],
       isCorrect: false,
       hasAnswered: null,
       hint: false,
+      questionOutineClass: "asdasd",
     };
   },
   watch: {
@@ -128,9 +134,11 @@ export default {
           nextBtn.style.display = "block";
           if (this.dropAns[0].isCorrect) {
             correctIcon.style.display = "flex";
+            this.questionOutineClass = "correct-ques-answer";
             this.$emit("answer", { result: true, val: this.dropAns[0].name });
           } else {
             incorrectIcon.style.display = "flex";
+            this.questionOutineClass = "incorrect-ques-answer";
             this.$emit("answer", { result: false, val: this.dropAns[0].name });
           }
           this.$refs["nextBtn"].style.display = "block";
@@ -161,7 +169,32 @@ export default {
 
     correctlyDropped() {},
     getShape(shape) {
-      return "circle-shape";
+      switch (shape) {
+        case "fill_blank":
+          return "fill-blank-shape";
+          break;
+        case "circle":
+          return "circle-shape";
+          break;
+        default:
+          return "circle-shape";
+      }
+    },
+    checkFillQuestion(shape) {
+      switch (shape) {
+        case "fill_blank":
+          return true;
+          break;
+        case "circle":
+          return false;
+          break;
+        default:
+          return false;
+      }
+    },
+    fillBlanks(question, option) {
+      const optHtml = '<span style="border-bottom: 1px solid black;">' + option + '</span>'
+      return question.replace("_____", optHtml);
     },
   },
 };
@@ -202,16 +235,22 @@ export default {
   color: white;
   cursor: pointer;
 }
+.optionText p {
+  text-align: center;
+  width: 100%;
+}
 .onDragClass {
   width: 100%;
   height: 100%;
   opacity: 0.3;
+  border-radius: 0;
 }
 .onDragClass > p {
   display: none;
 }
 .onDragging {
-  color: red;
+  color: yellow;
+  border-radius: 50%;
 }
 .onDragging > p {
   display: block;
@@ -243,6 +282,7 @@ export default {
   height: 1.5rem;
   background-color: green;
   color: white;
+  z-index: 100;
 }
 .incorrectCheckIcon {
   background-color: red;
@@ -252,6 +292,11 @@ export default {
   height: 10rem;
   border-radius: 50%;
 }
+.fill-blank-shape {
+  width: 500px;
+  height: auto;
+  padding: 30px 20px;
+}
 .selectedOption {
   position: absolute;
   z-index: 10;
@@ -260,7 +305,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: lightskyblue;
+  padding: 30px 20px;
 }
 .nextBtn {
   display: none;
@@ -297,7 +342,18 @@ export default {
 }
 .position-3 {
   position: absolute;
-  left: 65%;
-  top: 30%;
+  left: 55%;
+  top: 45%;
+}
+.position-4 {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+}
+.correct-ques-answer {
+  background-color: lightgreen;
+}
+.incorrect-ques-answer {
+  background-color: lightpink;
 }
 </style>

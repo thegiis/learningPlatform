@@ -87,7 +87,7 @@ export default {
   methods: {
     handleScroll() {
       if (this.checkSideNav) {
-        console.log(window.pageYOffset, this.stickyVal);
+        // console.log(window.pageYOffset, this.stickyVal);
         if (window.pageYOffset >= this.stickyVal) {
           this.hasScrolled = true;
           this.$emit("sticky", true);
