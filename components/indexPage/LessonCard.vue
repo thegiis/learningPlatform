@@ -1,17 +1,19 @@
 <template>
   <nuxt-link :to="link" class="card" :class="$style.cardContainer">
-    <div class="card-image" :class="$style.cardImg">
-      <img :src="require(`@/assets/images/${filename}`)" :alt="alt" />
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img :src="require(`@/assets/images/${filename}`)" :alt="alt" />
+      </figure>
     </div>
     <div class="card-content">
       <div class="media">
-        <div class="media-content" :class="$style.cardTitle">
-          <p class="title is-4">{{ title }}</p>
+        <div class="media-content">
+          <p class="title is-4 has-text-centered">{{ title }}</p>
         </div>
       </div>
-      <div class="content"  :class="$style.cardDesc">
+      <!--<div class="content"  :class="$style.cardDesc">
         {{ description }}
-      </div>
+      </div>-->
     </div>
   </nuxt-link>
 </template>
@@ -46,29 +48,30 @@ export default {
 <style module>
 .cardContainer {
   position: relative;
-  max-width: 400px;
+  width: 300px;
+  height: 320px;
   margin: 1.5rem;
   transition: 0.2s linear;
 }
-.cardContainer:hover{
-    transform: scale(1.05);
+.cardContainer:hover {
+  transform: scale(1.05);
 }
-.cardImg{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cardImg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cardImg img {
-  width: auto!important;
+  width: auto !important;
   height: 240px;
   margin: 0;
 }
-.cardTitle{
-    text-align: center;
-    overflow-y: hidden;
+.cardTitle {
+  text-align: center;
+  overflow-y: hidden;
 }
-.cardDesc{
-    text-align: center;
+.cardDesc {
+  text-align: center;
 }
 </style>
