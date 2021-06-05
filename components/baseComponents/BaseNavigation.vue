@@ -27,7 +27,8 @@
 
     <div id="navigationMenu" class="navbar-menu" ref="navMenu">
       <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
+        <!-- for modules drop down -->
+        <!-- <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> {{ $t("modules") }} </a>
 
           <div class="navbar-dropdown">
@@ -39,13 +40,13 @@
               >{{ lesson.title }}</nuxt-link
             >
           </div>
-        </div>
+        </div> -->
         <a
           @click="openGlossary()"
           class="navbar-item"
           >{{ $t("glossary") }}</a
         >
-        <GlossaryLangSwitch class="navbar-item" />
+        <!-- <GlossaryLangSwitch class="navbar-item" /> -->
         <LangSwitch class="navbar-item" />
       </div>
     </div>

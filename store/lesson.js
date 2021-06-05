@@ -4,7 +4,8 @@ export const state = () => ({
     currentWord: {},
     vocabLocale: 'en',
     showVocab: false,
-    vocabPosition: {}
+    vocabPosition: {},
+    overVocab: false
 })
 
 export const mutations = {
@@ -16,6 +17,22 @@ export const mutations = {
     },
     setCurrentWord(state, word) {
         state.currentWord = word
+    },
+    setVocab(state) {
+        state.showVocab = true;
+    },
+    resetVocab(state) {
+        setTimeout(function() {
+            if (!state.overVocab) {
+                state.showVocab = false;
+            }
+        }, 300)
+    },
+    setOverVocab(state) {
+        state.overVocab = true;
+    },
+    resetOverVocab(state) {
+        state.overVocab = false;
     },
     toggleVocab(state) {
         state.showVocab = !state.showVocab
@@ -39,6 +56,18 @@ export const actions = {
     },
     setVocabLocale(context, locale) {
         context.commit('setVocabLocale', locale)
+    },
+    setVocab(context) {
+        context.commit('setVocab')
+    },
+    resetVocab(context) {
+        context.commit('resetVocab')
+    },
+    setOverVocab(context) {
+        context.commit('setOverVocab')
+    },
+    resetOverVocab(context) {
+        context.commit('resetOverVocab')
     },
     toggleVocab(context) {
         context.commit('toggleVocab')

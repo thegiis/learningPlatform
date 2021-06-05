@@ -1,9 +1,9 @@
 <template>
   <div>
     <BaseNavigation @openGlossary="openGlossary()" />
-    <SideNavigation @sticky="handleSticky" @openNav="handleOpen" />
+    <SideNavigation @sticky="handleSticky" @openNav="handleOpen"/>
     <div
-      class="container is-widescreen"
+      class="container"
       :class="$style.paddedContainer"
       ref="mainContainer"
     >
@@ -53,6 +53,7 @@ export default {
     if (storedLocale !== undefined && storedGlossaryLocale !== undefined) {
       this.$store.dispatch("global/setIsFirstVisit", false);
     }
+    this.$store.dispatch("global/setSideNavigation");
   },
   computed: {
     containerClass() {
@@ -60,7 +61,7 @@ export default {
         return this.$style.navOpenContainer;
       }
       return this.$style.navOpenContainerClosed;
-    },
+    }
   },
   methods: {
     handleSticky(val) {
@@ -95,12 +96,14 @@ export default {
   display: flex;
   flex-direction: row;
   padding-top: 0;
+  max-width: none !important;
 }
 .navOpenContainer {
   position: relative;
   height: 100vh;
   width: 420px;
   animation: growWidth 0.2s linear forwards;
+  flex-shrink: 0;
 }
 @keyframes growWidth {
   from {

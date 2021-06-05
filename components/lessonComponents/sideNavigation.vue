@@ -3,8 +3,8 @@
     class="topBanner"
     :class="{ sticky: hasScrolled }"
     ref="sideNavbar"
-    v-if="isInsideLesson"
     :key="navkey"
+    v-if="checkSideNav"
   >
     <div :class="$style.expandContent">
       <i class="fas fa-clipboard-list" @click="openPanel()"></i>
@@ -38,13 +38,11 @@ export default {
       showPanel: false,
       sideNavkey: 0,
       navkey: 0,
-      insideLesson: false,
     };
   },
   created() {
     this.pages = getPageNamesFromMap(lessonMap);
     this.modules = getModulesFromMap(lessonMap);
-    this.updateInsideLesson();
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -57,31 +55,39 @@ export default {
   },
   watch: {
     // to close menu on changing routes
-    $route: function (val) {
-      this.updateInsideLesson();
-      this.showPanel = false;
-      this.$emit("openNav", false);
-      this.sideNavkey += 1;
+    $route(to, from) {
+      const path = to.path;
+      const fromPath = from.path;
+      if (path === "/") {
+        this.$store.dispatch("global/resetSideNavigation");
+      } else {
+        this.$store.dispatch("global/setSideNavigation");
+      }
+      
+      const toSplits = path.split("/");
+      const fromSplits = fromPath.split("/");
+
+      if (toSplits.length > fromSplits.length && path !== "/") {
+        this.showPanel = true;
+        this.$emit("openNav", true);
+        this.sideNavkey += 1;
+      } else {
+        this.showPanel = false;
+        this.$emit("openNav", false);
+        this.sideNavkey += 1;
+      }
     },
   },
   computed: {
-    isInsideLesson() {
-      return this.insideLesson;
+    checkSideNav() {
+      return this.$store.state.global.hasSideNavigation;
     },
   },
 
   methods: {
-    updateInsideLesson() {
-      const currentRouteName = this.$route.name.split("__")[0];
-      if (this.pages.indexOf(currentRouteName) > -1) {
-        this.insideLesson = true;
-      } else {
-        this.insideLesson = false;
-      }
-    },
     handleScroll() {
-      if (this.insideLesson) {
-        console.log(window.pageYOffset, this.stickyVal)
+      if (this.checkSideNav) {
+        console.log(window.pageYOffset, this.stickyVal);
         if (window.pageYOffset >= this.stickyVal) {
           this.hasScrolled = true;
           this.$emit("sticky", true);
