@@ -42,7 +42,7 @@
             :class="$style.wordItem"
             @click="setCurrentWord(word)"
           >
-            <h2 class="title is-6">{{ word.selector }}</h2>
+            <h2 class="title is-6">{{ getWordTitle(word) }}</h2>
           </div>
         </div>
 
@@ -66,10 +66,10 @@
 <script>
 import pollination from "@/assets/data/glossary/pollination.json";
 import companionship from "@/assets/data/glossary/companionship.json";
+import air_quality from "@/assets/data/glossary/regulation_of_air_quality.json";
 import DropDownGlossaryLang from "@/components/baseComponents/DropDownGlossaryLang2.vue";
 
-const chapterNames = ["Pollination", "Companionship"];
-const chapterData = [pollination, companionship];
+const chapterData = [air_quality];
 
 export default {
   components: {
@@ -141,7 +141,11 @@ export default {
       for (const [key, value] of Object.entries(this.display)) {
         words.push({ selector: key, desc: value });
       }
+      console.log(words)
       return words;
+    },
+    getWordTitle(word) {
+      return word.desc[this.$i18n.locale].word;
     },
     getLetterClass(idx) {
       if (idx === this.activeLetterIdx) {

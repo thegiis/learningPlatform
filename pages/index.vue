@@ -43,7 +43,7 @@ export default {
           title: this.$t("lesson4"),
           description: this.$t("description4"),
           filename: "index/pollution.jpg",
-          link: { name: "pollination___" + this.$i18n.locale },
+          link: { name: "regulation_of_air_quality___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson5"),

@@ -1,12 +1,14 @@
 <template>
   <div class="vocab-container" @mouseover="onOver()" @mouseleave="onLeave()">
     <h2 class="vocab-selector">{{ getSelector }}</h2>
-    <p>{{ getMeaning }}</p>
-    <template v-if="!isSameLocale"
-      ><p>{{ getTranslation }}</p>
-      <p>{{ getTranslatedMeaning }}</p>
-    </template>
-    <GlossaryLangSwitchHover/>
+    <div class="meaningDIv">
+      <p>{{ getMeaning }}</p>
+      <template v-if="!isSameLocale"
+        ><p>{{ getTranslation }}</p>
+        <p>{{ getTranslatedMeaning }}</p>
+      </template>
+    </div>
+    <GlossaryLangSwitchHover />
   </div>
 </template>
 
@@ -97,8 +99,11 @@ export default {
   color: black;
   text-align: center;
   z-index: 900;
-  border: 2px solid orange
+  border: 2px solid orange;
   /* overflow: hidden; */
+}
+.meaningDIv{
+  padding: 0rem 0.75rem;
 }
 .vocab-selector {
   padding: 0.25rem;

@@ -1,0 +1,58 @@
+{
+    "title": "Regulation of Air Quality",
+    "data": {
+        "p1text1": "Air Pollution",
+        "p1text2": "We are always breathing air into our bodies. It keeps us alive.",
+        "p1text3": "People need to breathe, and so do lots of other animals and plants. Breathing is part of a process called respiration. During respiration, a living thing takes in oxygen from the air and gives out carbon dioxide. This process gives animals and plants the energy to eat, grow, and live life. ",
+        "p1text4": "Clean air is needed for our health and health of the planet.",
+        "p1text5": "However, our air is getting increasingly polluted.",
+        "p1text6": "Many of us breathe dirty air every day, especially in our towns and cities.",
+        "p1text7": "Air pollution is one of the world’s largest health and environmental problems.",
+        "p1text8": "Air becomes polluted when harmful gases, dust, smoke enters into the atmosphere and has adverse effect on humans and the ecosystem.",
+        "p1text9": "Air Pollutant can be mixture of  solid and liquid particles such as dust, dirt and smoke or gases such as carbon dioxide, carbon monoxide, nitrogen dioxide,sulfur dioxide, methane and ozone.",
+        "p1text10": "Plants need Carbon dioxide to make their food. But Carbon dioxide is being released in the atmosphere at record high level. Carbon dioxide contributes to air pollution in its role in the greenhouse effect. Carbon dioxide traps radiation at ground level and prevents the earth from cooling at night.",
+        "p1text11": "Carbon monoxide is another major pollutant gas that is produced by combustion of fuel such as natural gas, coal or wood. Vehicular exhaust contributes to the majority of carbon monoxide let into our atmosphere. It creates a smog type formation in the air.",
+
+        "p1text12": "Natural and Man-made air pollution",
+        "p1text13": "Air pollutant can be of natural origin or man-made. Some sources of air pollution come from nature. These include eruptions of volcanoes, dust storms, and forest fires.",
+        "p1text14": "Human activity is a major cause of air pollution, especially in large cities. Human air pollution is caused by things such as factories, power plants, cars, airplanes, chemicals, fumes from spray cans, and methane gas from landfills.",
+        "p1text15": "One of the ways that humans cause the most air pollution is by burning fossil fuels. Fossil fuels include coal, oil, and natural gas. When we burn fossil fuels this releases all sorts of gasses into the air causing air pollution such as smog.",
+
+        "p1text16": "Indoor and Outdoor air pollution",
+        "p1text17": "Indoor air pollution is caused by burning solid fuel sources – such as firewood, crop waste, and dung – for cooking and heating.",
+        "p1text18": "Even burning kerosene in simple wick lamps also produces significant emissions of fine particles and other pollutants.",
+        "p1text19": "Around 3 billion people still cook using solid fuels (such as wood, crop wastes, charcoal, coal and dung) and kerosene in open fires and inefficient stoves. Most of these people are poor, and live in low- and middle-income countries.",
+        "p1text20": "These cooking practices produce high levels of household air pollution with a range of health-damaging pollutants, including small soot particles that penetrate deep into the lungs. In poorly ventilated dwellings, indoor smoke can be 100 times higher than acceptable levels for fine particles.",
+
+        "p1text21": "Outdoor air pollution is a complex mixture of pollutants originating from natural and man-made sources, including transportation, power generation, and industrial activity.",
+        "p1text22": "In urban areas, outdoor air pollutants are mainly emitted from on-road and off-road vehicles.",
+        "p1text23": "But there are also contributions from factories, aircrafts, ships and so on, depending on the locations and prevailing winds.",
+        "p1text24": "Millions of people worldwide are exposed to outdoor air pollution at levels that substantially exceed existing health-based guidelines.",
+        "p1text25": "Indoor air quality is affected by outdoor air . Similarly, indoor air quality also affects outdoor environments.",
+
+        "p2text1": "Effects of air Pollution",
+        "p2text2": "Effects on Human Health",
+        "p2text3": "Breathing in polluted air can be very bad for our health. Long-term exposure to air pollution has been associated with diseases of the heart and lungs, cancers and other health problems. That’s why it’s important for us to monitor air pollution.",
+        "p2text4": "Many scientific studies have shown that breathing air pollution, specifically airborne particulate matter (PM), increases your risk of several health problems. This is because larger particles can irritate the lungs and smaller particles can cause inflammation that affects other organs. Scientists have found that breathing PM causes heart disease, heart attacks, and strokes. Other scientific studies show that people who breathe more PM are more likely to develop lung cancer, lower respiratory infections, chronic obstructive pulmonary disease (COPD), and a number of problems during pregnancy and birth, such as low birth weight and premature delivery. Every year, new studies suggest that PM could increase the risk of more diseases.",
+        "p2text5": "Air pollution leads people to be exposed to fine particles in polluted air that penetrate deep into the lungs and cardiovascular system, causing diseases including stroke, heart disease, lung cancer, chronic obstructive pulmonary diseases and respiratory infections.",
+        "p2text6": "Air pollution is the major driver of chronic diseases and premature mortality in humans leading to 7 million deaths annually. Last year alone around 1.6 million deaths in India and 42000 in Nepal is attributed to air pollution.",
+        "p2text7": "Globally 9 out of 10 people breathe air that does not meet WHO air quality guidelines that mean they are breathing polluted air. However, poor air quality is pervasive in developing countries.",
+
+        "p2text8": "Effects on Developing Countries",
+        "p2text9": "South Asia is considered as the hotspot for air pollution globally. India, Nepal, Niger, Qatar, Nigeria, Egypt, Mauritania, Cameroon, Bangladesh and Pakistan are the top counties with the highest population-weighted annual average PM2.5 (fine particles smaller than 2.5 microns) exposures in 2019. According to the IQ index, 27 out of 30 most polluted cities lie in South Asia.",
+        "p2text10": "Air pollution reduces life expectancy on average by 6.2 years in Bangladesh, 5.2 years in India, 4.7 years in Nepal, and 2.7 years in Pakistan.",
+
+        "p2text11": "Effects on Animals and the ecosystem",
+        "p2text12": "Just like humans, animals also face some devastating effects of air pollution. Toxic chemicals present in the air can force wildlife species to move to a new place and change their habitat. The toxic pollutants deposit over the surface of the water and can also affect sea animals.",
+        "p2text13": "Air pollution and the release of gasses into the atmosphere can have many negative effects on the environment. Global warming - One type of air pollution is the addition of carbon dioxide gas into the air. Some scientists believe that releasing too much carbon dioxide into the atmosphere is one of the causes of global warming. This upsets the balance of the carbon cycle. ",
+
+        "p3text1": "Nature as Regulators of Air Quality ",
+        "p3text2": "Ecosystems (nature) can filter, fix, and degrade or store air pollutants such as carbon dioxide/oxygen balance, ozone, levels of sulfur oxide, nitrogen oxides, volatile organic compounds, particulates, aerosols that directly affect human health or infrastructure.",
+        "p3text3": "Aboveground plant parts (i.e., leaves, bark, and other exposed parts) generally act as persistent absorbers in a polluted environment and trees can intercept air pollutants and act as biological filters.",
+        "p3text4": "Tree leaves can filter out particulate matter and many other pollutants from the atmosphere. The average reduction of particulate matter near a tree is between 7-24%.",
+        "p3text5": "Transpiration of water during photosynthesis can help to reduce air temperatures, an average reduction of temperature near a tree is up to 2°C.",
+        "p3text6": "Wind erosion is reduced with increasing ground cover, additional structural complexity (canopy layers) further reduces particle displacement and increases particle interception. In addition, vegetation can serve as a barrier to the movement of soil dust fronts, thus mitigating the effects of dust storms.",
+        "p3text7": "Particulate matter may stick to plant structures (e.g., leaves) and later washed-out to soil, thus reducing the inhalation exposure of people. Trees with a large leaf surface area can remove 60 to 70 times more gaseous pollutants a year than small ones.",
+        "p3text8": "Plant leaves absorb many different air chemical compounds that can be harmful for people, contributing to scavenge air pollutants in their organic structure. For instance, plants can absorb atmospheric NO2 and use it as a source of nitrogen in metabolism. Nitrogen and sulphur gases may also be washed out to soils, transformed into other compounds, and be further absorbed by plant roots. Some air pollutants may not be directly absorbed by plant leaves or roots. However, once they are deposited in plant parts (leaves, branches, trunks), free-living or endophytic microorganisms may help to sequester, degrade, or detoxify these compounds into non-toxic forms, which can be further absorbed by plants. Once leaves fall or pollutants are washed out to soils, these processes may also be mediated by soil biodiversity."
+    }
+}

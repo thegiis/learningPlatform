@@ -85,25 +85,28 @@
             "pages": [
                 "",
                 "page1",
-                "quiz",
-                "quiz2"
+                "page2",
+                "page3",
+                "quiz"
             ],
             "en": {
                 "title": "Regulation of Air Quality",
                 "pageNames": [
                     "index___rwCJvSKzQkc",
-                    "Parts of a Flower",
-                    "Test Time",
-                    "Drag and Drop"
+                    "Air Pollution",
+                    "Effects of Air Pollution",
+                    "Nature as regulators of Air Quality",
+                    "Quiz"
                 ]
             },
             "np": {
-                "title": "Regulation of Air Quality",
+                "title": "वायु गुणवत्ताको नियमन",
                 "pageNames": [
                     "index___rwCJvSKzQkc",
-                    "फूलका विभिन्‍न भागहरू",
-                    "परिक्षण समय",
-                    "Drag and Drop"
+                    "वायु प्रदूषण",
+                    "वायु प्रदूषण को प्रभाव",
+                    "प्रकृति वायु गुणवत्ताको नियामक",
+                    "Quiz"
                 ]
             }
         }

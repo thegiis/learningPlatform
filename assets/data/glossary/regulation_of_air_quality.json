@@ -1,0 +1,73 @@
+{
+    "en": {
+        "breathing": {
+            "en": {
+                "word": "Breathe",
+                "meaning": "take air into the lungs and then expel it"
+            },
+            "np": {
+                "word": "सास फेर्नु",
+                "meaning": ""
+            },
+            "image": ""
+        },
+        "energy": {
+            "en": {
+                "word": "Energy",
+                "meaning": "strength "
+            },
+            "np": {
+                "word": "उर्जा",
+                "meaning": ""
+            },
+            "image": ""
+        },
+        "environmental": {
+            "en": {
+                "word": "Environment",
+                "meaning": "the natural world"
+            },
+            "np": {
+                "word": "वातावरण",
+                "meaning": ""
+            },
+            "image": ""
+        },
+        "harmful": {
+            "en": {
+                "word": "Harmful",
+                "meaning": "dangerous"
+            },
+            "np": {
+                "word": "हानिकारक",
+                "meaning": ""
+            },
+            "image": ""
+        },
+        "atmosphere": {
+            "en": {
+                "word": "Atmosphere",
+                "meaning": "the envelope of gases surrounding the earth"
+            },
+            "np": {
+                "word": "वातावरण",
+                "meaning": ""
+            },
+            "image": ""
+        },
+        "mixture": {
+            "en": {
+                "word": "Mixture",
+                "meaning": "a combination of different things"
+            },
+            "np": {
+                "word": "मिश्रण",
+                "meaning": ""
+            },
+            "image": ""
+        }
+    },
+    "np": {
+
+    }
+}
