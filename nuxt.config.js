@@ -75,7 +75,7 @@ export default {
   build: {},
   generate: {
     fallback: "404.html",
-    dir: modalName,
+    dir: "dist/" + modalName,
   },
   router: {
     base: "/" + modalName,
