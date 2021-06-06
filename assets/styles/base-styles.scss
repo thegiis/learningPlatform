@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
+
+// Set your brand colors
+$body-gray: #4a4a4a;
+$header-gray: #676b5e;
+$sub-header-orange: #f39569;
+$link-blue: #3273dc;
+$footer-dark-blue: #244590;
+
+// Update Bulma's global variables
+$family-sans-serif: "Quicksand", sans-serif;
+$family-primary: $family-sans-serif;
+$family-secondary: "Raleway";
+$link: $link-blue;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: #f8f9fa;
+
+.default-text-highlight {
+  color: purple;
+  font-weight: bold;
+}
+
+.default-vocab-word {
+  color: royalblue;
+  border-bottom: 1px dotted royalblue;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+p {
+  font-family: $family-secondary;
+}
+
+@import "bulma";
+
+// active nav link
+//background-color: #6f94c1;
+//border-color: white;
+//color: white;
+
+// non-active nav link
+//  color: #6f94c1;
+// border: .2rem solid #a8d6e2;
+
+// non-active nav link hover
+//    background-color: #97adc7;
+//    color: #354a63;
+//    border-color: white;
+//}

@@ -16,5 +16,10 @@
     "vue-youtube-embed": "^2.2.2",
     "vuedraggable": "^2.24.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "bulma": "^0.9.2",
+    "prettier": "^2.3.0",
+    "sass": "^1.32.13",
+    "sass-loader": "^10.2.0"
+  }
 }

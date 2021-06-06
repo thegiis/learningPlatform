@@ -83,7 +83,7 @@ export default {
     setGlossaryLocale(locale) {
       this.$cookiz.set("glossaryLang", locale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
-        path: '/'
+        path: '/' + process.env.modalName
       });
       this.$store.dispatch("lesson/setVocabLocale", locale);
       this.dropdown();

@@ -41,8 +41,8 @@ export default {
     };
   },
   created() {
-    const storedLocale = this.$cookiz.get("lang");
-    const storedGlossaryLocale = this.$cookiz.get("glossaryLang");
+    const storedLocale = this.$cookiz.get("lang") || undefined;
+    const storedGlossaryLocale = this.$cookiz.get("glossaryLang") || undefined;
 
     if (storedGlossaryLocale !== undefined) {
       this.$store.dispatch("lesson/setVocabLocale", storedGlossaryLocale);
