@@ -1,6 +1,6 @@
 <template>
   <div class="container is-max-desktop" :class="$style.indexPage">
-    <h1 :class="$style.title">{{ $t("lesson4") }}</h1>
+    <h1 class="subtitle is-4">{{ $t("lesson4") }}</h1>
     <div :class="$style.videoContianer">
       <client-only>
         <vue-youtube-player :video-id="videoID"></vue-youtube-player>

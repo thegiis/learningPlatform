@@ -4,8 +4,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
 
 // Set your brand colors
-$body-gray: #4a4a4a;
-$header-gray: #676b5e;
+$body-text-gray: #4a4a4a;
+$header-text-gray: #676b5e;
+$body-background-color: #f8f9fa;
 $sub-header-orange: #f39569;
 $link-blue: #3273dc;
 $footer-dark-blue: #244590;
@@ -17,6 +18,7 @@ $family-secondary: "Raleway";
 $link: $link-blue;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+$subtitle-color: $header-text-gray;
 
 // Update some of Bulma's component variables
 $body-background-color: #f8f9fa;

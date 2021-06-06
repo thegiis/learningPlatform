@@ -7,7 +7,7 @@
   >
     <div class="navbar-brand">
       <div>
-        <h1 :class="$style.title">{{ $t("topic") }}</h1>
+        <h1 class="title navbar-item">{{ $t("topic") }}</h1>
       </div>
       <a
         role="button"
