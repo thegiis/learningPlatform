@@ -1,13 +1,13 @@
 <template>
-  <div class="container is-max-desktop" :class="$style.indexPage">
+  <div class="container is-max-desktop indexPage">
     <h1 class="subtitle is-4 is-uppercase has-text-centered">
       {{ $t("lesson4") }}
     </h1>
-    <div :class="$style.videoContainer">
+    <div class="videoContainer">
       <client-only>
         <vue-youtube-player
           :video-id="videoID"
-          :class="$style.videoPlayer"
+          class="videoPlayer"
         ></vue-youtube-player>
       </client-only>
     </div>
@@ -39,25 +39,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-.indexPage {
-  position: relative;
-  width: 100%;
-  min-height: calc(100vh - 4rem);
-}
-.title {
-  font-size: 2.25rem;
-  text-align: left;
-  margin: 1rem;
-  color: black;
-  text-decoration: underline;
-}
-.videoContainer {
-  display: flex;
-}
-.videoPlayer {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
