@@ -134,8 +134,7 @@ export default {
 .topBanner {
   position: relative;
   width: 100%;
-  background-color: darkslategray;
-  height: 60px;
+  height: 40px;
   z-index: 1000;
 }
 .sticky {
@@ -158,10 +157,10 @@ export default {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  color: white;
+  color: black;
   cursor: pointer;
   font-size: 25px;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
 }
 .expandContent:hover .hoverText {
   display: block;

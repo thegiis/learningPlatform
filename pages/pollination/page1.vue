@@ -1,6 +1,5 @@
 <template>
-  <div class="container is-max-desktop" :class="$style.lesson">
-    <h1 :class="$style.title">{{ $t("title") }}</h1>
+  <div class="container is-max-desktop">
     <LessonBreadcrumbs />
     <div :class="$style.imgContainer">
       <img src="@/assets/images/pollination/flower1.png" alt="" />
