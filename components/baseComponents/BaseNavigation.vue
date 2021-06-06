@@ -6,10 +6,9 @@
     :class="$style.titleBar"
   >
     <div class="navbar-brand">
-      <nuxt-link :to="{ name: 'index___' + this.$i18n.locale }"
-        ><h1 :class="$style.title">{{ $t("topic") }}</h1></nuxt-link
-      >
-
+      <div>
+        <h1 :class="$style.title">{{ $t("topic") }}</h1>
+      </div>
       <a
         role="button"
         class="navbar-burger"
@@ -41,11 +40,16 @@
             >
           </div>
         </div> -->
-        <a
-          @click="openGlossary()"
+        <a href="/" class="navbar-item">
+          {{ $t("mainHome") }}
+        </a>
+        <nuxt-link
+          :to="{ name: 'index___' + this.$i18n.locale }"
           class="navbar-item"
-          >{{ $t("glossary") }}</a
         >
+          {{ $t("modules") }}
+        </nuxt-link>
+        <a @click="openGlossary()" class="navbar-item">{{ $t("glossary") }}</a>
         <!-- <GlossaryLangSwitch class="navbar-item" /> -->
         <LangSwitch class="navbar-item" />
       </div>
@@ -99,8 +103,8 @@ export default {
       navMenu.classList.toggle("is-active");
     },
     openGlossary() {
-      this.$emit('openGlossary', true)
-    }
+      this.$emit("openGlossary", true);
+    },
   },
 };
 </script>
