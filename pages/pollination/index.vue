@@ -1,7 +1,6 @@
 <template>
   <div class="container is-max-desktop indexPage">
-    <h1 class="subtitle is-4 is-uppercase has-text-centered">title</h1>
-
+    <LessonBreadcrumbs />
     <div class="videoContainer">
       <client-only>
         <vue-youtube-player

@@ -11,14 +11,12 @@
         >
       </li>
       <li>
-        <nuxt-link :to="{ name: parent.route}"
-          >{{parent.title}}</nuxt-link
-        >
+        <nuxt-link :to="{ name: parent.route }">{{ parent.title }}</nuxt-link>
       </li>
-      <li class='is-active'>
-        <nuxt-link :to="{ name: $route.name}" aria-current="page"
-          >{{current}}</nuxt-link
-        >
+      <li class="is-active" v-if="!current.startsWith('index')">
+        <nuxt-link :to="{ name: $route.name }" aria-current="page">{{
+          current
+        }}</nuxt-link>
       </li>
     </ul>
   </nav>
