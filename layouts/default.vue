@@ -1,12 +1,8 @@
 <template>
   <div>
     <BaseNavigation @openGlossary="openGlossary()" />
-    <SideNavigation @sticky="handleSticky" @openNav="handleOpen"/>
-    <div
-      class="container"
-      :class="$style.paddedContainer"
-      ref="mainContainer"
-    >
+    <SideNavigation @sticky="handleSticky" @openNav="handleOpen" />
+    <div class="container" :class="$style.paddedContainer" ref="mainContainer">
       <div :class="containerClass"></div>
       <div :class="$style.contentWrapper">
         <Nuxt />
@@ -61,7 +57,7 @@ export default {
         return this.$style.navOpenContainer;
       }
       return this.$style.navOpenContainerClosed;
-    }
+    },
   },
   methods: {
     handleSticky(val) {
@@ -101,7 +97,7 @@ export default {
 .navOpenContainer {
   position: relative;
   height: 100vh;
-  width: 420px;
+  width: 320px;
   animation: growWidth 0.2s linear forwards;
   flex-shrink: 0;
 }

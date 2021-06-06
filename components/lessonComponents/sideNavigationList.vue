@@ -1,10 +1,10 @@
 <template>
   <div :class="$style.sidePanel">
     <div :class="$style.contentHeader">
-      <div class="contentTitle">Table of Contents</div>
-      <span @click="closePanel" :class="$style.closeButton"
-        ><i class="fas fa-times"></i
-      ></span>
+      <div class="subtitle is-4" :id="$style.toc">Table of Contents</div>
+      <span @click="closePanel" :class="$style.closeButton">
+        <i class="fas fa-times" :class="$style.iconFont"></i>
+      </span>
     </div>
     <div :class="$style.linkContainer">
       <aside class="menu">
@@ -24,10 +24,10 @@
                 aria-haspopup="true"
                 aria-controls="dropdown-menu"
               >
-                <span class="icon is-small">
+                <span class="icon is-small" :class="$style.angleIcon">
                   <i class="fas fa-angle-right" aria-hidden="true"></i>
                 </span>
-                <span>{{ module.title }}</span>
+                <span class="subtitle is-5">{{ module.title }}</span>
               </button>
             </div>
             <div
@@ -37,8 +37,8 @@
               role="menu"
             >
               <ul
-                class="dropdown-content"
-                :class="currentTopic(module.routes[idx])"
+                class="dropdown-item"
+                :id="currentTopic(module.routes[idx])"
                 v-for="(page, idx) in module.pageNames"
                 :key="idx"
                 @click="closePanel"
@@ -47,7 +47,10 @@
                   <div v-if="checkThumb(page)">
                     <VideoThumb :youtubeId="getVid(page)"> </VideoThumb>
                   </div>
-                  <span v-else>{{ page }}</span>
+                  <span v-else
+                    ><hr class="dropdown-divider" />
+                    {{ page }}</span
+                  >
                 </nuxt-link>
               </ul>
             </div>
@@ -105,7 +108,7 @@ export default {
     },
     currentTopic(page) {
       if (page == this.currentPage) {
-        return [this.$style.customDropDownContent, this.$style.activeTopic];
+        return this.$style.customDropDownContentActiveTopic;
       }
       return this.$style.customDropDownContent;
     },
@@ -136,7 +139,7 @@ export default {
   padding: 0px;
   background-color: white;
   padding-bottom: 56px;
-  width: 420px;
+  width: auto;
   transition: left 0.3s ease 0s;
   box-shadow: rgb(0 0 0 / 27%) 0px 4px 6px 2px;
   overflow-y: auto;
@@ -146,7 +149,7 @@ export default {
 }
 .contentHeader {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -155,10 +158,12 @@ export default {
 }
 .closeButton {
   cursor: pointer;
+  position: relative;
+  right: 3px;
+  top: -10px;
 }
 .linkContainer {
   position: relative;
-  padding: 1rem;
 }
 .customDropDown {
   display: flex;
@@ -167,15 +172,30 @@ export default {
 .customMenu {
   position: relative;
 }
-.customDropDownContent {
+.customMenu:last-child {
+  margin-bottom: 1rem;
+}
+#customDropDownContent,
+#customDropDownContentActiveTopic {
   box-shadow: none;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
+  border-left: 0px;
+  margin: 0px;
+}
+#customDropDownContent a,
+#customDropDownContentActiveTopic a {
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#customDropDownContentActiveTopic a {
+  color: palevioletred;
 }
 .customDropDownButton {
   cursor: pointer;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background-color: transparent;
   margin-bottom: 0.5rem;
 }
@@ -185,8 +205,14 @@ export default {
 .activeChapter .customDropDownButton {
   color: palevioletred;
 }
-.activeTopic a {
-  color: palevioletred;
+.iconFont {
+  font-size: 1rem;
+}
+.angleIcon {
+  padding-top: 0.1rem;
+}
+#toc {
+  margin-bottom: 0px;
 }
 </style>
 <style scoped>
