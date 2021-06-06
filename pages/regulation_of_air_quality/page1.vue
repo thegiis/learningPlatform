@@ -1,6 +1,5 @@
 <template>
-  <div class="container is-max-desktop" :class="$style.lesson">
-    <h1 :class="$style.title">{{ getText("p1text1") }}</h1>
+  <div class="container is-max-desktop">
     <LessonBreadcrumbs />
     <div :class="$style.description">
       <BaseText :textdata="getText('p1text2')" :highlight="true" />
