@@ -22,11 +22,7 @@ export const mutations = {
         state.showVocab = true;
     },
     resetVocab(state) {
-        setTimeout(function() {
-            if (!state.overVocab) {
-                state.showVocab = false;
-            }
-        }, 300)
+        state.showVocab = false;
     },
     setOverVocab(state) {
         state.overVocab = true;
@@ -61,7 +57,11 @@ export const actions = {
         context.commit('setVocab')
     },
     resetVocab(context) {
-        context.commit('resetVocab')
+        setTimeout(function() {
+            if (!context.state.overVocab) {
+                context.commit('resetVocab')
+            }
+        }, 300)
     },
     setOverVocab(context) {
         context.commit('setOverVocab')
