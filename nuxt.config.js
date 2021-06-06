@@ -30,16 +30,14 @@ export default {
                 href: "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css",
             },
         ],
-        script: [{
-            src: "https://www.youtube.com/iframe_api"
-        }]
+        script: []
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: ["@/assets/styles/base-styles.scss"],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [{ src: "~/plugins/youtube.js", ssr: false }],
+    plugins: [{ src: '@/plugins/youtube.js', ssr: false }],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -74,7 +72,7 @@ export default {
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {},
+    build: { transpile : ['vue-youtube-embed'] },
     generate: {
         fallback: "404.html",
         dir: "dist/" + modalName,

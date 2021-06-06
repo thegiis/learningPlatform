@@ -3,10 +3,10 @@
     <LessonBreadcrumbs />
     <div class="videoContainer">
       <client-only>
-        <vue-youtube-player
+        <youtube>
           :video-id="videoID"
           class="videoPlayer"
-        ></vue-youtube-player>
+        ></youtube>
       </client-only>
     </div>
     <LessonNextButton />
