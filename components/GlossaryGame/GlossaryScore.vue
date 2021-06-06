@@ -52,7 +52,7 @@ export default {
       if ((idx + 1) % 5 !== 0) {
         retClass.push(this.$style.progressDotCommon);
       } else {
-        retClass.push(this.$style.progressDotSpecial);
+        retClass.push(this.$style.progressDotCommon);
       }
       return retClass;
     },

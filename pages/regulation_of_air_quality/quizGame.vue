@@ -1,5 +1,6 @@
 <template>
-  <div class="container" :class="$style.glossaryGameContainer">
+  <div class="container is-max-desktop">
+    <LessonBreadcrumbs />
     <GlossaryHead :answers="answers" :key="glossaryScore" v-if="!isLastPage" />
     <GlossaryQuestion
       :questionItem="getQuestionItem"
