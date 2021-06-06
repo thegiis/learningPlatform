@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.cardContainer">
+  <div :class="$style.cardContainer" class="container is-wide-screen">
     <LessonCard
       v-for="lesson in lessons"
       :key="lesson.title"
@@ -24,19 +24,19 @@ export default {
         {
           title: this.$t("lesson1"),
           description: this.$t("description1"),
-          filename: "index/food.png",
+          filename: "index/food.jpg",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson2"),
           description: this.$t("description2"),
-          filename: "index/hiking.png",
+          filename: "index/hiking.jpg",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson3"),
           description: this.$t("description3"),
-          filename: "index/pollination.png",
+          filename: "index/pollination.jpg",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
@@ -48,13 +48,13 @@ export default {
         {
           title: this.$t("lesson5"),
           description: this.$t("description5"),
-          filename: "index/companion.jpg",
+          filename: "index/companionship.jpg",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson6"),
           description: this.$t("description6"),
-          filename: "index/jump.svg",
+          filename: "index/jump.jpg",
           link: { name: "pollination___" + this.$i18n.locale },
         },
       ],

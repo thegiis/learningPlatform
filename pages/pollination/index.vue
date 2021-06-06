@@ -1,6 +1,6 @@
 <template>
   <div class="container is-max-desktop" :class="$style.indexPage">
-    <h1 :class="$style.title">title</h1>
+    <h1 :class="$style.title">{{ $t("lesson4") }}</h1>
     <div :class="$style.videoContianer">
       <client-only>
         <vue-youtube-player :video-id="videoID"></vue-youtube-player>
@@ -23,8 +23,7 @@ export default {
     };
   },
   created() {
-    // console.log(this.$cookiz.get('lang'))
-    console.log(this.$store.state.lesson.vocabLocale);
+    this.videoID = this.$store.state.lesson.currentVideoId;
   },
   methods: {
     getLink(page) {
@@ -50,7 +49,7 @@ export default {
   color: black;
   text-decoration: underline;
 }
-.videoContianer{
+.videoContianer {
   margin: 1rem;
 }
 </style>

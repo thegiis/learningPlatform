@@ -5,7 +5,8 @@ export const state = () => ({
     vocabLocale: 'en',
     showVocab: false,
     vocabPosition: {},
-    overVocab: false
+    overVocab: false,
+    currentVideoId: ''
 })
 
 export const mutations = {
@@ -38,6 +39,9 @@ export const mutations = {
     },
     setVocabPosition(state, position) {
         state.vocabPosition = position
+    },
+    setVideoId(state, id) {
+        state.currentVideoId = id
     }
 }
 
@@ -74,5 +78,8 @@ export const actions = {
     },
     setVocabPosition(context, position) {
         context.commit('setVocabPosition', position)
+    },
+    setVideoId(context, id) {
+        context.commit('setVideoId', id)
     }
 }

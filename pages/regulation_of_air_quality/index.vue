@@ -23,8 +23,7 @@ export default {
     };
   },
   created() {
-    // console.log(this.$cookiz.get('lang'))
-    console.log(this.$store.state.lesson.vocabLocale);
+    this.videoID = this.$store.state.lesson.currentVideoId;
   },
   methods: {
     getLink(page) {

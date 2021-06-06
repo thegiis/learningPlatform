@@ -43,6 +43,20 @@ export default {
   created() {
     this.pages = getPageNamesFromMap(lessonMap);
     this.modules = getModulesFromMap(lessonMap);
+
+    const lang = this.$i18n.locale;
+    const currentModules = this.modules.map((x) => x[lang]);
+    const currentPage = this.$route.name.split("__")[0];
+    for (let i = 0; i < currentModules.length; i++) {
+      const currModule = currentModules[i];
+      const pages = currModule.routes;
+      const pageIdx = pages.indexOf(currentPage);
+      if (pageIdx > -1) {
+        const videoTag = currentModules[pageIdx].pageNames[0];
+        const currentVideoId = videoTag.split("___")[1];
+        this.$store.dispatch("lesson/setVideoId", currentVideoId);
+      }
+    }
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -63,7 +77,7 @@ export default {
       } else {
         this.$store.dispatch("global/setSideNavigation");
       }
-      
+
       const toSplits = path.split("/");
       const fromSplits = fromPath.split("/");
 

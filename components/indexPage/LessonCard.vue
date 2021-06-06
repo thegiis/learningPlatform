@@ -2,7 +2,7 @@
   <nuxt-link :to="link" class="card" :class="$style.cardContainer">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="require(`@/assets/images/${filename}`)" :alt="alt" />
+        <img :src="require(`@/assets/images/${filename}`)" :alt="alt" :class="$style.thumbImg"/>
       </figure>
     </div>
     <div class="card-content">
@@ -73,5 +73,10 @@ export default {
 }
 .cardDesc {
   text-align: center;
+}
+.thumbImg{
+  width: auto !important;
+  height: 100% !important;
+  margin: 0 auto  !important;
 }
 </style>
