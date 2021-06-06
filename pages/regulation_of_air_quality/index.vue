@@ -1,9 +1,14 @@
 <template>
   <div class="container is-max-desktop" :class="$style.indexPage">
-    <h1 class="subtitle is-4">{{ $t("lesson4") }}</h1>
-    <div :class="$style.videoContianer">
+    <h1 class="subtitle is-4 is-uppercase has-text-centered">
+      {{ $t("lesson4") }}
+    </h1>
+    <div :class="$style.videoContainer">
       <client-only>
-        <vue-youtube-player :video-id="videoID"></vue-youtube-player>
+        <vue-youtube-player
+          :video-id="videoID"
+          :class="$style.videoPlayer"
+        ></vue-youtube-player>
       </client-only>
     </div>
     <LessonNextButton />
@@ -38,8 +43,6 @@ export default {
 <style module>
 .indexPage {
   position: relative;
-  padding: 2rem;
-  background-color: #efefef;
   width: 100%;
   min-height: calc(100vh - 4rem);
 }
@@ -50,7 +53,11 @@ export default {
   color: black;
   text-decoration: underline;
 }
-.videoContianer {
-  margin: 1rem;
+.videoContainer {
+  display: flex;
+}
+.videoPlayer {
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
