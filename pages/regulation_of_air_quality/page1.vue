@@ -30,7 +30,7 @@
       <BaseText :textdata="getText('p1text20')" :highlight="true" />
     </div>
     <div :class="$style.imgContainer">
-      <img src="@/assets/images/regulation_of_air_quality/img1.jpg" alt="" />
+      <img src="@/assets/images/regulation_of_air_quality/img1.JPG" alt="" />
     </div>
     <div :class="$style.description">
       <BaseText :textdata="getText('p1text21')" :highlight="true" />
