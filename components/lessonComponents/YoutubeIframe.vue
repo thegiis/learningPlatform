@@ -8,7 +8,7 @@
       title="YouTube video player"
       :width="playerWidth"
       :height="playerHeight"
-      :src="`http://www.youtube.com/embed/${videoId}?autoplay=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=http%3A%2F%2Flocalhost%3A3000&amp;widgetid=1`"
+      :src="`https://www.youtube.com/embed/${videoId}?autoplay=0&amp;playsinline=1&amp;enablejsapi=1&amp;widgetid=1`"
     ></iframe>
   </div>
 </template>
