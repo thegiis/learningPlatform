@@ -2,7 +2,8 @@
   <div class="container is-max-desktop indexPage">
     <LessonBreadcrumbs />
     <div class="videoContainer">
-      <youtube :video-id="videoID" class="videoPlayer"></youtube>
+      <YoutubeIframe :video-id="videoID" class="videoPlayer" />
+      <!--<youtube :video-id="videoID" class="videoPlayer"></youtube>-->
     </div>
     <LessonNextButton />
   </div>
@@ -10,10 +11,12 @@
 
 <script>
 import LessonNextButton from "@/components/lessonComponents/LessonNextButton.vue";
+import YoutubeIframe from "@/components/lessonComponents/YoutubeIframe.vue";
 
 export default {
   components: {
     LessonNextButton,
+    YoutubeIframe,
   },
   data() {
     return {
