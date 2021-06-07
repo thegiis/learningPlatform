@@ -148,9 +148,9 @@ function isObjectEmpty(obj) {
     if (typeof(obj) !== "object") {
         return true
     }
-    console.log(Object.keys(obj).length === 0)
-    console.log(obj)
-        // return true
+    // console.log(Object.keys(obj).length === 0)
+    // console.log(obj)
+    // return true
     return Object.keys(obj).length === 0;
 }
 
