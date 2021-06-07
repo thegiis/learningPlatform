@@ -2,7 +2,7 @@
   <div class="container is-max-desktop indexPage">
     <LessonBreadcrumbs />
     <div class="videoContainer">
-      <youtube> :video-id="videoID" class="videoPlayer" ></youtube>
+      <youtube :video-id="videoID" class="videoPlayer"></youtube>
     </div>
     <LessonNextButton />
   </div>
