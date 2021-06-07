@@ -58,6 +58,7 @@ export const actions = {
         context.commit('setVocabLocale', locale)
     },
     setVocab(context) {
+        context.commit('resetOverVocab')
         context.commit('setVocab')
     },
     resetVocab(context) {
