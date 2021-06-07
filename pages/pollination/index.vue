@@ -1,9 +1,12 @@
 <template>
-  <div class="container is-max-desktop" :class="$style.indexPage">
-    <h1 :class="$style.title">{{ $t("lesson4") }}</h1>
-    <div :class="$style.videoContianer">
+  <div class="container is-max-desktop indexPage">
+    <LessonBreadcrumbs />
+    <div class="videoContainer">
       <client-only>
-        <vue-youtube-player :video-id="videoID"></vue-youtube-player>
+        <vue-youtube-player
+          :video-id="videoID"
+          class="videoPlayer"
+        ></vue-youtube-player>
       </client-only>
     </div>
     <LessonNextButton />
@@ -19,7 +22,7 @@ export default {
   },
   data() {
     return {
-      videoID: "rwCJvSKzQkc",
+      videoID: "5a_2T6Mo7-k",
     };
   },
   created() {
@@ -33,23 +36,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-.indexPage {
-  position: relative;
-  padding: 2rem;
-  background-color: #efefef;
-  width: 100%;
-  min-height: calc(100vh - 4rem);
-}
-.title {
-  font-size: 2.25rem;
-  text-align: left;
-  margin: 1rem;
-  color: black;
-  text-decoration: underline;
-}
-.videoContianer {
-  margin: 1rem;
-}
-</style>

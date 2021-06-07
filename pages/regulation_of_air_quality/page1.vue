@@ -1,6 +1,5 @@
 <template>
-  <div class="container is-max-desktop" :class="$style.lesson">
-    <h1 :class="$style.title">{{ getText("p1text1") }}</h1>
+  <div class="container is-max-desktop">
     <LessonBreadcrumbs />
     <div :class="$style.description">
       <BaseText :textdata="getText('p1text2')" :highlight="true" />
@@ -30,7 +29,7 @@
       <BaseText :textdata="getText('p1text20')" :highlight="true" />
     </div>
     <div :class="$style.imgContainer">
-      <img src="@/assets/images/regulation_of_air_quality/img1.jpg" alt="" />
+      <img src="@/assets/images/regulation_of_air_quality/img1.JPG" alt="" />
     </div>
     <div :class="$style.description">
       <BaseText :textdata="getText('p1text21')" :highlight="true" />

@@ -1,11 +1,18 @@
 <template>
   <section :class="$style.nextSection" v-if="showNextSection">
-    <div :class="$style.topicIndicator">Next Section</div>
     <div :class="$style.topicTitleDiv">
-      <nuxt-link :to="{ name: getNextLink }" :class="$style.topicTitle">
-        <p>{{ getTopic }}</p>
-        <p><i class="fas fa-angle-right"></i></p>
-      </nuxt-link>
+      <div :class="$style.topicTitle">
+        <p :class="$style.nextSection" class="is-size-5">Next Section</p>
+        <nuxt-link
+          :to="{ name: getNextLink }"
+          class="button is-uppercase is-primary"
+        >
+          <span>{{ getTopic }}</span>
+          <span :class="$style.rightArrow"
+            ><i class="fas fa-angle-right"></i
+          ></span>
+        </nuxt-link>
+      </div>
     </div>
   </section>
 </template>
@@ -35,7 +42,8 @@ export default {
       const totalPages = tempModule.routes.length;
       if (pageIdx > -1) {
         if (pageIdx < totalPages) {
-          this.nextLink = tempModule.routes[pageIdx + 1] + "___" + this.$i18n.locale;
+          this.nextLink =
+            tempModule.routes[pageIdx + 1] + "___" + this.$i18n.locale;
           this.nextTopic = tempModule.pageNames[pageIdx + 1];
           this.showNextSection = true;
         }
@@ -47,19 +55,17 @@ export default {
     getTopic() {
       return this.nextTopic;
     },
-    getNextLink(){
+    getNextLink() {
       return this.nextLink;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style module>
 .nextSection {
-  position: relative;
-  background: lightyellow;
-  padding: 1rem;
-  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .topicIndicator {
   border-bottom: 1px solid darkgray;
@@ -67,14 +73,18 @@ export default {
   padding: 0.5rem;
 }
 .topicTitleDiv {
-  border-bottom: 1px solid darkgray;
-  font-size: 1.5rem;
+  border: 1px solid darkgray;
   padding: 0.5rem;
+  border-radius: 0.3rem;
 }
 .topicTitle {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.rightArrow {
+  padding-left: 0.5rem;
+  padding-top: 0.1rem;
 }
 </style>
