@@ -1,12 +1,10 @@
 <template>
   <div :class="$style.videoThumb">
-    <client-only>
-      <vue-youtube-player
-        :video-id="youtubeId"
-        player-width="280"
-        player-height="158"
-      ></vue-youtube-player>
-    </client-only>
+    <youtube
+      :video-id="youtubeId"
+      player-width="280"
+      player-height="158"
+    ></youtube>
   </div>
 </template>
 
