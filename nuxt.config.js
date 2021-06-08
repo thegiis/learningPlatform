@@ -73,7 +73,16 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: { transpile: ["vue-youtube-embed"] },
+  build: {
+    transpile: ["vue-youtube-embed"],
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
+  },
   generate: {
     fallback: "404.html",
     dir: "dist/" + modalName,
