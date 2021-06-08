@@ -12,7 +12,7 @@
 <script>
 import LessonNextButton from "@/components/lessonComponents/LessonNextButton.vue";
 import YoutubeIframe from "@/components/lessonComponents/YoutubeIframe.vue";
-import lessonMap from "@/assets/data/lessonsMap.json";
+import { getVideoId } from "@/utils/utils.js";
 
 export default {
   components: {
@@ -27,14 +27,9 @@ export default {
   created() {
     const lang = this.$i18n.locale;
     let currentPage = this.$route.name.split("__")[0];
-    let currentLesson = lessonMap.lessons.filter(
-      (x) => Object.keys(x)[0] === currentPage
-    )[0];
-    let firstPage = currentLesson[currentPage][lang].pageNames[0];
-    let currentVid = firstPage.split("___")[1];
 
     //this.videoID = this.$store.state.lesson.currentVideoId;
-    this.videoID = currentVid;
+    this.videoID = getVideoId(currentPage, lang);
   },
   methods: {
     getLink(page) {
