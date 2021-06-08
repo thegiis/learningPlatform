@@ -52,7 +52,7 @@ export default {
       const pages = currModule.routes;
       const pageIdx = pages.indexOf(currentPage);
       if (pageIdx > -1) {
-        const videoTag = currentModules[pageIdx].pageNames[0];
+        const videoTag = currentModules[i].pageNames[0];
         const currentVideoId = videoTag.split("___")[1];
         this.$store.dispatch("lesson/setVideoId", currentVideoId);
       }

@@ -1,6 +1,6 @@
 <template>
   <p>
-    <template v-for="word in words">
+    <template v-for="(word, index) in words">
       <span
         v-if="word.hasVocab"
         class="default-vocab-word"
@@ -8,10 +8,10 @@
         @mouseover="onOver(word.vocab, $event)"
         @mouseleave="onLeave()"
         ref="vocabItem"
-        v-bind:key="word"
+        v-bind:key="index"
         >{{ word.text }}
       </span>
-      <span v-else :class="getClass(word.isHighlight)" v-bind:key="word">{{
+      <span v-else :class="getClass(word.isHighlight)" v-bind:key="index">{{
         word.text
       }}</span>
     </template>

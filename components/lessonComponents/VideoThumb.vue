@@ -1,25 +1,25 @@
 <template>
   <div :class="$style.videoThumb">
-    <youtube
+    <YoutubeIframe
       :video-id="youtubeId"
       player-width="280"
       player-height="158"
-    ></youtube>
+    ></YoutubeIframe>
   </div>
 </template>
 
 <script>
+import YoutubeIframe from "@/components/lessonComponents/YoutubeIframe.vue";
+
 export default {
+  components: {
+    YoutubeIframe,
+  },
   props: {
     youtubeId: {
       type: String,
       required: true,
     },
-  },
-  data() {
-    return {
-      vid: "5a_2T6Mo7-k",
-    };
   },
 };
 </script>

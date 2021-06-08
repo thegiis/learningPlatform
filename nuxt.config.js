@@ -37,7 +37,8 @@ export default {
   css: ["@/assets/styles/base-styles.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "@/plugins/youtube.js", ssr: false }],
+  plugins: [],
+  //plugins: [{ src: "@/plugins/youtube.js", ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -73,7 +74,16 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: { transpile: ["vue-youtube-embed"] },
+  build: {
+    //transpile: ["vue-youtube-embed"],
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
+  },
   generate: {
     fallback: "404.html",
     dir: "dist/" + modalName,
