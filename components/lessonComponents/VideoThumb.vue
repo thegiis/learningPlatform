@@ -21,11 +21,6 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      vid: "5a_2T6Mo7-k",
-    };
-  },
 };
 </script>
 
