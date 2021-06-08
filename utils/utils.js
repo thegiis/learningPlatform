@@ -158,7 +158,8 @@ function isObjectEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 
-function getVideoId(page, lang) {
+function getVideoIdFromRoute(route, lang = "en") {
+  const page = route.name.split("__")[0];
   let lesson = lessonMap.lessons.filter((x) => Object.keys(x)[0] === page)[0];
   let firstPage = lesson[page][lang].pageNames[0];
   let videoId = firstPage.split("___")[1];
@@ -173,5 +174,5 @@ export {
   getPageNamesFromMap,
   getModulesFromMap,
   isObjectEmpty,
-  getVideoId,
+  getVideoIdFromRoute,
 };

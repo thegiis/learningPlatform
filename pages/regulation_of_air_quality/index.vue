@@ -12,7 +12,7 @@
 <script>
 import LessonNextButton from "@/components/lessonComponents/LessonNextButton.vue";
 import YoutubeIframe from "@/components/lessonComponents/YoutubeIframe.vue";
-import { getVideoId } from "@/utils/utils.js";
+import { getVideoIdFromRoute } from "@/utils/utils.js";
 
 export default {
   components: {
@@ -21,15 +21,12 @@ export default {
   },
   data() {
     return {
-      videoID: "5a_2T6Mo7-k",
+      videoID: "",
     };
   },
   created() {
-    const lang = this.$i18n.locale;
-    let currentPage = this.$route.name.split("__")[0];
-
+    this.videoID = getVideoIdFromRoute(this.$route, this.$i18n.locale);
     //this.videoID = this.$store.state.lesson.currentVideoId;
-    this.videoID = getVideoId(currentPage, lang);
   },
   methods: {
     getLink(page) {
