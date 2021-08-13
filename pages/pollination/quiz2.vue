@@ -2,7 +2,7 @@
   <div :class="$style.quizSection" class="container is-max-desktop">
     <LessonBreadcrumbs :pages="bcData" />
     <div :class="$style.quizContainer">
-      <section class="column is-11-mobile is-6-desktop" :class="$style.bgWhite">
+      <section class="column" :class="$style.bgWhite">
         <DragDropList
           :questionList="quizData"
           :instructionClass="$style.instruction"
@@ -69,6 +69,7 @@ export default {
   display: flex;
   justify-content: center;
   background-color: white;
+  width: 90%;
 }
 .quizSection {
   padding: 2rem;

@@ -4,46 +4,31 @@
       {{ instruction.text }}
     </h1>
 
-    <draggable
-      :disabled="!enabled"
-      :list="questionList"
-      class="questionList"
-      :class="itemList.class"
-      group="activity"
-      ref="questionList"
-      @change="checkDrop"
-    >
-      <div
-        class="card dndItem"
-        v-for="element in questionList"
-        :key="element.name"
-      >
-        {{ element.name }}
-      </div>
-    </draggable>
-
     <div class="dragdropAnsDiv">
-      <draggable
-        v-for="(dropContainer, idx) in dropList"
-        :key="idx"
-        :disabled="!enabled"
-        :list="ansList[idx]"
-        :data-name="dropContainer.name"
-        :ref="dropContainer.name"
-        class="dropContainer"
-        :class="dropContainer.class"
-        group="activity"
-        @change="checkDrop"
-      >
-        <h1 class="title is-5">{{ dropContainer.label }}</h1>
-        <div
-          class="card dndItem"
-          v-for="element in ansList[idx]"
-          :key="element.name"
+      <div v-for="(dropContainer, idx) in dropList" :key="idx" class="dropDiv">
+        <h1 class="title is-5">{{ dropContainer.name }}</h1>
+        <draggable
+          :disabled="!enabled"
+          :list="ansList[idx]"
+          :data-name="dropContainer.name"
+          :ref="dropContainer.name"
+          :id="'drop-' + dropContainer.name"
+          class="dropContainer"
+          :class="dropContainer.class"
+          group="activity"
+          @change="checkDrop"
+          :move="checkMove"
         >
-          {{ element.name }}
-        </div>
-      </draggable>
+          <div
+            class="card dndItem"
+            :class="getClass(element)"
+            v-for="element in ansList[idx]"
+            :key="element.id"
+          >
+            {{ element.name }}
+          </div>
+        </draggable>
+      </div>
     </div>
 
     <button
@@ -54,12 +39,32 @@
     >
       {{ submitText }}
     </button>
+
+    <draggable
+      :disabled="!enabled"
+      :list="questionList"
+      class="questionList"
+      :class="itemList.class"
+      group="activity"
+      ref="questionList"
+      @change="handleExtraDrop"
+      :move="checkMove"
+    >
+      <div
+        class="card dndItem"
+        v-for="element in questionList"
+        :key="element.id"
+      >
+        {{ element.name }}
+      </div>
+    </draggable>
+    <!--     
     <HintInterface
       :display="showHint"
       hintText="this is hint"
       @close="closeHint()"
     />
-    <HintIcon @open="openHint()" />
+    <HintIcon @open="openHint()" /> -->
   </div>
 </template>
 
@@ -67,6 +72,8 @@
 import draggable from "vuedraggable";
 import HintInterface from "@/components/interactiveActivity/HintInterface.vue";
 import HintIcon from "@/components/interactiveActivity/HintIcon.vue";
+
+import { shuffleArray } from "@/utils/utils.js";
 
 export default {
   components: {
@@ -94,16 +101,31 @@ export default {
     return {
       submitText: this.$i18n.t("submit"),
       enabled: true,
-      questionList: this.itemList.list,
+      allQuestions: shuffleArray(this.itemList.list),
+      questionList: [],
       ansList: this.dropList.map((item) => item.list),
       dropMap: this.dropList.map((item) => item.name),
       isCorrect: false,
       correctlyAnswered: null,
+      isChecked: false,
       hint: false,
+      usedIds: [],
+      dropCount: 0,
     };
   },
   created() {
     // console.log(this.dropMap)
+    // let ansObj = this.dropList.reduce((obj, item) => {
+    //   return {
+    //     ...obj,
+    //     [item["name"]]: item["list"],
+    //   };
+    // }, {});
+    // console.log(ansObj)
+    this.allQuestions = shuffleArray(this.itemList.list);
+    this.questionList = this.allQuestions.slice(0, 7);
+    this.dropCount = 7;
+    this.usedIds = this.questionList.map((item) => item.id);
   },
   computed: {
     showHint() {
@@ -130,13 +152,61 @@ export default {
     },
   },
   methods: {
-    checkDrop({ added, removed }) {
-      if (added || removed) {
-        this.correctlyDropped();
+    checkDrop(evt) {
+      // console.log(evt);
+      // if (added || removed) {
+      //   // this.correctlyDropped();
+      // }
+    },
+
+    checkMove(evt) {
+      // reference https://github.com/SortableJS/Vue.Draggable/issues/347
+      // const dropId = evt.to.id;
+      const dropName = evt.to.dataset.name;
+      const listIdx = this.dropMap.indexOf(dropName);
+      const currList = this.ansList[listIdx];
+      console.log(dropName, currList);
+      if (currList.length > 4) {
+        return false;
+      }
+      return true;
+    },
+    handleExtraDrop({ added, removed }) {
+      const lenArr = this.questionList.length;
+      if (added) {
+        if (lenArr > 7) {
+          const lastId = this.questionList[lenArr - 1].id;
+          const lastIndex = this.usedIds.indexOf(lastId);
+          if (lastIndex > -1) {
+            this.usedIds.splice(lastIndex, 1);
+            this.questionList = this.questionList.filter(
+              (item) => item.id !== lastId
+            );
+          }
+          this.dropCount -= 1;
+        }
+      }
+      if (removed) {
+        if (lenArr < 7) {
+          const totalLen = this.allQuestions.length - 1;
+          if (this.dropCount <= totalLen) {
+            let randIdx = Math.floor(Math.random() * (totalLen - 0 + 1));
+            while (this.usedIds.indexOf(randIdx) !== -1) {
+              randIdx = Math.floor(Math.random() * (totalLen - 0 + 1));
+            }
+            const newItem = this.allQuestions.filter(
+              (item) => item.id === randIdx
+            )[0];
+            this.questionList.push(newItem);
+            this.usedIds.push(randIdx);
+            this.dropCount += 1;
+          }
+        }
       }
     },
     correctlyDropped() {
       let allCorrect = true;
+      // check if questionlist is empty
       for (let i = 0; i < this.questionList.length; i++) {
         if (this.questionList[i].drop !== "questionList") {
           allCorrect = false;
@@ -144,8 +214,15 @@ export default {
       }
       for (let i = 0; i < this.ansList.length; i++) {
         const drop = this.dropMap[i];
+        const names = this.ansList[i].map(function (item) {
+          return item["name"];
+        });
+        // console.log(names)
         this.ansList[i].forEach(function (ans) {
-          if (ans.drop !== drop) {
+          if (ans.drop.indexOf(drop) !== -1) {
+            ans.correct = true;
+          } else {
+            ans.correct = false;
             allCorrect = false;
           }
         });
@@ -155,9 +232,21 @@ export default {
         // this.enabled = false;
       }
     },
+    getClass(element) {
+      if (this.isChecked) {
+        if (element.correct === false) {
+          return "incorrectDrop";
+        } else {
+          return "";
+        }
+      }
+    },
+
     checkAns() {
       this.correctlyDropped();
+      this.isChecked = true;
       if (this.correctlyAnswered === null) {
+        this.enabled = false;
         if (this.isCorrect) {
           this.submitText = this.$i18n.t("next");
           this.correctlyAnswered = true;
@@ -173,6 +262,8 @@ export default {
         this.submitText = this.$i18n.t("submit");
       } else {
         this.correctlyAnswered = null;
+        this.isChecked = false;
+        this.enabled = true;
         this.submitText = this.$i18n.t("submit");
       }
     },
@@ -214,12 +305,16 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.dropContainer {
-  background-color: lightsalmon;
-  min-height: 200px;
+.dropDiv {
   margin: 0.25rem;
   padding: 0.25rem;
   width: 45%;
+}
+.dropContainer {
+  position: relative;
+  background-color: lightsalmon;
+  min-height: 200px;
+  width: 100%;
 }
 .dndSubmitBtn {
   width: auto;
@@ -239,5 +334,8 @@ export default {
 }
 .disabledInput {
   pointer-events: none;
+}
+.incorrectDrop {
+  background-color: red;
 }
 </style>
