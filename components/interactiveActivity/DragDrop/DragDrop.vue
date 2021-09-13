@@ -123,6 +123,10 @@ export default {
     //   };
     // }, {});
     // console.log(ansObj)
+    this.showQuestions =
+      this.allQuestions.length > this.showQuestions
+        ? this.showQuestions
+        : this.allQuestions.length;
     this.allQuestions = shuffleArray(this.itemList.list);
     this.questionList = this.allQuestions.slice(0, this.showQuestions);
     this.dropCount = this.showQuestions;
