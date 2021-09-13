@@ -54,7 +54,7 @@ export default {
         {
           title: this.$t("lesson6"),
           description: this.$t("description6"),
-          filename: "index/trees-message.png",
+          filename: "index/air-quality.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
       ],
