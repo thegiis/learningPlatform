@@ -22,6 +22,13 @@ $body-background-color: #f8f9fa;
 $background: $body-background-color;
 $primary: #6f94c1;
 
+// media query screen sizes
+$sm: 38em;
+$md: 48em;
+
+// plain sizes
+$size-500: 1.25rem;
+
 .default-text-highlight {
   color: purple;
   font-weight: bold;
@@ -72,3 +79,69 @@ body {
 //    color: #354a63;
 //    border-color: white;
 //}
+
+/** Cube CSS styles */
+// wrapper types
+.wrapper {
+  max-width: 75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  &[data-variant="no-padding"] {
+    padding: 0;
+  }
+}
+.split-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--split-pair-space, 1.25rem);
+}
+.splitter {
+  > :last-child {
+    margin-top: 1.25rem;
+  }
+  @media (min-width: $md) {
+    display: flex;
+    > * {
+      flex-grow: 1;
+    }
+    > :last-child {
+      margin-top: 0;
+      margin-left: 1.25rem;
+      min-width: 22rem;
+    }
+  }
+}
+.flow > * + * {
+  margin-top: var(--flow-space, $size-500);
+}
+
+// effects
+.box-shadow-glow {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.center-text-section {
+  text-align: center;
+  padding-top: 20px;
+  @media (min-width: $sm) {
+    padding-top: 175px;
+  }
+}
+
+// Banner background image
+.bg-img-vector {
+  background-image: url(/img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 260px;
+  @media (min-width: $sm) {
+    height: 620px;
+  }
+}
