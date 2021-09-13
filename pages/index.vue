@@ -1,14 +1,17 @@
 <template>
-  <div :class="$style.cardContainer" class="container is-wide-screen">
-    <LessonCard
-      v-for="lesson in lessons"
-      :key="lesson.title"
-      :filename="lesson.filename"
-      :title="lesson.title"
-      :description="lesson.description"
-      :alt="lesson.title"
-      :link="lesson.link"
-    />
+  <div>
+    <article class="bg-img-vector"></article>
+    <div :class="$style.cardContainer" class="container is-wide-screen">
+      <LessonCard
+        v-for="lesson in lessons"
+        :key="lesson.title"
+        :filename="lesson.filename"
+        :title="lesson.title"
+        :description="lesson.description"
+        :alt="lesson.title"
+        :link="lesson.link"
+      />
+    </div>
   </div>
 </template>
 
