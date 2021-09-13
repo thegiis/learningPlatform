@@ -24,45 +24,45 @@ export default {
         {
           title: this.$t("lesson1"),
           description: this.$t("description1"),
-          filename: "index/food.jpg",
+          filename: "index/food.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson2"),
           description: this.$t("description2"),
-          filename: "index/hiking.jpg",
+          filename: "index/inspiration.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson3"),
           description: this.$t("description3"),
-          filename: "index/pollination.jpg",
+          filename: "index/pollination.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson4"),
           description: this.$t("description4"),
-          filename: "index/pollution.jpg",
+          filename: "index/air-quality.png",
           link: { name: "regulation_of_air_quality___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson5"),
           description: this.$t("description5"),
-          filename: "index/companionship.jpg",
+          filename: "index/companionship.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson6"),
           description: this.$t("description6"),
-          filename: "index/jump.jpg",
+          filename: "index/trees-message.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
       ],
     };
   },
-  created(){
+  created() {
     // to hide sidenav
-      this.$store.dispatch("global/resetSideNavigation");
+    this.$store.dispatch("global/resetSideNavigation");
   },
   mounted() {
     // console.log(this.$i18n.messages)
@@ -70,7 +70,7 @@ export default {
 };
 </script>
 
-<style  module>
+<style module>
 .cardContainer {
   position: relative;
   width: 100%;
