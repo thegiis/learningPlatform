@@ -112,6 +112,7 @@ export default {
       usedIds: [],
       dropCount: 0,
       showQuestions: 7,
+      maxAnswers: 5,
     };
   },
   created() {
@@ -171,9 +172,9 @@ export default {
       const listIdx = this.dropMap.indexOf(dropName);
       const currList = this.ansList[listIdx];
       console.log(dropName, currList);
-      //if (currList.length > 10) {
-      //  return false;
-      //}
+      if (currList.length >= this.maxAnswers) {
+        return false;
+      }
       return true;
     },
     handleExtraDrop({ added, removed }) {
@@ -197,12 +198,17 @@ export default {
     },
     correctlyDropped() {
       let allCorrect = true;
-      // check if questionlist is empty
-      for (let i = 0; i < this.questionList.length; i++) {
-        if (this.questionList[i].drop !== "questionList") {
-          allCorrect = false;
+
+      //check if questionList is empty or all ansList are to capacity
+      if (this.questionList.length !== 0) {
+        for (let i = 0; i < this.ansList.length; i++) {
+          if (this.ansList[i].length < this.maxAnswers) {
+            allCorrect = false;
+            break;
+          }
         }
       }
+
       for (let i = 0; i < this.ansList.length; i++) {
         const drop = this.dropMap[i];
         const names = this.ansList[i].map(function (item) {
