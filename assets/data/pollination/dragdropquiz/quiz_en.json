@@ -54,7 +54,7 @@
             { "name": "red 2", "id": 1, "drop": ["red"], "correct": null },
             { "name": "blue 1", "id": 2, "drop": ["blue"], "correct": null },
             { "name": "blue 2", "id": 3, "drop": ["blue"], "correct": null },
-            { "name": "green 1", "id": 3, "drop": ["green"], "correct": null }
+            { "name": "green 1", "id": 4, "drop": ["green"], "correct": null }
         ],
 
         "dropList": [{
