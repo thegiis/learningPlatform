@@ -111,6 +111,8 @@ export default {
       hint: false,
       usedIds: [],
       dropCount: 0,
+      showQuestions: 7,
+      maxAnswers: 5,
     };
   },
   created() {
@@ -122,9 +124,13 @@ export default {
     //   };
     // }, {});
     // console.log(ansObj)
+    this.showQuestions =
+      this.allQuestions.length > this.showQuestions
+        ? this.showQuestions
+        : this.allQuestions.length;
     this.allQuestions = shuffleArray(this.itemList.list);
-    this.questionList = this.allQuestions.slice(0, 7);
-    this.dropCount = 7;
+    this.questionList = this.allQuestions.slice(0, this.showQuestions);
+    this.dropCount = this.showQuestions;
     this.usedIds = this.questionList.map((item) => item.id);
   },
   computed: {
@@ -166,7 +172,7 @@ export default {
       const listIdx = this.dropMap.indexOf(dropName);
       const currList = this.ansList[listIdx];
       console.log(dropName, currList);
-      if (currList.length > 4) {
+      if (currList.length >= this.maxAnswers) {
         return false;
       }
       return true;
@@ -174,7 +180,7 @@ export default {
     handleExtraDrop({ added, removed }) {
       const lenArr = this.questionList.length;
       if (added) {
-        if (lenArr > 7) {
+        if (lenArr > this.showQuestions) {
           const lastId = this.questionList[lenArr - 1].id;
           const lastIndex = this.usedIds.indexOf(lastId);
           if (lastIndex > -1) {
@@ -187,31 +193,22 @@ export default {
         }
       }
       if (removed) {
-        if (lenArr < 7) {
-          const totalLen = this.allQuestions.length - 1;
-          if (this.dropCount <= totalLen) {
-            let randIdx = Math.floor(Math.random() * (totalLen - 0 + 1));
-            while (this.usedIds.indexOf(randIdx) !== -1) {
-              randIdx = Math.floor(Math.random() * (totalLen - 0 + 1));
-            }
-            const newItem = this.allQuestions.filter(
-              (item) => item.id === randIdx
-            )[0];
-            this.questionList.push(newItem);
-            this.usedIds.push(randIdx);
-            this.dropCount += 1;
-          }
-        }
+        this.updateQuestionList();
       }
     },
     correctlyDropped() {
       let allCorrect = true;
-      // check if questionlist is empty
-      for (let i = 0; i < this.questionList.length; i++) {
-        if (this.questionList[i].drop !== "questionList") {
-          allCorrect = false;
+
+      //check if questionList is empty or all ansList are to capacity
+      if (this.questionList.length !== 0) {
+        for (let i = 0; i < this.ansList.length; i++) {
+          if (this.ansList[i].length < this.maxAnswers) {
+            allCorrect = false;
+            break;
+          }
         }
       }
+
       for (let i = 0; i < this.ansList.length; i++) {
         const drop = this.dropMap[i];
         const names = this.ansList[i].map(function (item) {
@@ -265,13 +262,53 @@ export default {
         this.isChecked = false;
         this.enabled = true;
         this.submitText = this.$i18n.t("submit");
+
+        for (let i = 0; i < this.ansList.length; i++) {
+          let curAnsList = this.ansList[i];
+          let newAnsList = [];
+          for (let j = 0; j < curAnsList.length; j++) {
+            if (!curAnsList[j].correct) {
+              // first reset the answer
+              curAnsList[j].correct = null;
+              // remove wrong answer from usedIds
+              const notUsedID = this.usedIds.indexOf(curAnsList[j].id);
+              this.usedIds.splice(notUsedID, 1);
+              // reduce the dropcount
+              this.dropCount--;
+            } else {
+              newAnsList.push(curAnsList[j]);
+            }
+          }
+          this.ansList[i] = newAnsList;
+        }
       }
+      this.updateQuestionList();
     },
     openHint() {
       this.hint = true;
     },
     closeHint() {
       this.hint = false;
+    },
+    updateQuestionList() {
+      while (
+        this.questionList.length < this.showQuestions &&
+        this.usedIds.length < this.allQuestions.length
+      ) {
+        const totalLen = this.allQuestions.length - 1;
+        if (this.dropCount <= totalLen) {
+          let randIdx = Math.floor(Math.random() * (totalLen - 0 + 1));
+          while (this.usedIds.indexOf(randIdx) !== -1) {
+            randIdx = Math.floor(Math.random() * (totalLen - 0 + 1));
+          }
+          const newItem = this.allQuestions.filter(
+            (item) => item.id === randIdx
+          )[0];
+          this.questionList.push(newItem);
+          this.usedIds.push(randIdx);
+          this.dropCount += 1;
+        }
+      }
     },
   },
 };
@@ -315,6 +352,7 @@ export default {
   background-color: lightsalmon;
   min-height: 200px;
   width: 100%;
+  cursor: pointer;
 }
 .dndSubmitBtn {
   width: auto;

@@ -1,7 +1,7 @@
 import enData from "./assets/data/baseData_en.json";
 import npData from "./assets/data/baseData_np.json";
 
-const modalName = "ncp";
+const modalName = "";
 
 export default {
   env: {
