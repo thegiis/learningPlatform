@@ -2,10 +2,14 @@
   <nuxt-link :to="link" class="card" :class="$style.cardContainer">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="require(`@/assets/images/${filename}`)" :alt="alt" :class="$style.thumbImg"/>
+        <img
+          :src="require(`@/assets/images/${filename}`)"
+          :alt="alt"
+          :class="$style.thumbImg"
+        />
       </figure>
     </div>
-    <div class="card-content">
+    <div class="card-content" :class="$style.cardContentModifier">
       <div class="media">
         <div class="media-content">
           <p class="title is-4 has-text-centered">{{ title }}</p>
@@ -49,7 +53,7 @@ export default {
 .cardContainer {
   position: relative;
   width: 300px;
-  height: 320px;
+  height: 300px;
   margin: 1.5rem;
   transition: 0.2s linear;
 }
@@ -74,9 +78,12 @@ export default {
 .cardDesc {
   text-align: center;
 }
-.thumbImg{
+.thumbImg {
   width: auto !important;
   height: 100% !important;
-  margin: 0 auto  !important;
+  margin: 0 auto !important;
+}
+.cardContentModifier {
+  padding-top: 0px;
 }
 </style>
