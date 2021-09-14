@@ -1,5 +1,5 @@
 <template>
-  <div class="white">
+  <div class="bg-white">
     <div
       class="wrapper split-pair"
       data-variant="more-padding"
