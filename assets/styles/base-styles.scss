@@ -1,37 +1,12 @@
 @charset "utf-8";
 @import "config";
 
-// Import a Google Font
-@import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
-
-// Other fonts
-@font-face {
-  font-family: "Mortina";
-  src: local("Mortina"), url(~assets/fonts/MortinaOne.otf) format("opentype");
+// generics
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
-
-html {
-  font-family: "Mortina";
-}
-
-// Set your brand colors
-$body-text-gray: #4a4a4a;
-$header-text-gray: #676b5e;
-$sub-header-orange: #f39569;
-$link-blue: #3273dc;
-$footer-dark-blue: #244590;
-
-// Update Bulma's global variables
-$family-sans-serif: "Quicksand", sans-serif;
-$family-primary: $family-sans-serif;
-$family-secondary: "Raleway";
-$link: $link-blue;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
-$subtitle-color: $header-text-gray;
-$body-background-color: #f8f9fa;
-$background: $body-background-color;
-$primary: #6f94c1;
 
 .default-text-highlight {
   color: purple;
@@ -148,4 +123,17 @@ body {
   @include media-query("sm") {
     height: 620px;
   }
+}
+// general configuration
+.green-primary {
+  background-color: var(--green-primary);
+}
+.green-primary-border {
+  border-top: 2px solid var(--green-primary-border);
+}
+.green-secondary {
+  background-color: var(--green-secondary);
+}
+.green-secondary-border {
+  border-top: 2px solid var(--green-secondary-border);
 }
