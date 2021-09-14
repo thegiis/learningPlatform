@@ -10,7 +10,11 @@
     </div>
     <LessonNextButton />
     <div class="green-primary">
-      <div class="wrapper" :class="$style.paddingTopBottom">
+      <div
+        class="wrapper"
+        data-variant="more-padding"
+        :class="$style.paddingTopBottom"
+      >
         <div class="tiles" data-variant="two-per-row">
           <div class="bg-white">
             <h2 class="lesson" :class="$style.h2">Read</h2>
