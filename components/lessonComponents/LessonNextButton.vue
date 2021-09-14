@@ -1,18 +1,16 @@
 <template>
   <section :class="$style.nextSection" v-if="showNextSection">
-    <div :class="$style.topicTitleDiv">
-      <div :class="$style.topicTitle">
-        <p :class="$style.nextSection" class="is-size-5">Next Section</p>
-        <nuxt-link
-          :to="{ name: getNextLink }"
-          class="button is-uppercase is-primary"
-        >
-          <span>{{ getTopic }}</span>
-          <span :class="$style.rightArrow"
-            ><i class="fas fa-angle-right"></i
-          ></span>
-        </nuxt-link>
-      </div>
+    <div class="wrapper split-pair" data-variant="more-padding">
+      <div></div>
+      <nuxt-link
+        :to="{ name: getNextLink }"
+        class="button is-uppercase is-primary"
+      >
+        <span>Learn</span>
+        <span :class="$style.rightArrow"
+          ><i class="fas fa-angle-right"></i
+        ></span>
+      </nuxt-link>
     </div>
   </section>
 </template>
@@ -64,8 +62,8 @@ export default {
 
 <style module>
 .nextSection {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 .topicIndicator {
   border-bottom: 1px solid darkgray;
@@ -73,7 +71,6 @@ export default {
   padding: 0.5rem;
 }
 .topicTitleDiv {
-  border: 1px solid darkgray;
   padding: 0.5rem;
   border-radius: 0.3rem;
 }
