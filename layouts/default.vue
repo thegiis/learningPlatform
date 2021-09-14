@@ -11,6 +11,7 @@
       <BaseGlossary v-if="showGlossary" @closeGlossary="closeGlossary()" />
       <!-- <CardVocab :key="$store.state.lesson.showVocab" /> -->
     </div>
+    <FooterComponent />
     <ModalLangSelect />
   </div>
 </template>
@@ -21,6 +22,7 @@ import CardVocab from "@/components/baseComponents/CardVocab.vue";
 import SideNavigation from "@/components/lessonComponents/sideNavigation.vue";
 import BaseGlossary from "@/components/glossaryOverlay/baseGlossary.vue";
 import ModalLangSelect from "@/components/baseComponents/ModalLangSelect.vue";
+import FooterComponent from "@/components/baseComponents/FooterComponent.vue";
 
 export default {
   components: {
@@ -29,6 +31,7 @@ export default {
     SideNavigation,
     BaseGlossary,
     ModalLangSelect,
+    FooterComponent,
   },
   data() {
     return {

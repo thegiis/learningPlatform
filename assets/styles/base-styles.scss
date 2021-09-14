@@ -1,26 +1,12 @@
 @charset "utf-8";
+@import "config";
 
-// Import a Google Font
-@import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
-
-// Set your brand colors
-$body-text-gray: #4a4a4a;
-$header-text-gray: #676b5e;
-$sub-header-orange: #f39569;
-$link-blue: #3273dc;
-$footer-dark-blue: #244590;
-
-// Update Bulma's global variables
-$family-sans-serif: "Quicksand", sans-serif;
-$family-primary: $family-sans-serif;
-$family-secondary: "Raleway";
-$link: $link-blue;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
-$subtitle-color: $header-text-gray;
-$body-background-color: #f8f9fa;
-$background: $body-background-color;
-$primary: #6f94c1;
+// generics
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
 
 .default-text-highlight {
   color: purple;
@@ -72,3 +58,103 @@ body {
 //    color: #354a63;
 //    border-color: white;
 //}
+
+/** Cube CSS styles */
+// wrapper types
+.wrapper {
+  max-width: 75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  &[data-variant="no-padding"] {
+    padding: 0;
+  }
+}
+.split-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--split-pair-space, 1.25rem);
+}
+.splitter {
+  > :last-child {
+    margin-top: 1.25rem;
+  }
+  @include media-query("md") {
+    display: flex;
+    > * {
+      flex-grow: 1;
+    }
+    > :last-child {
+      margin-top: 0;
+      margin-left: 1.25rem;
+      min-width: 22rem;
+    }
+  }
+}
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25rem);
+}
+
+// effects
+.box-shadow-glow {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.center-text-section {
+  text-align: center;
+  padding-top: 20px;
+  @include media-query("sm") {
+    padding-top: 175px;
+  }
+}
+
+// Banner background image
+.bg-img-vector {
+  background-image: url(/img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 260px;
+  @include media-query("sm") {
+    height: 620px;
+  }
+}
+
+// oval button for top menu
+.ovalButton {
+  border-radius: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.ovalButton:after {
+  font-family: "ElegantIcons";
+  content: "\33";
+  font-size: 1.5em;
+  margin-left: 0.1em;
+  margin-right: -0.25em;
+}
+.ovalButton.is-active:after {
+  content: "\32";
+}
+
+// general configuration
+.green-primary {
+  background-color: var(--green-primary);
+}
+.green-primary-border {
+  border-top: 2px solid var(--green-primary-border);
+}
+.green-secondary {
+  background-color: var(--green-secondary);
+}
+.green-secondary-border {
+  border-top: 2px solid var(--green-secondary-border);
+}
+.white {
+  background-color: white;
+}

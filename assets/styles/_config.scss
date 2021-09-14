@@ -1,0 +1,79 @@
+@import "./mixins/mixins";
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
+
+// Other fonts
+@font-face {
+  font-family: "Mortina";
+  src: local("Mortina"), url(~assets/fonts/MortinaOne.otf) format("opentype");
+}
+@font-face {
+  font-family: "ElegantIcons";
+  src: url(~assets/fonts/ElegantIcons.eot);
+  src: url(~assets/fonts/ElegantIcons.eot?#iefix) format("embedded-opentype"),
+    url(~assets/fonts/ElegantIcons.woff) format("woff"),
+    url(~assets/fonts/ElegantIcons.ttf) format("truetype"),
+    url(~assets/fonts/ElegantIcons.svg#ElegantIcons) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.font_icons {
+  font-family: "ElegantIcons";
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url(~assets/fonts/Quicksand-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url(~assets/fonts/Quicksand-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url(~assets/fonts/Quicksand-Light.ttf) format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+/// CORE CONFIG
+/// This powers everything from utility class generation to breakpoints
+/// to enabling/disabling pre-built components/utilities.
+///
+$cube-config: (
+  "breakpoints": (
+    "sm": "(min-width: 38em)",
+    "md": "(min-width: 48em)",
+    "lg": "(min-width: 60em)",
+  ),
+);
+:root {
+  --green-primary: #19b955;
+  --green-primary-border: #19ed55;
+  --green-secondary: #00c000;
+  --green-secondary-border: #19ed55;
+}
+html {
+  font-family: "Mortina";
+}
+
+// Set your brand colors
+$body-text-gray: #4a4a4a;
+$header-text-gray: #676b5e;
+$sub-header-orange: #f39569;
+$link-blue: #3273dc;
+$footer-dark-blue: #244590;
+
+// Update Bulma's global variables
+$family-sans-serif: "Mortina", sans-serif;
+$family-primary: $family-sans-serif;
+$family-secondary: "Quicksand";
+$link: $link-blue;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+$subtitle-color: $header-text-gray;
+$body-background-color: #f8f9fa;
+$background: $body-background-color;
+$primary: #6f94c1;
