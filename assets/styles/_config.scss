@@ -20,6 +20,24 @@
 .font_icons {
   font-family: "ElegantIcons";
 }
+@font-face {
+  font-family: "Quicksand";
+  src: url(~assets/fonts/Quicksand-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url(~assets/fonts/Quicksand-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url(~assets/fonts/Quicksand-Light.ttf) format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
 /// to enabling/disabling pre-built components/utilities.
@@ -49,9 +67,9 @@ $link-blue: #3273dc;
 $footer-dark-blue: #244590;
 
 // Update Bulma's global variables
-$family-sans-serif: "Quicksand", sans-serif;
+$family-sans-serif: "Mortina", sans-serif;
 $family-primary: $family-sans-serif;
-$family-secondary: "Raleway";
+$family-secondary: "Quicksand";
 $link: $link-blue;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
