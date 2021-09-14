@@ -7,6 +7,16 @@
         <div>To People</div>
       </div>
     </article>
+    <div class="wrapper split-pair" :class="$style.paddingTopBottom">
+      <div :class="$style.subHeading" class="flow" style="--flow-space: -0.5em">
+        <div>We're getting more</div>
+        <div>than what we know</div>
+      </div>
+      <p :class="$style.byLine">
+        Pick a Topic and watch how nature is an irreplaceable part of our
+        lifeline.
+      </p>
+    </div>
     <div :class="$style.cardContainer" class="container is-wide-screen">
       <LessonCard
         v-for="lesson in lessons"
@@ -60,12 +70,6 @@ export default {
           filename: "index/companionship.png",
           link: { name: "pollination___" + this.$i18n.locale },
         },
-        {
-          title: this.$t("lesson6"),
-          description: this.$t("description6"),
-          filename: "index/air-quality.png",
-          link: { name: "pollination___" + this.$i18n.locale },
-        },
       ],
     };
   },
@@ -88,7 +92,7 @@ export default {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -109,5 +113,23 @@ export default {
     padding-top: 75px;
     padding-left: 250px;
   }
+}
+.subHeading {
+  font-family: "Mortina";
+  font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.byLine {
+  font-size: 1.1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 18em;
+}
+.paddingTopBottom {
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 </style>
