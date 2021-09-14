@@ -7,7 +7,19 @@
   font-family: "Mortina";
   src: local("Mortina"), url(~assets/fonts/MortinaOne.otf) format("opentype");
 }
-
+@font-face {
+  font-family: "ElegantIcons";
+  src: url(~assets/fonts/ElegantIcons.eot);
+  src: url(~assets/fonts/ElegantIcons.eot?#iefix) format("embedded-opentype"),
+    url(~assets/fonts/ElegantIcons.woff) format("woff"),
+    url(~assets/fonts/ElegantIcons.ttf) format("truetype"),
+    url(~assets/fonts/ElegantIcons.svg#ElegantIcons) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.font_icons {
+  font-family: "ElegantIcons";
+}
 /// CORE CONFIG
 /// This powers everything from utility class generation to breakpoints
 /// to enabling/disabling pre-built components/utilities.
