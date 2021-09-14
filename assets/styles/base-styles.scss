@@ -1,7 +1,18 @@
 @charset "utf-8";
+@import "config";
 
 // Import a Google Font
 @import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
+
+// Other fonts
+@font-face {
+  font-family: "Mortina";
+  src: local("Mortina"), url(~assets/fonts/MortinaOne.otf) format("opentype");
+}
+
+html {
+  font-family: "Mortina";
+}
 
 // Set your brand colors
 $body-text-gray: #4a4a4a;
@@ -21,13 +32,6 @@ $subtitle-color: $header-text-gray;
 $body-background-color: #f8f9fa;
 $background: $body-background-color;
 $primary: #6f94c1;
-
-// media query screen sizes
-$sm: 38em;
-$md: 48em;
-
-// plain sizes
-$size-500: 1.25rem;
 
 .default-text-highlight {
   color: purple;
@@ -103,7 +107,7 @@ body {
   > :last-child {
     margin-top: 1.25rem;
   }
-  @media (min-width: $md) {
+  @include media-query("md") {
     display: flex;
     > * {
       flex-grow: 1;
@@ -116,7 +120,7 @@ body {
   }
 }
 .flow > * + * {
-  margin-top: var(--flow-space, $size-500);
+  margin-top: var(--flow-space, 1.25rem);
 }
 
 // effects
@@ -126,7 +130,7 @@ body {
 .center-text-section {
   text-align: center;
   padding-top: 20px;
-  @media (min-width: $sm) {
+  @include media-query("sm") {
     padding-top: 175px;
   }
 }
@@ -141,7 +145,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   height: 260px;
-  @media (min-width: $sm) {
+  @include media-query("sm") {
     height: 620px;
   }
 }
