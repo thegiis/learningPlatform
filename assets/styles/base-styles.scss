@@ -124,6 +124,24 @@ body {
     height: 620px;
   }
 }
+
+// oval button for top menu
+.ovalButton {
+  border-radius: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.ovalButton:after {
+  font-family: "ElegantIcons";
+  content: "\33";
+  font-size: 1.5em;
+  margin-left: 0.1em;
+  margin-right: -0.25em;
+}
+.ovalButton.is-active:after {
+  content: "\32";
+}
+
 // general configuration
 .green-primary {
   background-color: var(--green-primary);
@@ -136,4 +154,7 @@ body {
 }
 .green-secondary-border {
   border-top: 2px solid var(--green-secondary-border);
+}
+.white {
+  background-color: white;
 }

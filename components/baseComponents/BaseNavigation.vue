@@ -1,60 +1,44 @@
 <template>
-  <nav
-    class="navbar"
-    role="navigation"
-    aria-label="main navigation"
-    :class="$style.titleBar"
-  >
-    <div class="navbar-brand">
-      <div>
-        <h1 class="title navbar-item">{{ $t("topic") }}</h1>
-      </div>
-      <a
-        role="button"
-        class="navbar-burger"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navigationMenu"
-        @click="navBurger"
-        ref="navBurger"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+  <div class="white">
+    <div class="wrapper split-pair" :class="$style.paddingTopBottom">
+      <a href="/">
+        <img src="/img/earthschool.png" />
       </a>
-    </div>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navigationMenu"
+            @click="navBurger"
+            ref="navBurger"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-    <div id="navigationMenu" class="navbar-menu" ref="navMenu">
-      <div class="navbar-end">
-        <!-- for modules drop down -->
-        <!-- <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link"> {{ $t("modules") }} </a>
-
-          <div class="navbar-dropdown">
+        <div id="navigationMenu" class="navbar-menu" ref="navMenu">
+          <div class="navbar-end" :class="$style.navStyle">
             <nuxt-link
-              v-for="lesson in lessons"
-              :key="lesson.title"
-              :to="lesson.link"
+              :to="{ name: 'index___' + this.$i18n.locale }"
               class="navbar-item"
-              >{{ lesson.title }}</nuxt-link
             >
+              {{ $t("chapters") }}
+            </nuxt-link>
+            <a @click="openGlossary()" class="navbar-item">{{
+              $t("glossary")
+            }}</a>
+            <!-- <GlossaryLangSwitch class="navbar-item" /> -->
+            <LangSwitch class="navbar-item" />
           </div>
-        </div> -->
-        <a href="/" class="navbar-item">
-          {{ $t("mainHome") }}
-        </a>
-        <nuxt-link
-          :to="{ name: 'index___' + this.$i18n.locale }"
-          class="navbar-item"
-        >
-          {{ $t("modules") }}
-        </nuxt-link>
-        <a @click="openGlossary()" class="navbar-item">{{ $t("glossary") }}</a>
-        <!-- <GlossaryLangSwitch class="navbar-item" /> -->
-        <LangSwitch class="navbar-item" />
-      </div>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
@@ -112,11 +96,6 @@ export default {
 <style module>
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.titleBar {
-  box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 7%);
-  z-index: 2000;
-}
-
 .title {
   font-size: 2rem;
   padding-left: 2rem;
@@ -125,10 +104,16 @@ export default {
   text-transform: uppercase;
   font-weight: normal;
 }
+.paddingTopBottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.navStyle {
+  font-family: "Mortina";
+}
 </style>
 <style scoped>
 a.nuxt-link-exact-active {
-  background-color: #fafafa;
   color: #3273dc;
 }
 </style>
