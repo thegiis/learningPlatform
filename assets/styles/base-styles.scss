@@ -70,6 +70,12 @@ body {
   &[data-variant="no-padding"] {
     padding: 0;
   }
+  &[data-variant="more-padding"] {
+    @include media-query("lg") {
+      padding-left: 225px;
+      padding-right: 225px;
+    }
+  }
 }
 .split-pair {
   display: flex;

@@ -1,6 +1,10 @@
 <template>
   <div class="white">
-    <div class="wrapper split-pair" :class="$style.paddingTopBottom">
+    <div
+      class="wrapper split-pair"
+      data-variant="more-padding"
+      :class="$style.paddingTopBottom"
+    >
       <a href="/">
         <img src="/img/earthschool.png" />
       </a>
