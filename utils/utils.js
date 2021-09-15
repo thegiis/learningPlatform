@@ -122,13 +122,19 @@ function getModulesFromMap(data) {
     const pageNums = x[1].pages;
     let pageName = "";
     let chapterPages = [];
+    let pageTypes = [];
 
     for (let i = 0; i < pageNums.length; i++) {
       if (pageNums[i] === "") {
         chapterPages.push(pageCode);
+        pageTypes.push("watch");
       } else {
         pageName = pageCode + "-" + pageNums[i];
         chapterPages.push(pageName);
+
+        let type = pageNums[i].toLowerCase();
+        if (type.startsWith("quiz")) pageTypes.push("quiz");
+        else if (type.startsWith("page")) pageTypes.push("learn");
       }
     }
     const moduleItem = {};
@@ -136,7 +142,23 @@ function getModulesFromMap(data) {
     for (let i = 1; i < temp.length; i++) {
       let langData = temp[i][1];
       langData.routes = chapterPages;
+      langData.id = pageCode;
 
+      // get videoId
+      const indexPage = langData.pageNames[0];
+      const currentVideoId = indexPage.split("___")[1];
+      langData.videoId = currentVideoId;
+
+      // get pages from langData.pageNames and chapterPages
+      let pages = [];
+      for (let i = 0; i < langData.pageNames.length; i++) {
+        let page = {};
+        page.name = langData.pageNames[i];
+        page.route = chapterPages[i];
+        page.type = pageTypes[i];
+        pages.push(page);
+      }
+      langData.pages = pages;
       const tempItem = {
         [temp[i][0]]: langData,
       };
@@ -146,6 +168,21 @@ function getModulesFromMap(data) {
   });
 
   return modules;
+}
+
+function getLessonsFromModules(modules) {
+  //{en: [{id: 'food', title: 'Food', videoId: '03434', pages: [{name: 'blah', route: 'blah', type: 'learn'}]}],
+  // np: [{id: 'food', title: 'Khan', videoId: '03434', pages: [{name: 'blah', route: 'blah', type: 'learn'}]}]}
+  let allLessons = {};
+  for (let i = 0; i < modules.length; i++) {
+    let currObj = modules[i];
+    //iterate through object
+    for (const [key, value] of Object.entries(currObj)) {
+      if (!allLessons[key]) allLessons[key] = [];
+      allLessons[key].push(value);
+    }
+  }
+  return allLessons;
 }
 
 function isObjectEmpty(obj) {
@@ -175,4 +212,5 @@ export {
   getModulesFromMap,
   isObjectEmpty,
   getVideoIdFromRoute,
+  getLessonsFromModules,
 };

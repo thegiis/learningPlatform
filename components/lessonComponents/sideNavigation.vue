@@ -23,7 +23,11 @@
 <script>
 import lessonMap from "@/assets/data/lessonsMap.json";
 import sideNavigationList from "@/components/lessonComponents/sideNavigationList.vue";
-import { getPageNamesFromMap, getModulesFromMap } from "@/utils/utils.js";
+import {
+  getPageNamesFromMap,
+  getModulesFromMap,
+  getLessonsFromModules,
+} from "@/utils/utils.js";
 
 export default {
   components: {
@@ -57,6 +61,8 @@ export default {
         this.$store.dispatch("lesson/setVideoId", currentVideoId);
       }
     }
+    const allLessons = getLessonsFromModules(this.modules);
+    this.$store.dispatch("lesson/setAllLessons", allLessons);
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
