@@ -14,7 +14,7 @@
       <h3 class="lesson">{{ currentLessonLang.title.toUpperCase() }}</h3>
     </div>
     <slot></slot>
-    <LessonNextButton />
+    <LessonNavButtons />
     <LessonMoreTopics />
   </div>
 </template>
