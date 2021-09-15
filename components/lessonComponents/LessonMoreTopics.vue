@@ -43,10 +43,11 @@
 .h2 {
   border: 0 solid;
   border-bottom-width: 1px;
-  padding-left: 0.63rem;
-  padding-right: 0.63rem;
-  padding-top: 0.63rem;
-  padding-bottom: 0.63rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  line-height: 1.1;
 }
 .listContainer {
   padding-left: 0.63rem;
