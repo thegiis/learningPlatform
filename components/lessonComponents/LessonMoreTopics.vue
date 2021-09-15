@@ -6,6 +6,19 @@
       :class="$style.paddingTopBottom"
     >
       <div class="tiles" data-variant="two-per-row">
+        <div class="bg-white" v-if="currentPageType !== 'watch'">
+          <h2 class="lesson" :class="$style.h2">Watch</h2>
+          <nuxt-link :to="{ name: watchPageUrl }">
+            <div :class="$style.watchTitle">
+              <h3 class="lesson">WATCH THE</h3>
+              <h3 class="lesson">ANIMATED</h3>
+              <h3 class="lesson">SERIES</h3>
+              <br />
+              <h3 class="lesson">→</h3>
+              <img src="img/watch.png" :class="$style.thumbImg" />
+            </div>
+          </nuxt-link>
+        </div>
         <div class="bg-white" v-if="currentPageType !== 'learn'">
           <h2 class="lesson" :class="$style.h2">Learn</h2>
           <div :class="$style.listContainer">
@@ -52,6 +65,8 @@ export default {
         ),
       currentPageType:
         this.$store.state.lesson.currentLessonLang.currentPage.type,
+      watchPageUrl:
+        this.$store.state.lesson.currentLessonLang.pages[0].i18nRoute,
     };
   },
 };
@@ -92,5 +107,12 @@ export default {
       }
     }
   }
+}
+.watchTitle {
+  padding: 1rem;
+}
+.thumbImg {
+  margin-left: auto;
+  margin-top: -100px;
 }
 </style>
