@@ -46,7 +46,10 @@ export default {
   },
   created() {
     this.pages = getPageNamesFromMap(lessonMap);
-    this.modules = getModulesFromMap(lessonMap);
+    this.modules =
+      this.$store.state.lesson.modules.length === 0
+        ? getModulesFromMap(lessonMap)
+        : this.$store.state.lesson.modules;
 
     const lang = this.$i18n.locale;
     const currentModules = this.modules.map((x) => x[lang]);
@@ -70,6 +73,10 @@ export default {
     // if (this.insideLesson) {
     //   this.stickyVal = this.$refs["sideNavbar"].offsetTop;
     // }
+    this.setCurrentPageToState();
+  },
+  updated() {
+    this.setCurrentPageToState();
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -132,6 +139,26 @@ export default {
       } else {
         return "closePanel";
       }
+    },
+    setCurrentPageToState() {
+      const langPages = this.$store.state.lesson.allLessons[this.$i18n.locale];
+      const currUrl = this.$route.name.split("-")[0].split("___")[0];
+      let currChapter = {};
+      for (let i = 0; i < langPages.length; i++) {
+        if (langPages[i].id === currUrl) {
+          currChapter = { ...langPages[i] };
+          break;
+        }
+      }
+      let currentPage = {};
+      for (let i = 0; i < currChapter.pages.length; i++) {
+        if (currChapter.pages[i].i18nRoute === this.$route.name) {
+          currentPage = { ...currChapter.pages[i], id: i };
+          break;
+        }
+      }
+      currChapter.currentPage = currentPage;
+      this.$store.dispatch("lesson/setCurrentLessonLang", currChapter);
     },
   },
 };
