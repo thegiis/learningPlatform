@@ -1,17 +1,18 @@
 <template>
-  <div :class="$style.quizSection" class="container is-max-desktop">
-    <LessonBreadcrumbs :pages="bcData" />
-    <div :class="$style.quizContainer">
-      <section class="column" :class="$style.bgWhite">
-        <DragDropList
-          :questionList="quizData"
-          :instructionClass="$style.instruction"
-          :questionClass="$style.questionClass"
-          :dropClasses="[$style.redDrop, $style.blueDrop]"
-        />
-      </section>
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <div :class="$style.quizContainer">
+        <section class="column" :class="$style.bgWhite">
+          <DragDropList
+            :questionList="quizData"
+            :instructionClass="$style.instruction"
+            :questionClass="$style.questionClass"
+            :dropClasses="[$style.redDrop, $style.blueDrop]"
+          />
+        </section>
+      </div>
     </div>
-  </div>
+  </LessonIndex>
 </template>
 
 <script>
@@ -92,4 +93,3 @@ export default {
   background-color: skyblue !important;
 }
 </style>
-
