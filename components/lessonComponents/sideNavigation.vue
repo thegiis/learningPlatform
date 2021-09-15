@@ -67,13 +67,13 @@ export default {
     const allLessons = getLessonsFromModules(this.modules);
     this.$store.dispatch("lesson/setAllLessons", allLessons);
     this.$store.dispatch("lesson/setModules", this.modules);
+    this.setCurrentPageToState();
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     // if (this.insideLesson) {
     //   this.stickyVal = this.$refs["sideNavbar"].offsetTop;
     // }
-    this.setCurrentPageToState();
   },
   updated() {
     this.setCurrentPageToState();
@@ -142,8 +142,12 @@ export default {
     },
     setCurrentPageToState() {
       const langPages = this.$store.state.lesson.allLessons[this.$i18n.locale];
-      const currUrl = this.$route.name.split("-")[0].split("___")[0];
+      let currUrl = this.$route.name.split("-")[0].split("___")[0];
       let currChapter = {};
+
+      if (currUrl === "index") {
+        currUrl = langPages[0].id;
+      }
       for (let i = 0; i < langPages.length; i++) {
         if (langPages[i].id === currUrl) {
           currChapter = { ...langPages[i] };
