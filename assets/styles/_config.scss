@@ -1,4 +1,9 @@
+/// IMPORT TOKENS
+/// The $gorko-colors, $gorko-fonts and $gorko-size-scale are auto-generated with
+/// JSON and saved as ./tokens.scss
+@import "tokens";
 @import "./mixins/mixins";
+@import "./functions/functions";
 // Import a Google Font
 @import url("https://fonts.googleapis.com/css?family=Raleway|Quicksand|Poppins");
 

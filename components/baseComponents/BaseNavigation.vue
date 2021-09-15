@@ -1,9 +1,13 @@
 <template>
-  <div class="white">
-    <div class="wrapper split-pair" :class="$style.paddingTopBottom">
-      <a href="/">
+  <div class="bg-white">
+    <div
+      class="wrapper split-pair"
+      data-variant="more-padding"
+      :class="$style.paddingTopBottom"
+    >
+      <nuxt-link :to="{ name: 'index___' + this.$i18n.locale }">
         <img src="/img/earthschool.png" />
-      </a>
+      </nuxt-link>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a

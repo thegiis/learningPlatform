@@ -99,7 +99,6 @@ export default {
 }
 .navOpenContainer {
   position: relative;
-  height: 100vh;
   width: 340px;
   animation: growWidth 0.2s linear forwards;
   flex-shrink: 0;
@@ -111,7 +110,6 @@ export default {
 }
 .navOpenContainerClosed {
   position: relative;
-  height: 100vh;
   width: 420px;
   animation: shrinkWidth 0.2s linear forwards;
 }

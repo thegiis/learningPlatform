@@ -1,7 +1,15 @@
 @charset "utf-8";
 @import "config";
+@import "./compositions/tiles";
+@import "bulma";
 
 // generics
+body {
+  background-color: $body-background-color;
+}
+p {
+  font-family: $family-secondary;
+}
 img,
 picture {
   max-width: 100%;
@@ -27,22 +35,18 @@ picture {
 }
 .videoContainer {
   display: flex;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 .videoPlayer {
   margin-left: auto;
   margin-right: auto;
 }
-
-p {
-  font-family: $family-secondary;
+.thumbImg {
+  width: auto !important;
+  height: 100% !important;
+  margin: 0 auto !important;
 }
-
-body {
-  background-color: $body-background-color;
-}
-
-@import "bulma";
 
 // active nav link
 //background-color: #6f94c1;
@@ -69,6 +73,12 @@ body {
   margin-right: auto;
   &[data-variant="no-padding"] {
     padding: 0;
+  }
+  &[data-variant="more-padding"] {
+    @include media-query("lg") {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
   }
 }
 .split-pair {
@@ -100,7 +110,8 @@ body {
 
 // effects
 .box-shadow-glow {
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 10px;
 }
 .center-text-section {
   text-align: center;
@@ -125,6 +136,18 @@ body {
   }
 }
 
+// main button
+.button.is-primary {
+  background-color: transparent;
+  border-color: var(--green-primary);
+  color: black;
+}
+.button.is-primary:hover,
+.button.is-primary.is-hovered {
+  background-color: var(--green-primary);
+  border-color: transparent;
+  color: #fff;
+}
 // oval button for top menu
 .ovalButton {
   border-radius: 25px;
@@ -142,7 +165,7 @@ body {
   content: "\32";
 }
 
-// general configuration
+// general color configuration
 .green-primary {
   background-color: var(--green-primary);
 }
@@ -155,6 +178,35 @@ body {
 .green-secondary-border {
   border-top: 2px solid var(--green-secondary-border);
 }
-.white {
+.bg-white {
   background-color: white;
+}
+
+// Headings
+h1.lesson {
+  font-size: 40px;
+  line-height: 1.1;
+  color: #00c000;
+  font-weight: bold;
+  font-family: "Quicksand";
+}
+h2.lesson {
+  font-size: 35px;
+  line-height: 1.1;
+  color: #00c000;
+  font-family: "Mortina";
+}
+
+h3.lesson {
+  font-size: 30px;
+  line-height: 1.1;
+  color: #231f20;
+  font-weight: lighter;
+  font-family: "Quicksand";
+}
+h4.lesson {
+  font-size: 24px;
+  line-height: 1.1;
+  color: #000000;
+  font-family: "Mortina";
 }

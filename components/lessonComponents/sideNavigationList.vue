@@ -24,9 +24,6 @@
                 aria-haspopup="true"
                 aria-controls="dropdown-menu"
               >
-                <span class="icon is-small" :class="$style.angleIcon">
-                  <i class="fas fa-angle-right" aria-hidden="true"></i>
-                </span>
                 <span class="subtitle is-5">{{ module.title }}</span>
               </button>
             </div>
@@ -82,8 +79,8 @@ export default {
   created() {},
   computed: {
     currentModules() {
-      const lang = this.$i18n.locale;
-      return this.modules.map((x) => x[lang]);
+      const currentLesson = [this.$store.state.lesson.currentLessonLang];
+      return currentLesson;
     },
   },
   methods: {

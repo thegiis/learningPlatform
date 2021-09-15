@@ -1,17 +1,17 @@
 <template>
-  <div class="container is-max-desktop">
-    <LessonBreadcrumbs />
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p3text2')" :highlight="true" />
-      <BaseText :textdata="getText('p3text3')" :highlight="true" />
-      <BaseText :textdata="getText('p3text4')" :highlight="true" />
-      <BaseText :textdata="getText('p3text5')" :highlight="true" />
-      <BaseText :textdata="getText('p3text6')" :highlight="true" />
-      <BaseText :textdata="getText('p3text7')" :highlight="true" />
-      <BaseText :textdata="getText('p3text8')" :highlight="true" />
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p3text2')" :highlight="true" />
+        <BaseText :textdata="getText('p3text3')" :highlight="true" />
+        <BaseText :textdata="getText('p3text4')" :highlight="true" />
+        <BaseText :textdata="getText('p3text5')" :highlight="true" />
+        <BaseText :textdata="getText('p3text6')" :highlight="true" />
+        <BaseText :textdata="getText('p3text7')" :highlight="true" />
+        <BaseText :textdata="getText('p3text8')" :highlight="true" />
+      </div>
     </div>
-    <LessonNextButton />
-  </div>
+  </LessonIndex>
 </template>
 
 <script>

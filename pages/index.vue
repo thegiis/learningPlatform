@@ -7,7 +7,11 @@
         <div>To People</div>
       </div>
     </article>
-    <div class="wrapper split-pair" :class="$style.paddingTopBottom">
+    <div
+      class="wrapper split-pair"
+      data-variant="more-padding"
+      :class="$style.paddingTopBottom"
+    >
       <div :class="$style.subHeading" class="flow" style="--flow-space: -0.5em">
         <div>We're getting more</div>
         <div>than what we know</div>
@@ -41,6 +45,18 @@ export default {
     return {
       lessons: [
         {
+          title: this.$t("lesson4"),
+          description: this.$t("description4"),
+          filename: "index/air-quality.png",
+          link: { name: "regulation_of_air_quality___" + this.$i18n.locale },
+        },
+        {
+          title: this.$t("lesson3"),
+          description: this.$t("description3"),
+          filename: "index/pollination.png",
+          link: { name: "pollination___" + this.$i18n.locale },
+        },
+        {
           title: this.$t("lesson1"),
           description: this.$t("description1"),
           filename: "index/food.png",
@@ -51,18 +67,6 @@ export default {
           description: this.$t("description2"),
           filename: "index/inspiration.png",
           link: { name: "pollination___" + this.$i18n.locale },
-        },
-        {
-          title: this.$t("lesson3"),
-          description: this.$t("description3"),
-          filename: "index/pollination.png",
-          link: { name: "pollination___" + this.$i18n.locale },
-        },
-        {
-          title: this.$t("lesson4"),
-          description: this.$t("description4"),
-          filename: "index/air-quality.png",
-          link: { name: "regulation_of_air_quality___" + this.$i18n.locale },
         },
         {
           title: this.$t("lesson5"),

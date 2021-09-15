@@ -4,6 +4,7 @@
       id="player"
       frameborder="0"
       allowfullscreen="1"
+      class="box-shadow-glow"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       title="YouTube video player"
       :width="playerWidth"

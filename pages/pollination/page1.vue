@@ -1,33 +1,33 @@
 <template>
-  <div class="container is-max-desktop">
-    <LessonBreadcrumbs />
-    <div :class="$style.imgContainer">
-      <img src="@/assets/images/pollination/flower1.png" alt="" />
-      <img src="@/assets/images/pollination/flower2.png" alt="" />
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <div :class="$style.imgContainer">
+        <img src="@/assets/images/pollination/flower1.png" alt="" />
+        <img src="@/assets/images/pollination/flower2.png" alt="" />
+      </div>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('text1')" :highlight="true" />
+        <BaseText :textdata="getText('text2')" :highlight="true" />
+        <BaseText :textdata="getText('text3')" :highlight="true" />
+        <BaseText :textdata="getText('text4')" :highlight="true" />
+        <BaseText :textdata="getText('text5')" :highlight="true" />
+        <BaseText :textdata="getText('text6')" :highlight="true" />
+        <BaseText
+          :textdata="getText('text7')"
+          :highlight="true"
+          :highlightClass="$style.testClass"
+        />
+      </div>
+      <div :class="$style.imgContainer">
+        <img src="@/assets/images/pollination/flower1.png" alt="" />
+        <img src="@/assets/images/pollination/flower2.png" alt="" />
+      </div>
+      <div :class="$style.imgContainer">
+        <img src="@/assets/images/pollination/flower1.png" alt="" />
+        <img src="@/assets/images/pollination/flower2.png" alt="" />
+      </div>
     </div>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('text1')" :highlight="true" />
-      <BaseText :textdata="getText('text2')" :highlight="true" />
-      <BaseText :textdata="getText('text3')" :highlight="true" />
-      <BaseText :textdata="getText('text4')" :highlight="true" />
-      <BaseText :textdata="getText('text5')" :highlight="true" />
-      <BaseText :textdata="getText('text6')" :highlight="true" />
-      <BaseText
-        :textdata="getText('text7')"
-        :highlight="true"
-        :highlightClass="$style.testClass"
-      />
-    </div>
-    <div :class="$style.imgContainer">
-      <img src="@/assets/images/pollination/flower1.png" alt="" />
-      <img src="@/assets/images/pollination/flower2.png" alt="" />
-    </div>
-    <div :class="$style.imgContainer">
-      <img src="@/assets/images/pollination/flower1.png" alt="" />
-      <img src="@/assets/images/pollination/flower2.png" alt="" />
-    </div>
-    <LessonNextButton/>
-  </div>
+  </LessonIndex>
 </template>
 
 <script>

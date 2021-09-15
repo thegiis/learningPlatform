@@ -1,21 +1,26 @@
 <template>
-  <div class="container is-max-desktop">
-    <LessonBreadcrumbs />
-    <GlossaryHead :answers="answers" :key="glossaryScore" v-if="!isLastPage" />
-    <GlossaryQuestion
-      :questionItem="getQuestionItem"
-      @answer="handleAnswer"
-      @next="handleNext"
-      v-if="!isLastPage"
-    />
-    <GlossarySummary
-      :answers="getAnswers"
-      :questionList="questions"
-      :userAnswers="selectedAns"
-      v-if="isLastPage"
-      @repeat="playAgain()"
-    />
-  </div>
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <GlossaryHead
+        :answers="answers"
+        :key="glossaryScore"
+        v-if="!isLastPage"
+      />
+      <GlossaryQuestion
+        :questionItem="getQuestionItem"
+        @answer="handleAnswer"
+        @next="handleNext"
+        v-if="!isLastPage"
+      />
+      <GlossarySummary
+        :answers="getAnswers"
+        :questionList="questions"
+        :userAnswers="selectedAns"
+        v-if="isLastPage"
+        @repeat="playAgain()"
+      />
+    </div>
+  </LessonIndex>
 </template>
 
 <script>

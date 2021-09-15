@@ -23,7 +23,11 @@
 <script>
 import lessonMap from "@/assets/data/lessonsMap.json";
 import sideNavigationList from "@/components/lessonComponents/sideNavigationList.vue";
-import { getPageNamesFromMap, getModulesFromMap } from "@/utils/utils.js";
+import {
+  getPageNamesFromMap,
+  getModulesFromMap,
+  getLessonsFromModules,
+} from "@/utils/utils.js";
 
 export default {
   components: {
@@ -42,7 +46,10 @@ export default {
   },
   created() {
     this.pages = getPageNamesFromMap(lessonMap);
-    this.modules = getModulesFromMap(lessonMap);
+    this.modules =
+      this.$store.state.lesson.modules.length === 0
+        ? getModulesFromMap(lessonMap)
+        : this.$store.state.lesson.modules;
 
     const lang = this.$i18n.locale;
     const currentModules = this.modules.map((x) => x[lang]);
@@ -57,12 +64,19 @@ export default {
         this.$store.dispatch("lesson/setVideoId", currentVideoId);
       }
     }
+    const allLessons = getLessonsFromModules(this.modules);
+    this.$store.dispatch("lesson/setAllLessons", allLessons);
+    this.$store.dispatch("lesson/setModules", this.modules);
+    this.setCurrentPageToState();
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     // if (this.insideLesson) {
     //   this.stickyVal = this.$refs["sideNavbar"].offsetTop;
     // }
+  },
+  updated() {
+    this.setCurrentPageToState();
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -82,8 +96,8 @@ export default {
       const fromSplits = fromPath.split("/");
 
       if (toSplits.length > fromSplits.length && path !== "/") {
-        this.showPanel = true;
-        this.$emit("openNav", true);
+        //this.showPanel = true;
+        //this.$emit("openNav", true);
         this.sideNavkey += 1;
       } else {
         this.showPanel = false;
@@ -125,6 +139,30 @@ export default {
       } else {
         return "closePanel";
       }
+    },
+    setCurrentPageToState() {
+      const langPages = this.$store.state.lesson.allLessons[this.$i18n.locale];
+      let currUrl = this.$route.name.split("-")[0].split("___")[0];
+      let currChapter = {};
+
+      if (currUrl === "index") {
+        currUrl = langPages[0].id;
+      }
+      for (let i = 0; i < langPages.length; i++) {
+        if (langPages[i].id === currUrl) {
+          currChapter = { ...langPages[i] };
+          break;
+        }
+      }
+      let currentPage = {};
+      for (let i = 0; i < currChapter.pages.length; i++) {
+        if (currChapter.pages[i].i18nRoute === this.$route.name) {
+          currentPage = { ...currChapter.pages[i], id: i };
+          break;
+        }
+      }
+      currChapter.currentPage = currentPage;
+      this.$store.dispatch("lesson/setCurrentLessonLang", currChapter);
     },
   },
 };

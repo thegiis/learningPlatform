@@ -1,14 +1,18 @@
 <template>
-  <div :class="$style.quizSection" class="container is-max-desktop">
-    <LessonBreadcrumbs :pages="bcData" />
-    <div :class="$style.quizWrapper">
-      <section class="column is-11-mobile is-6-desktop" :class="$style.bgWhite">
-        <h1 :class="$style.quizTitle">{{ $t("quizTime") }}</h1>
-        <QuestionList :questionList="quizData" />
-      </section>
-      <!-- <LessonPrevButton :navlink="prevLink" /> -->
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <div :class="$style.quizWrapper">
+        <section
+          class="column is-11-mobile is-6-desktop"
+          :class="$style.bgWhite"
+        >
+          <h1 :class="$style.quizTitle">{{ $t("quizTime") }}</h1>
+          <QuestionList :questionList="quizData" />
+        </section>
+        <!-- <LessonPrevButton :navlink="prevLink" /> -->
+      </div>
     </div>
-  </div>
+  </LessonIndex>
 </template>
 
 <script>
