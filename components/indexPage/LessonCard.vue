@@ -5,7 +5,7 @@
         <img
           :src="require(`@/assets/images/${filename}`)"
           :alt="alt"
-          :class="$style.thumbImg"
+          class="thumbImg"
         />
       </figure>
     </div>
@@ -77,11 +77,6 @@ export default {
 }
 .cardDesc {
   text-align: center;
-}
-.thumbImg {
-  width: auto !important;
-  height: 100% !important;
-  margin: 0 auto !important;
 }
 .cardContentModifier {
   padding-top: 0px;
