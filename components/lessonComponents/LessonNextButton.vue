@@ -30,7 +30,7 @@ export default {
   },
   created() {
     const lang = this.$i18n.locale;
-    const modules = getModulesFromMap(lessonMap);
+    const modules = this.$store.state.lesson.modules;
     const currentLangModules = modules.map((x) => x[lang]);
     let i = 0;
 

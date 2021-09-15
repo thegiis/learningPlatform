@@ -63,6 +63,7 @@ export default {
     }
     const allLessons = getLessonsFromModules(this.modules);
     this.$store.dispatch("lesson/setAllLessons", allLessons);
+    this.$store.dispatch("lesson/setModules", this.modules);
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);

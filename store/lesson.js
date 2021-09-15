@@ -8,6 +8,7 @@ export const state = () => ({
   overVocab: false,
   currentVideoId: "",
   allLessons: {},
+  modules: [],
 
   // {id: 'food', title: 'Food', videoId: '03434', currentPage:{id: 0, name: 'blah', route: 'blah', type: 'learn'}, pages: [{name: 'blah', route: 'blah', type: 'learn'}]}
   currentLessonLang: {},
@@ -52,6 +53,9 @@ export const mutations = {
   },
   setCurrentLessonLang(state, currentLessonLang) {
     state.currentLessonLang = currentLessonLang;
+  },
+  setModules(state, modules) {
+    state.modules = modules;
   },
 };
 
@@ -98,5 +102,8 @@ export const actions = {
   },
   setCurrentLessonLang(context, currentLessonLang) {
     context.commit("setCurrentLessonLang", currentLessonLang);
+  },
+  setModules(context, modules) {
+    context.commit("setModules", modules);
   },
 };
