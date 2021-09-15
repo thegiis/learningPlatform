@@ -151,11 +151,13 @@ function getModulesFromMap(data) {
 
       // get pages from langData.pageNames and chapterPages
       let pages = [];
+      let currLang = temp[i][0];
       for (let i = 0; i < langData.pageNames.length; i++) {
         let page = {};
         page.name = langData.pageNames[i];
         page.route = chapterPages[i];
         page.type = pageTypes[i];
+        page.i18nRoute = chapterPages[i] + "___" + currLang;
         pages.push(page);
       }
       langData.pages = pages;
