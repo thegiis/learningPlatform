@@ -6,35 +6,56 @@
       :class="$style.paddingTopBottom"
     >
       <div class="tiles" data-variant="two-per-row">
-        <div class="bg-white">
+        <div class="bg-white" v-if="currentPageType !== 'learn'">
           <h2 class="lesson" :class="$style.h2">Learn</h2>
           <div :class="$style.listContainer">
             <ol class="flow" :class="$style.list" style="--flow-space: 0.5rem">
-              <li>
-                Air Pollution
-                <ul>
-                  <li>Nature and man made pollution</li>
-                  <li>Nature and man made pollution</li>
-                  <li>Nature and man made pollution</li>
-                </ul>
+              <li v-for="(page, idx) in currentChapterLearnPages" :key="idx">
+                <nuxt-link :to="{ name: page.i18nRoute }">
+                  {{ page.name }}
+                </nuxt-link>
               </li>
-              <li>
-                Effects of Air Pollution
-                <ul>
-                  <li>Nature and man made pollution</li>
-                  <li>Nature and man made pollution</li>
-                  <li>Nature and man made pollution</li>
-                </ul>
-              </li>
-              <li>Nature as regulations of Air Quality</li>
             </ol>
           </div>
         </div>
-        <div class="bg-white"></div>
+        <div class="bg-white" v-if="currentPageType !== 'quiz'">
+          <h2 class="lesson" :class="$style.h2">Quiz</h2>
+          <div :class="$style.listContainer">
+            <ol class="flow" :class="$style.list" style="--flow-space: 0.5rem">
+              <li v-for="(page, idx) in currentChapterQuizPages" :key="idx">
+                <nuxt-link :to="{ name: page.i18nRoute }">
+                  {{ page.name }}
+                </nuxt-link>
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      currentChapterLearnPages:
+        this.$store.state.lesson.currentLessonLang.pages.filter(
+          (page) => page.type === "learn"
+        ),
+      currentChapterQuizPages:
+        this.$store.state.lesson.currentLessonLang.pages.filter(
+          (page) => page.type === "quiz"
+        ),
+      currentChapterWatchPages:
+        this.$store.state.lesson.currentLessonLang.pages.filter(
+          (page) => page.type === "watch"
+        ),
+      currentPageType:
+        this.$store.state.lesson.currentLessonLang.currentPage.type,
+    };
+  },
+};
+</script>
 <style module lang="scss">
 .paddingTopBottom {
   padding-top: 2em;
