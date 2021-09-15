@@ -1,45 +1,45 @@
 <template>
-  <div class="container is-max-desktop">
-    <LessonBreadcrumbs />
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p1text2')" :highlight="true" />
-      <BaseText :textdata="getText('p1text3')" :highlight="true" />
-      <BaseText :textdata="getText('p1text4')" :highlight="true" />
-      <BaseText :textdata="getText('p1text5')" :highlight="true" />
-      <BaseText :textdata="getText('p1text6')" :highlight="true" />
-      <BaseText :textdata="getText('p1text7')" :highlight="true" />
-      <BaseText :textdata="getText('p1text8')" :highlight="true" />
-      <BaseText :textdata="getText('p1text9')" :highlight="true" />
-      <BaseText :textdata="getText('p1text10')" :highlight="true" />
-      <BaseText :textdata="getText('p1text11')" :highlight="true" />
-    </div>
-    <h2 :class="$style.title2">{{ getText("p1text12") }}</h2>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p1text12')" :highlight="true" />
-      <BaseText :textdata="getText('p1text13')" :highlight="true" />
-      <BaseText :textdata="getText('p1text14')" :highlight="true" />
-      <BaseText :textdata="getText('p1text15')" :highlight="true" />
-    </div>
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p1text2')" :highlight="true" />
+        <BaseText :textdata="getText('p1text3')" :highlight="true" />
+        <BaseText :textdata="getText('p1text4')" :highlight="true" />
+        <BaseText :textdata="getText('p1text5')" :highlight="true" />
+        <BaseText :textdata="getText('p1text6')" :highlight="true" />
+        <BaseText :textdata="getText('p1text7')" :highlight="true" />
+        <BaseText :textdata="getText('p1text8')" :highlight="true" />
+        <BaseText :textdata="getText('p1text9')" :highlight="true" />
+        <BaseText :textdata="getText('p1text10')" :highlight="true" />
+        <BaseText :textdata="getText('p1text11')" :highlight="true" />
+      </div>
+      <h2 :class="$style.title2">{{ getText("p1text12") }}</h2>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p1text12')" :highlight="true" />
+        <BaseText :textdata="getText('p1text13')" :highlight="true" />
+        <BaseText :textdata="getText('p1text14')" :highlight="true" />
+        <BaseText :textdata="getText('p1text15')" :highlight="true" />
+      </div>
 
-    <h2 :class="$style.title2">{{ getText("p1text16") }}</h2>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p1text17')" :highlight="true" />
-      <BaseText :textdata="getText('p1text18')" :highlight="true" />
-      <BaseText :textdata="getText('p1text19')" :highlight="true" />
-      <BaseText :textdata="getText('p1text20')" :highlight="true" />
+      <h2 :class="$style.title2">{{ getText("p1text16") }}</h2>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p1text17')" :highlight="true" />
+        <BaseText :textdata="getText('p1text18')" :highlight="true" />
+        <BaseText :textdata="getText('p1text19')" :highlight="true" />
+        <BaseText :textdata="getText('p1text20')" :highlight="true" />
+      </div>
+      <div :class="$style.imgContainer">
+        <img src="@/assets/images/regulation_of_air_quality/img1.JPG" alt="" />
+      </div>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p1text21')" :highlight="true" />
+        <BaseText :textdata="getText('p1text22')" :highlight="true" />
+        <BaseText :textdata="getText('p1text23')" :highlight="true" />
+        <BaseText :textdata="getText('p1text24')" :highlight="true" />
+        <BaseText :textdata="getText('p1text25')" :highlight="true" />
+      </div>
     </div>
-    <div :class="$style.imgContainer">
-      <img src="@/assets/images/regulation_of_air_quality/img1.JPG" alt="" />
-    </div>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p1text21')" :highlight="true" />
-      <BaseText :textdata="getText('p1text22')" :highlight="true" />
-      <BaseText :textdata="getText('p1text23')" :highlight="true" />
-      <BaseText :textdata="getText('p1text24')" :highlight="true" />
-      <BaseText :textdata="getText('p1text25')" :highlight="true" />
-    </div>
-    <LessonNextButton />
-  </div>
+  </LessonIndex>
 </template>
 
 <script>

@@ -1,31 +1,31 @@
 <template>
-  <div class="container is-max-desktop">
-    <LessonBreadcrumbs />
-    <h2 :class="$style.title2">{{ getText("p2text2") }}</h2>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p2text3')" :highlight="true" />
-      <BaseText :textdata="getText('p2text4')" :highlight="true" />
-      <BaseText :textdata="getText('p2text5')" :highlight="true" />
-      <BaseText :textdata="getText('p2text6')" :highlight="true" />
-      <BaseText :textdata="getText('p2text7')" :highlight="true" />
-    </div>
-    <h2 :class="$style.title2">{{ getText("p2text8") }}</h2>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p2text9')" :highlight="true" />
-      <BaseText :textdata="getText('p2text10')" :highlight="true" />
-    </div>
+  <LessonIndex>
+    <div class="wrapper" data-variant="more-padding">
+      <h2 :class="$style.title2">{{ getText("p2text2") }}</h2>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p2text3')" :highlight="true" />
+        <BaseText :textdata="getText('p2text4')" :highlight="true" />
+        <BaseText :textdata="getText('p2text5')" :highlight="true" />
+        <BaseText :textdata="getText('p2text6')" :highlight="true" />
+        <BaseText :textdata="getText('p2text7')" :highlight="true" />
+      </div>
+      <h2 :class="$style.title2">{{ getText("p2text8") }}</h2>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p2text9')" :highlight="true" />
+        <BaseText :textdata="getText('p2text10')" :highlight="true" />
+      </div>
 
-    <div :class="$style.imgContainer">
-      <img src="@/assets/images/regulation_of_air_quality/img2.png" alt="" />
-    </div>
+      <div :class="$style.imgContainer">
+        <img src="@/assets/images/regulation_of_air_quality/img2.png" alt="" />
+      </div>
 
-    <h2 :class="$style.title2">{{ getText("p2text11") }}</h2>
-    <div :class="$style.description">
-      <BaseText :textdata="getText('p2text12')" :highlight="true" />
-      <BaseText :textdata="getText('p2text13')" :highlight="true" />
+      <h2 :class="$style.title2">{{ getText("p2text11") }}</h2>
+      <div :class="$style.description">
+        <BaseText :textdata="getText('p2text12')" :highlight="true" />
+        <BaseText :textdata="getText('p2text13')" :highlight="true" />
+      </div>
     </div>
-    <LessonNextButton />
-  </div>
+  </LessonIndex>
 </template>
 
 <script>
