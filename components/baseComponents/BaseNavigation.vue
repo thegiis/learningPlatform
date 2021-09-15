@@ -5,9 +5,9 @@
       data-variant="more-padding"
       :class="$style.paddingTopBottom"
     >
-      <a href="/">
+      <nuxt-link :to="{ name: 'index___' + this.$i18n.locale }">
         <img src="/img/earthschool.png" />
-      </a>
+      </nuxt-link>
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a
