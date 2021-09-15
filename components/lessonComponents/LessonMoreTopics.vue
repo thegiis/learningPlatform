@@ -98,6 +98,9 @@ export default {
   margin: 1em 2em;
   > li {
     padding-left: 0.5em;
+    > a {
+      color: black;
+    }
     > ul {
       list-style-type: "→";
       list-style-position: outside;
