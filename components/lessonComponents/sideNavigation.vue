@@ -96,8 +96,8 @@ export default {
       const fromSplits = fromPath.split("/");
 
       if (toSplits.length > fromSplits.length && path !== "/") {
-        this.showPanel = true;
-        this.$emit("openNav", true);
+        //this.showPanel = true;
+        //this.$emit("openNav", true);
         this.sideNavkey += 1;
       } else {
         this.showPanel = false;
