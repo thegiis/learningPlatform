@@ -40,10 +40,16 @@ export default {
       const totalPages = tempModule.routes.length;
       if (pageIdx > -1) {
         if (pageIdx < totalPages) {
-          this.nextLink =
-            tempModule.routes[pageIdx + 1] + "___" + this.$i18n.locale;
-          this.nextTopic = tempModule.pageNames[pageIdx + 1];
-          this.showNextSection = true;
+          if (tempModule.routes[pageIdx + 1]) {
+            this.nextLink =
+              tempModule.routes[pageIdx + 1] + "___" + this.$i18n.locale;
+            this.nextTopic = tempModule.pageNames[pageIdx + 1];
+            this.showNextSection = true;
+          } else {
+            this.nextLink = undefined;
+            this.nextTopic = undefined;
+            this.showNextSection = false;
+          }
         }
       }
       i++;
