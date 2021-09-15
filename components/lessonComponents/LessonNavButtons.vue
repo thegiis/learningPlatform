@@ -2,7 +2,7 @@
   <section :class="$style.nextSection">
     <div class="wrapper split-pair" data-variant="more-padding">
       <div>
-        <!--<LessonPrevButton />-->
+        <LessonPrevButton />
       </div>
       <div>
         <LessonNextButton />
