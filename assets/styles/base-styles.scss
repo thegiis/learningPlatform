@@ -130,9 +130,18 @@ picture {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 260px;
+  height: 200px;
   @include media-query("sm") {
-    height: 620px;
+    height: 300px;
+  }
+  @include media-query("md") {
+    height: 425px;
+  }
+  @include media-query("lg") {
+    height: 600px;
+  }
+  @include media-query("hd") {
+    height: 1000px;
   }
 }
 
