@@ -108,6 +108,8 @@ export default {
 }
 .description p {
   margin: 1rem 0;
+  font-size: 18px;
+  line-height: 30px;
 }
 
 .imgContainer {

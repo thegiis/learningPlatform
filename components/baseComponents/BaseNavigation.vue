@@ -33,6 +33,7 @@
             >
               {{ $t("chapters") }}
             </nuxt-link>
+            <a href="#" class="navbar-item" :class="$style.divider">|</a>
             <a @click="openGlossary()" class="navbar-item">{{
               $t("glossary")
             }}</a>
@@ -115,9 +116,13 @@ export default {
 .navStyle {
   font-family: "Mortina";
 }
+.divider {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
 </style>
 <style scoped>
 a.nuxt-link-exact-active {
-  color: #3273dc;
+  color: var(--green-secondary);
 }
 </style>

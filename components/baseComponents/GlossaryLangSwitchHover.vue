@@ -84,7 +84,7 @@ export default {
   margin-left: 0.5rem;
 }
 a.nuxt-link-exact-active {
-  color: navy;
+  color: var(--green-secondary);
 }
 .glossary-lang-switch {
   position: relative;

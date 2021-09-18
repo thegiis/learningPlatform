@@ -6,6 +6,7 @@
 // generics
 body {
   background-color: $body-background-color;
+  color: black;
 }
 p {
   font-family: $family-secondary;
@@ -22,8 +23,8 @@ picture {
 }
 
 .default-vocab-word {
-  color: royalblue;
-  border-bottom: 1px dotted royalblue;
+  color: var(--green-secondary);
+  border-bottom: 1px dotted var(--green-secondary);
   cursor: pointer;
   font-weight: bold;
 }
@@ -195,17 +196,16 @@ picture {
 h1.lesson {
   font-size: 40px;
   line-height: 1.1;
-  color: #00c000;
+  color: var(--green-secondary);
   font-weight: bold;
   font-family: "Quicksand";
 }
 h2.lesson {
   font-size: 35px;
   line-height: 1.1;
-  color: #00c000;
+  color: var(--green-secondary);
   font-family: "Mortina";
 }
-
 h3.lesson {
   font-size: 30px;
   line-height: 1.1;
@@ -218,4 +218,11 @@ h4.lesson {
   line-height: 1.1;
   color: #000000;
   font-family: "Mortina";
+}
+// Linking
+a.navbar-item:hover {
+  color: var(--green-secondary);
+}
+.dropdown-item.activeLink {
+  color: var(--green-secondary);
 }

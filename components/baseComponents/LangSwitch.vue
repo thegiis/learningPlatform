@@ -83,6 +83,6 @@ export default {
   text-transform: uppercase;
 }
 a.nuxt-link-exact-active {
-  color: navy;
+  color: var(--green-secondary);
 }
 </style>

@@ -83,7 +83,7 @@ export default {
     setGlossaryLocale(locale) {
       this.$cookiz.set("glossaryLang", locale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
-        path: '/' + process.env.modalName
+        path: "/" + process.env.modalName,
       });
       this.$store.dispatch("lesson/setVocabLocale", locale);
       this.dropdown();
@@ -102,7 +102,7 @@ export default {
   text-transform: uppercase;
 }
 a.nuxt-link-exact-active {
-  color: navy;
+  color: var(--green-secondary);
 }
 .glossary-lang-switch {
   min-width: 8rem;

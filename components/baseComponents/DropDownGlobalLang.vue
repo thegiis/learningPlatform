@@ -2,11 +2,14 @@
   <div class="dropdown" :class="{ 'is-active': isActive }">
     <div class="select is-info">
       <select @change="setLocale($event)">
-        <option 
+        <option
           v-for="locale in availableLocales"
           :key="locale.code"
           class="dropdown-item"
-          :class="currentClass(locale)">{{ locale.name }}</option>
+          :class="currentClass(locale)"
+        >
+          {{ locale.name }}
+        </option>
       </select>
     </div>
   </div>
@@ -39,14 +42,16 @@ export default {
     },
     // change locale for vocab in store as well
     setLocale(event) {
-      const selectedLocale = this.$i18n.locales.filter((i) => i.name === event.target.value)[0].code;
-      this.$i18n.setLocale(selectedLocale)
+      const selectedLocale = this.$i18n.locales.filter(
+        (i) => i.name === event.target.value
+      )[0].code;
+      this.$i18n.setLocale(selectedLocale);
       this.$cookiz.set("lang", selectedLocale, {
         maxAge: 60 * 60 * 24 * 365 * 10,
-        path: '/' + process.env.modalName
+        path: "/" + process.env.modalName,
       });
       this.dropdown();
-    }
+    },
   },
 };
 </script>
@@ -57,9 +62,9 @@ export default {
   text-transform: capitalize;
 }
 a.nuxt-link-exact-active {
-  color: navy;
+  color: var(--green-secondary);
 }
-.dropdown-icon svg{
+.dropdown-icon svg {
   fill: gray;
   width: 60%;
 }
