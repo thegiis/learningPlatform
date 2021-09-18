@@ -7,6 +7,14 @@ export const state = () => ({
   vocabPosition: {},
   overVocab: false,
   currentVideoId: "",
+
+  //{en: [{id: 'food', title: 'Food', videoId: '03434',
+  //			 pages: [{ name: 'blah', route: 'blah', type: 'learn' }]
+  //		 }],
+  // np: [{id: 'food', title: 'Khan', videoId: '03434',
+  //       pages: [{ name: 'blah', route: 'blah', type: 'learn' }]
+  //     }]
+  //}
   allLessons: {},
   modules: [],
 

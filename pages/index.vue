@@ -42,37 +42,40 @@ export default {
     LessonCard,
   },
   data() {
+    const allLessons = this.$store.state.lesson.allLessons;
     return {
       lessons: [
         {
           title: this.$t("lesson4"),
           description: this.$t("description4"),
           filename: "index/air-quality.png",
-          link: { name: "regulation_of_air_quality___" + this.$i18n.locale },
+          link: {
+            name: allLessons[this.$i18n.locale][3].pages[0].i18nRoute,
+          },
         },
         {
           title: this.$t("lesson3"),
           description: this.$t("description3"),
           filename: "index/pollination.png",
-          link: { name: "pollination___" + this.$i18n.locale },
+          link: { name: allLessons[this.$i18n.locale][2].pages[0].i18nRoute },
         },
         {
           title: this.$t("lesson1"),
           description: this.$t("description1"),
           filename: "index/food.png",
-          link: { name: "pollination___" + this.$i18n.locale },
+          link: { name: allLessons[this.$i18n.locale][0].pages[0].i18nRoute },
         },
         {
           title: this.$t("lesson2"),
           description: this.$t("description2"),
           filename: "index/inspiration.png",
-          link: { name: "pollination___" + this.$i18n.locale },
+          link: { name: allLessons[this.$i18n.locale][1].pages[0].i18nRoute },
         },
         {
           title: this.$t("lesson5"),
           description: this.$t("description5"),
           filename: "index/companionship.png",
-          link: { name: "pollination___" + this.$i18n.locale },
+          link: { name: allLessons[this.$i18n.locale][4].pages[0].i18nRoute },
         },
       ],
     };
