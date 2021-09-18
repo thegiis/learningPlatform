@@ -187,7 +187,7 @@ export default {
   padding-bottom: 0px;
 }
 #customDropDownContentActiveTopic a {
-  color: palevioletred;
+  color: var(--green-secondary);
 }
 .customDropDownButton {
   cursor: pointer;
@@ -200,7 +200,7 @@ export default {
   color: blueviolet;
 }
 .activeChapter .customDropDownButton {
-  color: palevioletred;
+  color: var(--green-secondary);
 }
 .iconFont {
   font-size: 1rem;

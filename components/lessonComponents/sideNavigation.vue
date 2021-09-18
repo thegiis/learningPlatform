@@ -7,7 +7,7 @@
     v-if="checkSideNav"
   >
     <div :class="$style.expandContent">
-      <i class="fas fa-clipboard-list" @click="openPanel()"></i>
+      <i class="fas fa-bars" @click="openPanel()"></i>
       <p :class="$style.hoverText">Table of Contents</p>
     </div>
     <sideNavigationList
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       hasScrolled: false,
-      stickyVal: 56, //height of top navbar
+      stickyVal: 148, //height of top navbar
       pages: [],
       modules: [],
       showPanel: false,
@@ -190,15 +190,24 @@ export default {
   left: -420px;
 }
 </style>
-<style module>
+<style module lang="scss">
+@import "@/assets/styles/config";
+
 .expandContent {
   position: relative;
-  top: 50%;
+  top: 61px;
   transform: translateY(-50%);
   color: black;
   cursor: pointer;
   font-size: 25px;
-  padding: 0 1rem;
+  padding: 0 0.25rem;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include media-query("lg") {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 .expandContent:hover .hoverText {
   display: block;
