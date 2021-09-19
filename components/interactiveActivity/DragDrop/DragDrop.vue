@@ -198,7 +198,7 @@ export default {
       const listIdx = this.dropMap.indexOf(dropName);
       const currList = this.ansList[listIdx];
       console.log(dropName, currList);
-      if (currList.length >= this.maxAnswers) {
+      if (currList.length >= this.answerNums) {
         return false;
       }
       return true;
@@ -228,7 +228,7 @@ export default {
       //check if questionList is empty or all ansList are to capacity
       if (this.questionList.length !== 0) {
         for (let i = 0; i < this.ansList.length; i++) {
-          if (this.ansList[i].length < this.maxAnswers) {
+          if (this.ansList[i].length < this.answerNums) {
             allCorrect = false;
             break;
           }

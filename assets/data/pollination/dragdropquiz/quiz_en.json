@@ -5,48 +5,29 @@
       "type": "dragdrop",
       "instruction": "Plants and Pollinators",
       "items": [
-        {
-          "name": "Apple",
-          "id": 0,
-          "drop": ["bees", "flies"],
-          "correct": null
-        },
-        { "name": "Peach", "id": 1, "drop": ["bees", "bats"], "correct": null },
-        { "name": "Mustard", "id": 2, "drop": ["bees"], "correct": null },
-        { "name": "Pumpkin", "id": 3, "drop": ["bees"], "correct": null },
-        {
-          "name": "Almond",
-          "id": 4,
-          "drop": ["bees", "flies"],
-          "correct": null
-        },
-        { "name": "Pear", "id": 5, "drop": ["bees", "flies"], "correct": null },
-        {
-          "name": "Cashew",
-          "id": 6,
-          "drop": ["bees", "bats", "flies"],
-          "correct": null
-        },
-        {
-          "name": "Mango",
-          "id": 7,
-          "drop": ["bees", "bats", "flies"],
-          "correct": null
-        },
-        { "name": "Guava", "id": 8, "drop": ["bees", "bats"], "correct": null },
-        {
-          "name": "Carrot",
-          "id": 9,
-          "drop": ["bees", "flies"],
-          "correct": null
-        },
-        { "name": "Banana", "id": 10, "drop": ["bats"], "correct": null },
-        {
-          "name": "Cacao",
-          "id": 11,
-          "drop": ["bats", "flies"],
-          "correct": null
-        }
+        { "name": "Apple", "id": 0, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Apple", "id": 1, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Peach", "id": 2, "drop": ["bees", "bats"], "correct": null },
+        { "name": "Peach", "id": 3, "drop": ["bees", "bats"], "correct": null },
+        { "name": "Mustard", "id": 4, "drop": ["bees"], "correct": null },
+        { "name": "Pumpkin", "id": 5, "drop": ["bees"], "correct": null },
+        { "name": "Almond", "id": 6, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Almond", "id": 7, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Pear", "id": 8, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Pear", "id": 9, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Cashew", "id": 10, "drop": ["bees", "bats", "flies"], "correct": null },
+        { "name": "Cashew", "id": 11, "drop": ["bees", "bats", "flies"], "correct": null },
+        { "name": "Cashew", "id": 12, "drop": ["bees", "bats", "flies"], "correct": null },
+        { "name": "Mango", "id": 13, "drop": ["bees", "bats", "flies"], "correct": null },
+        { "name": "Mango", "id": 14, "drop": ["bees", "bats", "flies"], "correct": null },
+        { "name": "Mango", "id": 15, "drop": ["bees", "bats", "flies"], "correct": null },
+        { "name": "Guava", "id": 16, "drop": ["bees", "bats"], "correct": null },
+        { "name": "Guava", "id": 17, "drop": ["bees", "bats"], "correct": null },
+        { "name": "Carrot", "id": 18, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Carrot", "id": 19, "drop": ["bees", "flies"], "correct": null },
+        { "name": "Banana", "id": 20, "drop": ["bats"], "correct": null },
+        { "name": "Cacao", "id": 21, "drop": ["bats", "flies"], "correct": null },
+        { "name": "Cacao", "id": 22, "drop": ["bats", "flies"], "correct": null }
       ],
 
       "dropList": [
