@@ -11,7 +11,7 @@
 
     <div class="dragdropAnsDiv">
       <div v-for="(dropContainer, idx) in dropList" :key="idx" class="dropDiv">
-        <h1 class="title is-5">{{ dropContainer.name }}</h1>
+        <h1 class="title is-5">{{ dropContainer.label }}</h1>
         <draggable
           :disabled="!enabled"
           :list="ansList[idx]"
@@ -410,5 +410,8 @@ export default {
 }
 h4.lesson {
   color: var(--green-secondary);
+}
+h1.title {
+  height: 50px;
 }
 </style>

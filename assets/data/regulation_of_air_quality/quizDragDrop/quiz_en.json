@@ -1,0 +1,66 @@
+{
+  "questions": [
+    {
+      "id": "q001",
+      "type": "dragdrop",
+      "instruction": "How Trees Regulate Air Quality",
+      "items": [
+        {
+          "name": "Humans and all animals need oxygen",
+          "id": 0,
+          "drop": ["oxygen"],
+          "correct": null
+        },
+        {
+          "name": "By absorbing carbon dioxide, trees reduce global warming",
+          "id": 1,
+          "drop": ["oxygen"],
+          "correct": null
+        },
+        {
+          "name": "Trees cool temperature by providing shade",
+          "id": 2,
+          "drop": ["airCooler"],
+          "correct": null
+        },
+        {
+          "name": "Trees release water into the air through photosynthesis",
+          "id": 3,
+          "drop": ["airCooler"],
+          "correct": null
+        },
+        {
+          "name": "Trees absorb tiny particles and smoke",
+          "id": 4,
+          "drop": ["airPurifier"],
+          "correct": null
+        },
+        {
+          "name": "Particulate matters settle on the leaves and when it rains, they are washed down the gutters",
+          "id": 5,
+          "drop": ["airPurifier"],
+          "correct": null
+        }
+      ],
+
+      "dropList": [
+        {
+          "list": [],
+          "label": "Trees provide oxygen and absorb carbon dioxide",
+          "name": "oxygen"
+        },
+        {
+          "list": [],
+          "label": "Trees make our air cooler.",
+          "name": "airCooler"
+        },
+        {
+          "list": [],
+          "label": "Trees reduce air pollution. Trees are like giant air purifiers",
+          "name": "airPurifier"
+        }
+      ],
+      "difficulty": 1
+    }
+  ]
+}
