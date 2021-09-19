@@ -1,73 +1,248 @@
 {
-    "en": {
-        "breathing": {
-            "en": {
-                "word": "Breathe",
-                "meaning": "take air into the lungs and then expel it"
-            },
-            "np": {
-                "word": "सास फेर्नु",
-                "meaning": ""
-            },
-            "image": ""
-        },
-        "energy": {
-            "en": {
-                "word": "Energy",
-                "meaning": "strength "
-            },
-            "np": {
-                "word": "उर्जा",
-                "meaning": ""
-            },
-            "image": ""
-        },
-        "environmental": {
-            "en": {
-                "word": "Environment",
-                "meaning": "the natural world"
-            },
-            "np": {
-                "word": "वातावरण",
-                "meaning": ""
-            },
-            "image": ""
-        },
-        "harmful": {
-            "en": {
-                "word": "Harmful",
-                "meaning": "dangerous"
-            },
-            "np": {
-                "word": "हानिकारक",
-                "meaning": ""
-            },
-            "image": ""
-        },
-        "atmosphere": {
-            "en": {
-                "word": "Atmosphere",
-                "meaning": "the envelope of gases surrounding the earth"
-            },
-            "np": {
-                "word": "वातावरण",
-                "meaning": ""
-            },
-            "image": ""
-        },
-        "mixture": {
-            "en": {
-                "word": "Mixture",
-                "meaning": "a combination of different things"
-            },
-            "np": {
-                "word": "मिश्रण",
-                "meaning": ""
-            },
-            "image": ""
-        }
+  "en": {
+    "breathing": {
+      "en": {
+        "word": "Breathe",
+        "meaning": "take air into the lungs and then expel it"
+      },
+      "np": {
+        "word": "सास फेर्नु",
+        "meaning": ""
+      },
+      "image": ""
     },
-    "np": {
+    "energy": {
+      "en": {
+        "word": "Energy",
+        "meaning": "strength "
+      },
+      "np": {
+        "word": "उर्जा",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "environmental": {
+      "en": {
+        "word": "Environment",
+        "meaning": "the natural world"
+      },
+      "np": {
+        "word": "वातावरण",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "harmful": {
+      "en": {
+        "word": "Harmful",
+        "meaning": "dangerous"
+      },
+      "np": {
+        "word": "हानिकारक",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "atmosphere": {
+      "en": {
+        "word": "Atmosphere",
+        "meaning": "the envelope of gases surrounding the earth"
+      },
+      "np": {
+        "word": "वातावरण",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "mixture": {
+      "en": {
+        "word": "Mixture",
+        "meaning": "a combination of different things"
+      },
+      "np": {
+        "word": "मिश्रण",
+        "meaning": ""
+      },
+      "image": ""
+    },
 
+    "breathe": {
+      "en": {
+        "word": "Breathe",
+        "meaning": "take air into the lungs and then expel it"
+      },
+      "np": {
+        "word": "सास फेर्नु",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "energy": {
+      "en": {
+        "word": "Energy",
+        "meaning": "Strength"
+      },
+      "np": {
+        "word": "उर्जा",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "environment": {
+      "en": {
+        "word": "Environment",
+        "meaning": "the natural world"
+      },
+      "np": {
+        "word": "वातावरण",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "harmful": {
+      "en": {
+        "word": "harmful",
+        "meaning": "dangerous"
+      },
+      "np": {
+        "word": "हानिकारक",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "atmosphere": {
+      "en": {
+        "word": "atmosphere",
+        "meaning": "the envelope of gases surrounding the earth"
+      },
+      "np": {
+        "word": "वातावरण",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "mixture": {
+      "en": {
+        "word": "mixture",
+        "meaning": "a combination of different things"
+      },
+      "np": {
+        "word": "मिश्रण",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Pollutant": {
+      "en": {
+        "word": "Pollutant",
+        "meaning": "a substance that pollutes environment"
+      },
+      "np": {
+        "word": "प्रदूषक",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Ventilation": {
+      "en": {
+        "word": "Ventilation",
+        "meaning": "provision of fresh air inside the room"
+      },
+      "np": {
+        "word": "हावा संचार",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Airborne": {
+      "en": {
+        "word": "Airborne",
+        "meaning": "transported by air"
+      },
+      "np": {
+        "word": "हवाई",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Irritate": {
+      "en": {
+        "word": "Irritate",
+        "meaning": "cause pain and discomfort"
+      },
+      "np": {
+        "word": "दुखाइ र असुविधा हुनु",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Inflammation": {
+      "en": {
+        "word": "Inflammation",
+        "meaning": "swelling"
+      },
+      "np": {
+        "word": "सुन्नीनु",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Chronic diseases": {
+      "en": {
+        "word": "Chronic diseases",
+        "meaning": "A disease that stay longer in the body and may get worse over time."
+      },
+      "np": {
+        "word": "दीर्घकालीन रोग",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "hotspot": {
+      "en": {
+        "word": "hotspot",
+        "meaning": "an area with high activity or danger"
+      },
+      "np": {
+        "word": "उच्च गतिविधि वा खतरा भएको क्षेत्र",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "purifier": {
+      "en": {
+        "word": "purifier",
+        "meaning": "a device or a substance that removes polluting particles"
+      },
+      "np": {
+        "word": "शुद्ध गर्ने",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "regulate": {
+      "en": {
+        "word": "regulate",
+        "meaning": "control and create balance"
+      },
+      "np": {
+        "word": "नियंत्रण गर्नु",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "mitigate": {
+      "en": {
+        "word": "mitigate",
+        "meaning": "reduce"
+      },
+      "np": {
+        "word": "कम गर्नु",
+        "meaning": ""
+      },
+      "image": ""
     }
+  },
+  "np": {}
 }
