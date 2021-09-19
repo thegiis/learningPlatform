@@ -1,88 +1,156 @@
 {
-    "questions": [{
+    "questions": [
+      {
         "id": "q001",
         "type": "MCQ",
         "instruction": {
-            "text": "Drag the correct option",
-            "highlight": null
+          "text": "Drag the correct option",
+          "highlight": null
         },
-        "question": { "text": "During respiration, a living thing takes in oxygen from the air and gives out _____.", "shape": "fill_blank", "type": "text" },
+        "question": {
+          "text": "During respiration, a living thing takes in oxygen from the air and gives out _____.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
         "options": [
-            { "name": "carbon dioxide", "isCorrect": true },
-            { "name": "carbon monoxide", "isCorrect": false },
-            { "name": "nitrogen dioxide", "isCorrect": false },
-            { "name": "sulfur dioxide", "isCorrect": false }
+          { "name": "carbon dioxide", "isCorrect": true },
+          { "name": "carbon monoxide", "isCorrect": false },
+          { "name": "nitrogen dioxide", "isCorrect": false },
+          { "name": "sulfur dioxide", "isCorrect": false }
         ]
-    }, {
+      },
+      {
         "id": "q002",
         "type": "MCQ",
         "instruction": {
-            "text": "Drag the correct option",
-            "highlight": null
+          "text": "Drag the correct option",
+          "highlight": null
         },
-        "question": { "text": "Carbon dioxide contributes to air pollution in its role in the _____.", "shape": "fill_blank", "type": "text" },
+        "question": {
+          "text": "Carbon dioxide contributes to air pollution in its role in the _____.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
         "options": [
-            { "name": "Ozone Depletion", "isCorrect": false },
-            { "name": "Greenhouse effect", "isCorrect": true },
-            { "name": "Acid Rain", "isCorrect": false },
-            { "name": "Nuclear Radiation", "isCorrect": false }
+          { "name": "Ozone Depletion", "isCorrect": false },
+          { "name": "Greenhouse effect", "isCorrect": true },
+          { "name": "Acid Rain", "isCorrect": false },
+          { "name": "Nuclear Radiation", "isCorrect": false }
         ]
-    }, {
+      },
+      {
         "id": "q003",
         "type": "MCQ",
         "instruction": {
-            "text": "Drag the correct option",
-            "highlight": null
+          "text": "Drag the correct option",
+          "highlight": null
         },
-        "question": { "text": "_____ air pollution is caused by burning solid fuel sources – such as firewood, crop waste, and dung – for cooking and heating.", "shape": "fill_blank", "type": "text" },
+        "question": {
+          "text": "_____ air pollution is caused by burning solid fuel sources – such as firewood, crop waste, and dung – for cooking and heating.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
         "options": [
-            { "name": "Indoor", "isCorrect": true },
-            { "name": "Outdoor", "isCorrect": false },
-            { "name": "Natural", "isCorrect": false },
-            { "name": "Oceanic", "isCorrect": false }
+          { "name": "Indoor", "isCorrect": true },
+          { "name": "Outdoor", "isCorrect": false },
+          { "name": "Natural", "isCorrect": false },
+          { "name": "Oceanic", "isCorrect": false }
         ]
-    }, {
+      },
+      {
         "id": "q004",
         "type": "MCQ",
         "instruction": {
-            "text": "Drag the correct option",
-            "highlight": null
+          "text": "Drag the correct option",
+          "highlight": null
         },
-        "question": { "text": "Aboveground plant parts generally act as _____ of pollutants.", "shape": "fill_blank", "type": "text" },
+        "question": {
+          "text": "Plant leaves act as _____ of pollutants.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
         "options": [
-            { "name": "emitters", "isCorrect": false },
-            { "name": "absorbers", "isCorrect": true },
-            { "name": "transformers", "isCorrect": false },
-            { "name": "dividers", "isCorrect": false }
+          { "name": "emitters", "isCorrect": false },
+          { "name": "absorbers", "isCorrect": true },
+          { "name": "transformers", "isCorrect": false },
+          { "name": "dividers", "isCorrect": false }
         ]
-    }, {
+      },
+      {
         "id": "q005",
         "type": "MCQ",
         "instruction": {
-            "text": "Drag the correct option",
-            "highlight": null
+          "text": "Drag the correct option",
+          "highlight": null
         },
-        "question": { "text": "Indoor air pollution is mostly suffered by people living in _____ countries.", "shape": "fill_blank", "type": "text" },
+        "question": {
+          "text": "Indoor air pollution is mostly suffered by people living in _____ countries.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
         "options": [
-            { "name": "Developed", "isCorrect": false },
-            { "name": "Developing", "isCorrect": true },
-            { "name": "Warm", "isCorrect": false },
-            { "name": "Cold", "isCorrect": false }
+          { "name": "Developed", "isCorrect": false },
+          { "name": "Developing", "isCorrect": true },
+          { "name": "Warm", "isCorrect": false },
+          { "name": "Cold", "isCorrect": false }
         ]
-    }, {
+      },
+      {
         "id": "q006",
         "type": "MCQ",
         "instruction": {
-            "text": "Drag the correct option",
-            "highlight": null
+          "text": "Drag the correct option",
+          "highlight": null
         },
-        "question": { "text": "According to the IQ index, 27 out of 30 most polluted cities lie in _____.", "shape": "fill_blank", "type": "text" },
+        "question": {
+          "text": "According to the IQ index, 27 out of 30 most polluted cities lie in _____.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
         "options": [
-            { "name": "India", "isCorrect": false },
-            { "name": "China", "isCorrect": false },
-            { "name": "South Asia", "isCorrect": true },
-            { "name": "South East Asia", "isCorrect": false }
+          { "name": "India", "isCorrect": false },
+          { "name": "China", "isCorrect": false },
+          { "name": "South Asia", "isCorrect": true },
+          { "name": "South East Asia", "isCorrect": false }
         ]
-    }]
+      },
+      {
+        "id": "q007",
+        "type": "MCQ",
+        "instruction": {
+          "text": "Drag the correct option",
+          "highlight": null
+        },
+        "question": {
+          "text": "_____ of water during photosynthesis in plants can help to reduce air temperatures.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
+        "options": [
+          { "name": "Sublimation", "isCorrect": false },
+          { "name": "Precipitation", "isCorrect": false },
+          { "name": "Transpiration", "isCorrect": true },
+          { "name": "Condensation", "isCorrect": false }
+        ]
+      },{
+        "id": "q008",
+        "type": "MCQ",
+        "instruction": {
+          "text": "Drag the correct option",
+          "highlight": null
+        },
+        "question": {
+          "text": "Plants can serve as a barrier to the movement of soil dust, thus _____ the effects of dust storms.",
+          "shape": "fill_blank",
+          "type": "text"
+        },
+        "options": [
+          { "name": "producing", "isCorrect": false },
+          { "name": "transferring", "isCorrect": false },
+          { "name": "adding", "isCorrect": false },
+          { "name": "reducing", "isCorrect": true }
+        ]
+      }
+    ]
 
 }
