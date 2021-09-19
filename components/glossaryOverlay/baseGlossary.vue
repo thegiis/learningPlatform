@@ -45,7 +45,7 @@
             :class="$style.wordItem"
             @click="setCurrentWord(word)"
           >
-            {{ getWordTitle(word) }}
+            <p :class="$style.glossWord">{{ getWordTitle(word) }}</p>
           </div>
         </div>
 
@@ -203,7 +203,9 @@ export default {
 };
 </script>
 
-<style module>
+<style module lang="scss">
+@import "@/assets/styles/config";
+
 .glossaryContainer {
   z-index: 1600;
   position: fixed;
@@ -234,7 +236,7 @@ export default {
   border: 1px solid black;
   border-radius: 1rem;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 .closeBtn {
   position: absolute;
@@ -262,6 +264,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .letterSearch {
   padding: 0 0.25rem;
@@ -284,15 +287,18 @@ export default {
 }
 .wordList {
   margin-right: 1rem;
-  min-width: 300px;
+  min-width: 150px;
+  @include media-query("sm") {
+    min-width: 225px;
+  }
 }
 .wordItem {
-  padding: 0.5rem;
+  padding: 0.5rem 1em;
   background-color: var(--green-secondary);
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   border: 2px solid var(--green-secondary);
   margin: 0.25rem 0rem;
   cursor: pointer;
@@ -324,5 +330,6 @@ export default {
 }
 .glossWord {
   color: white;
+  font-weight: bold;
 }
 </style>

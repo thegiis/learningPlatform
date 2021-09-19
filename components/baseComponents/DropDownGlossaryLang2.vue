@@ -88,16 +88,21 @@ export default {
 }
 </style>
 <style module>
-.translationContainer{
+.translationContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1em;
 }
-.translationLabel{
+.translationLabel {
   margin-right: 1rem;
+  line-height: 1;
+  padding-bottom: 0.35em;
 }
-.customSelect select, .customSelect select:hover, .customSelect select:active{
+.customSelect select,
+.customSelect select:hover,
+.customSelect select:active {
   border: 0px;
   border-color: transparent;
   box-shadow: none;
