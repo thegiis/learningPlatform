@@ -24,7 +24,9 @@
           @change="checkDrop"
         >
           <div>
-            {{ question.text }}
+            <p>
+              {{ question.text }}
+            </p>
           </div>
           <div
             class="selectedOption"

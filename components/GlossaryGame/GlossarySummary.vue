@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="summaryContainer">
     <div :class="$style.topSection">
       <p :class="$style.scoreIndicator">
-        <span :class="$style.scoreIndicatorText">Score</span>
+        <span :class="$style.scoreIndicatorText">SCORE</span>
         <span :class="$style.currentScore">{{ scoreDisplay }}</span>
       </p>
       <div :class="$style.dotsContainer">
@@ -21,14 +21,14 @@
       </div>
 
       <p :class="$style.questionIdx">
-        <span :class="$style.questionIdxText">Question</span>
+        <span :class="$style.questionIdxText">QUESTION</span>
         <span :class="$style.currentIdx">{{ questionIdx + 1 }}</span>
       </p>
     </div>
     <div :class="$style.summarySection">
-      <h1 class="quesInstruction" :class="instruction.class">
+      <h4 class="quesInstruction lesson" :class="instruction.class">
         {{ instruction.text }}
-      </h1>
+      </h4>
 
       <div class="questionContainer">
         <div class="questionStructure" :class="getShape(question.shape)">
@@ -59,17 +59,33 @@
           </div>
         </div>
       </div>
-
-      <div :class="$style.nextBtn" ref="nextButton" @click="goNext()">
-        <i class="fas fa-arrow-right" :class="$style.centeredArrow"></i>
-      </div>
-
-      <div :class="$style.prevBtn" ref="prevButton" @click="goPrev()">
-        <i class="fas fa-arrow-left" :class="$style.centeredArrow"></i>
+      <div class="wrapper split-pair width-100">
+        <div
+          :class="$style.prevBtn"
+          class="button is-primary is-uppercase"
+          ref="prevButton"
+          @click="goPrev()"
+        >
+          <span>PREVIOUS</span>
+          <span class="leftArrow">
+            <i class="far fa-arrow-alt-circle-left"></i>
+          </span>
+        </div>
+        <div
+          :class="$style.nextBtn"
+          class="button is-primary is-uppercase"
+          ref="nextButton"
+          @click="goNext()"
+        >
+          <span>NEXT</span>
+          <span class="rightArrow">
+            <i class="far fa-arrow-alt-circle-right"></i>
+          </span>
+        </div>
       </div>
 
       <div :class="$style.playAgain" @click="playAgain()">
-        <p>Play Again</p>
+        <p>PLAY AGAIN</p>
       </div>
     </div>
   </div>
@@ -106,7 +122,7 @@ export default {
   mounted() {
     // console.log(this.correctAnswers);
     // console.log(this.userAnswers);
-    console.log(this.$refs)
+    console.log(this.$refs);
     this.checkNavigation();
   },
   computed: {
@@ -154,16 +170,16 @@ export default {
     },
     checkUserAns(isCorrect, val) {
       // return false if answer is correct or answered value is correct
-      const userAns = this.userAnswers[this.questionIdx]
-      const correctAns = this.correctAnswers[this.questionIdx]
+      const userAns = this.userAnswers[this.questionIdx];
+      const correctAns = this.correctAnswers[this.questionIdx];
       if (isCorrect) {
         return false;
-      } else if (val == userAns){
-        return true
+      } else if (val == userAns) {
+        return true;
       }
       return false;
     },
-    jumpTo(idx){
+    jumpTo(idx) {
       this.questionIdx = idx;
       this.checkNavigation();
     },
@@ -181,17 +197,17 @@ export default {
       if (this.questionIdx == 0) {
         prevBtn.style.display = "none";
       } else {
-        prevBtn.style.display = "block";
+        prevBtn.style.display = "inline-flex";
       }
       if (this.questionIdx == this.totalQuestions - 1) {
         nextBtn.style.display = "none";
       } else {
-        nextBtn.style.display = "block";
+        nextBtn.style.display = "inline-flex";
       }
     },
-    playAgain(){
-      this.$emit("repeat", true)
-    }
+    playAgain() {
+      this.$emit("repeat", true);
+    },
   },
 };
 </script>
@@ -234,6 +250,7 @@ export default {
   display: inline-block;
 }
 .ansDot {
+  border: 2px solid var(--green-secondary);
   display: inline-block;
   position: relative;
   width: 1.5rem;
@@ -256,10 +273,11 @@ export default {
   justify-content: center;
 }
 .correctDot {
-  background-color: lime;
+  background-color: white;
 }
 .incorrectDot {
-  background-color: red;
+  background-color: white;
+  border-color: red;
 }
 .summarySection {
   display: flex;
@@ -269,30 +287,12 @@ export default {
 
 .nextBtn,
 .prevBtn {
-  position: absolute;
-  cursor: pointer;
-  z-index: 50;
-  border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
-  background-color: navy;
-  color: white;
-  transition: 0.3s;
+  color: var(--green-secondary);
 }
 .nextBtn:hover,
 .prevBtn:hover {
   opacity: 0.8;
   transform: translateY(-50%) scale(1.1);
-}
-.nextBtn {
-  right: 0%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.prevBtn {
-  left: 0%;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .centeredArrow {
@@ -302,20 +302,17 @@ export default {
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
 }
-.playAgain{
+.playAgain {
   position: absolute;
   cursor: pointer;
-  bottom: 5%;
-  right: 5%;
-  z-index: 50;
+  bottom: -3em;
   border-radius: 1rem;
   padding: 0.5rem 1.5rem;
-  border: 2px solid lightseagreen;
-  color: navy;
+  border: 2px solid var(--green-secondary);
   font-size: 1.5rem;
   transition: 0.3s;
 }
-.playAgain:hover{
+.playAgain:hover {
   background-color: lightsteelblue;
   color: white;
 }
@@ -323,10 +320,7 @@ export default {
 
 <style scoped>
 .quesInstruction {
-  font-size: 2rem;
-  margin: 0.5rem 0;
-  color: #1e4d63;
-  text-align: center;
+  color: var(--green-secondary);
 }
 .questionStructure {
   position: relative;
@@ -336,6 +330,7 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-radius: 10px;
 }
 .circle-shape {
   width: 10rem;
@@ -346,6 +341,7 @@ export default {
   width: 500px;
   height: auto;
   padding: 30px 20px;
+  margin: 1.2em 0 0 0;
 }
 .optionContainer {
   position: relative;
@@ -383,5 +379,29 @@ export default {
 }
 .incorrectCheckIcon {
   background-color: red;
+}
+.summaryContainer {
+  height: 500px;
+  width: 566px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+.fa-times {
+  color: red;
+}
+p {
+  font-weight: bold;
+}
+.width-100 {
+  width: 100%;
+  position: absolute;
+  bottom: 1em;
+}
+.leftArrow,
+.rightArrow {
+  padding-left: 0.5rem;
+  padding-top: 0.1rem;
 }
 </style>
