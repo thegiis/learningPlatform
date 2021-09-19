@@ -93,7 +93,6 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1em;
 }
 .translationLabel {
   margin-right: 1rem;

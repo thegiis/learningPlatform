@@ -120,6 +120,11 @@ export default {
   padding-left: 0rem;
   padding-right: 0rem;
 }
+@media screen and (max-width: 1023px) {
+  .divider {
+    display: none;
+  }
+}
 </style>
 <style scoped>
 a.nuxt-link-exact-active {

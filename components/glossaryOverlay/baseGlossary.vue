@@ -48,15 +48,16 @@
             <p :class="$style.glossWord">{{ getWordTitle(word) }}</p>
           </div>
         </div>
+        <div :class="$style.verticalRule" v-if="currentWord">&nbsp;</div>
 
         <div :class="$style.meaningSection" v-if="currentWord">
           <div :class="$style.meaningItem">
             <div>
-              <h2 :class="$style.meaningTitle">{{ getBaseWord }}</h2>
+              <p :class="$style.meaningWord">{{ getBaseWord }}</p>
               <p>{{ getMeaning }}</p>
             </div>
             <div v-if="!isGlossaryLangSame">
-              <p>{{ getTranslatedWord }}</p>
+              <p :class="$style.meaningWord">{{ getTranslatedWord }}</p>
               <p>{{ getMeaningTranslated }}</p>
             </div>
           </div>
@@ -229,7 +230,7 @@ export default {
 .glossaryModal {
   position: relative;
   z-index: 10;
-  padding: 2rem;
+  padding: 2rem 2rem 0;
   height: calc(100vh - 100px);
   margin-top: 50px;
   background-color: white;
@@ -272,7 +273,7 @@ export default {
   cursor: pointer;
 }
 .activeLetterSearch {
-  color: darkcyan;
+  color: var(--green-secondary);
 }
 .letterSearch:hover {
   color: blueviolet;
@@ -282,7 +283,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 1rem 0;
+  padding: 1.4rem 0 0;
   overflow-y: auto;
 }
 .wordList {
@@ -307,12 +308,11 @@ export default {
   filter: brightness(125%);
 }
 .meaningSection {
-  margin: 1rem;
   width: 100%;
+  margin-left: 1rem;
 }
 .meaningItem {
-  padding: 0.5rem;
-  border: 1px solid black;
+  padding: 0.5rem 0.5rem 0.5rem 0rem;
 }
 .meaningTitle {
   font-size: 1.3rem;
@@ -325,11 +325,20 @@ export default {
   padding-right: 0em;
 }
 .hardRule {
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   background-color: black;
 }
 .glossWord {
   color: white;
   font-weight: bold;
+}
+.meaningWord {
+  font-weight: bold;
+}
+.verticalRule {
+  width: 1px;
+  background-color: gray;
+  margin-top: -25px;
+  height: calc(100vh - 300px);
 }
 </style>
