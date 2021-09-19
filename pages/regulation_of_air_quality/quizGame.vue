@@ -12,6 +12,8 @@
           :answers="answers"
           :key="glossaryScore"
           v-if="!isLastPage"
+          :current="currentQuestion"
+          :total="totalQuestions"
         />
         <GlossarySummary
           :answers="getAnswers"

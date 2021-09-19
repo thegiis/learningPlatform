@@ -375,4 +375,7 @@ export default {
   padding-left: 0.5rem;
   padding-top: 0.1rem;
 }
+p {
+  font-weight: bold;
+}
 </style>

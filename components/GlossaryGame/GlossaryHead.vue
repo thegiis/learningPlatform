@@ -3,7 +3,7 @@
     <GlossaryScore :class="$style.scoreSection" :answers="answers" />
     <div :class="$style.questionIndicator">
       <p :class="$style.questionIndicatorText">QUESTION</p>
-      <p :class="$style.questionLeft">{{ remainingQuestions }}</p>
+      <p :class="$style.questionLeft">{{ current + 1 }} / {{ total }}</p>
     </div>
   </div>
 </template>
@@ -19,6 +19,14 @@ export default {
       type: Array,
       required: true,
     },
+    current: {
+      type: Number,
+      required: true,
+    },
+    total: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     remainingQuestions() {
@@ -31,8 +39,6 @@ export default {
 <style module>
 .glossaryHeader {
   width: 100%;
-  display: flex;
-  border-bottom: 2px solid darkgray;
 }
 .scoreSection {
   width: 85%;
@@ -47,7 +53,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-left: 2px solid darkgray;
 }
 .questionIndicatorText {
   color: gray;
@@ -59,5 +64,10 @@ export default {
   margin: 0.5rem;
   font-weight: bold;
   font-size: 1.25rem;
+}
+</style>
+<style scoped>
+p {
+  margin: 0;
 }
 </style>
