@@ -3,6 +3,14 @@
     <h1 class="dragdropTitle" :class="instruction.class">
       {{ instruction.text }}
     </h1>
+    <div class="instructions">
+      <p>
+        Please select five plants pollinated by each of these animals and drop
+        them in the corresponding box. Please note that some plants are
+        pollinated by only a specific animal and some plants can be pollinated
+        by multiple animals.
+      </p>
+    </div>
 
     <div class="dragdropAnsDiv">
       <div v-for="(dropContainer, idx) in dropList" :key="idx" class="dropDiv">
@@ -26,6 +34,14 @@
             :key="element.id"
           >
             {{ element.name }}
+          </div>
+          <div
+            class="card dndItem"
+            v-for="index in 5 - (ansList[idx] ? ansList[idx].length : 0)"
+            :key="index + 1000"
+            style="color: white"
+          >
+            A
           </div>
         </draggable>
       </div>
@@ -350,9 +366,13 @@ export default {
 .dropContainer {
   position: relative;
   background-color: lightsalmon;
-  min-height: 200px;
+  height: 234px;
   width: 100%;
   cursor: pointer;
+  padding: 0.25em;
+  border: 1px solid var(--green-primary);
+  border-radius: 4px;
+  overflow: hidden;
 }
 .dndSubmitBtn {
   width: auto;
@@ -375,5 +395,16 @@ export default {
 }
 .incorrectDrop {
   background-color: red;
+}
+.instructions {
+  border: 1px solid var(--green-secondary);
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1em;
+}
+.button.is-primary:focus,
+.button.is-primary.is-focused {
+  color: black;
+  border-color: var(--green-secondary);
 }
 </style>
