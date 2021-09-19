@@ -48,13 +48,13 @@
     },
     {
       "pollination": {
-        "pages": ["", "page1", "quiz", "quiz2"],
+        "pages": ["", "page1", "page2", "quiz2"],
         "en": {
           "title": "Pollination",
           "pageNames": [
             "index___eqsXc_aefKI",
-            "Parts of a Flower",
-            "Test Time",
+            "Pollination",
+            "We need Pollinators",
             "Drag and Drop"
           ]
         },
@@ -62,8 +62,8 @@
           "title": "परागकण",
           "pageNames": [
             "index___eqsXc_aefKI",
-            "फूलका विभिन्‍न भागहरू",
-            "परिक्षण समय",
+            "Pollination",
+            "We need Pollinators",
             "Drag and Drop"
           ]
         }
