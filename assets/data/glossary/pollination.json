@@ -1,28 +1,149 @@
 {
-    "en": {
-        "reproductive organ": {
-            "en": {
-                "word": "reproductive organ",
-                "meaning": "some meaning"
-            },
-            "np": {
-                "word": "",
-                "meaning": "प्रजनन अङ्ग"
-            },
-            "image": ""
-        }
+  "en": {
+    "reproductive organ": {
+      "en": {
+        "word": "reproductive organ",
+        "meaning": "some meaning"
+      },
+      "np": {
+        "word": "",
+        "meaning": "प्रजनन अङ्ग"
+      },
+      "image": ""
     },
-    "np": {
-        "प्रजनन": {
-            "en": {
-                "word": "Reproduction",
-                "meaning": ""
-            },
-            "np": {
-                "word": "प्रजनन",
-                "meaning": "सन्तान उत्पादन गर्नु"
-            },
-            "image": ""
-        }
+    "Fertilize": {
+      "en": {
+        "word": "Fertilize",
+        "meaning": "combine make and female cell to produce new seed or baby"
+      },
+      "np": {
+        "word": "गर्भाधान",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Nectar": {
+      "en": {
+        "word": "Nectar",
+        "meaning": "sweet liquid in the middle of a flower"
+      },
+      "np": {
+        "word": "फूलको गुलियो रस",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "species": {
+      "en": {
+        "word": "species",
+        "meaning": "a group of closely related living things that can reproduce with each other"
+      },
+      "np": {
+        "word": "प्रजाति",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "abdomen": {
+      "en": {
+        "word": "abdomen",
+        "meaning": "provision of fresh air inside the room"
+      },
+      "np": {
+        "word": "हावा संचार",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "evolve": {
+      "en": {
+        "word": "evolve",
+        "meaning": "develop gradually from earlier forms to more advanced forms"
+      },
+      "np": {
+        "word": "विकसित हुनु",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Extinction": {
+      "en": {
+        "word": "Extinction",
+        "meaning": "dying out and complete disappearance of species"
+      },
+      "np": {
+        "word": "समाप्ति",
+        "meaning": "विलुप्त हुनु"
+      },
+      "image": ""
+    },
+    "Diverse": {
+      "en": {
+        "word": "Diverse",
+        "meaning": "showing a great deal of variety"
+      },
+      "np": {
+        "word": "विविध",
+        "meaning": "धेरै थरिको"
+      },
+      "image": ""
+    },
+    "Habitat": {
+      "en": {
+        "word": "Habitat",
+        "meaning": "natural home or environment of an animal or plant"
+      },
+      "np": {
+        "word": "बासस्थान",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Accumulate": {
+      "en": {
+        "word": "Accumulate",
+        "meaning": "gather together"
+      },
+      "np": {
+        "word": "जम्मा हुनु",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Ecosystem": {
+      "en": {
+        "word": "Ecosystem",
+        "meaning": "a system that includes all living organisms in an area as well as its physical environment functioning together as a unit"
+      },
+      "np": {
+        "word": "पारितंत्र",
+        "meaning": ""
+      },
+      "image": ""
+    },
+    "Food Chain": {
+      "en": {
+        "word": "Food Chain",
+        "meaning": "an order in which organisms, or living things, depend on each other for food"
+      },
+      "np": {
+        "word": "खाद्य श्रृंखला",
+        "meaning": ""
+      },
+      "image": ""
     }
+  },
+  "np": {
+    "प्रजनन": {
+      "en": {
+        "word": "Reproduction",
+        "meaning": ""
+      },
+      "np": {
+        "word": "प्रजनन",
+        "meaning": "सन्तान उत्पादन गर्नु"
+      },
+      "image": ""
+    }
+  }
 }

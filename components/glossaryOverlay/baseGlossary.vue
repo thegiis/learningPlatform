@@ -73,7 +73,7 @@ import companionship from "@/assets/data/glossary/companionship.json";
 import air_quality from "@/assets/data/glossary/regulation_of_air_quality.json";
 import DropDownGlossaryLang from "@/components/baseComponents/DropDownGlossaryLang2.vue";
 
-const chapterData = [air_quality];
+const chapterData = [air_quality, pollination];
 
 export default {
   components: {
