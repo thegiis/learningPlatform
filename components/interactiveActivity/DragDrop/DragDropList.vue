@@ -20,6 +20,7 @@
         @answer="handleAnswer"
         @goNext="handleNext"
         :key="componentKey"
+        :answerNums="answerNums"
       />
     </div>
     <div :class="$style.completedMessage" v-else>
@@ -56,6 +57,10 @@ export default {
     instructions: {
       type: String,
       required: false,
+    },
+    answerNums: {
+      type: Number,
+      required: true,
     },
   },
   data() {

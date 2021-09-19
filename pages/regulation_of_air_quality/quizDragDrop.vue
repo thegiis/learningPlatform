@@ -8,6 +8,7 @@
             :instructionClass="$style.instruction"
             :questionClass="$style.questionClass"
             :dropClasses="[$style.redDrop, $style.blueDrop]"
+            :answerNums="answerNums"
           />
         </section>
       </div>
@@ -40,6 +41,7 @@ export default {
         data[this.$i18n.locale]["title"],
         data[this.$i18n.locale]["pageNames"][1],
       ],
+      answerNums: 2,
     };
   },
   computed: {

@@ -19,7 +19,7 @@
           :ref="dropContainer.name"
           :id="'drop-' + dropContainer.name"
           class="dropContainer"
-          :class="dropContainer.class"
+          :class="allClasses(dropContainer.class)"
           group="activity"
           @change="checkDrop"
           :move="checkMove"
@@ -34,7 +34,7 @@
           </div>
           <div
             class="card dndItem"
-            v-for="index in 5 - (ansList[idx] ? ansList[idx].length : 0)"
+            v-for="index in maxNum(idx)"
             :key="index + 1000"
             style="color: white"
           >
@@ -113,6 +113,10 @@ export default {
       type: Array,
       required: true,
     },
+    answerNums: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
@@ -129,7 +133,6 @@ export default {
       usedIds: [],
       dropCount: 0,
       showQuestions: 7,
-      maxAnswers: 5,
     };
   },
   created() {
@@ -163,7 +166,6 @@ export default {
       });
       return hasDropped;
     },
-
     getSubmitClass() {
       if (this.correctlyAnswered == null) {
         return "";
@@ -181,7 +183,14 @@ export default {
       //   // this.correctlyDropped();
       // }
     },
-
+    allClasses(anotherClass) {
+      return 46.8 * this.answerNums + "px " + anotherClass;
+    },
+    maxNum(idx) {
+      return (
+        this.answerNums - (this.ansList[idx] ? this.ansList[idx].length : 0)
+      );
+    },
     checkMove(evt) {
       // reference https://github.com/SortableJS/Vue.Draggable/issues/347
       // const dropId = evt.to.id;
@@ -367,7 +376,6 @@ export default {
 .dropContainer {
   position: relative;
   background-color: lightsalmon;
-  height: 234px;
   width: 100%;
   cursor: pointer;
   padding: 0.25em;

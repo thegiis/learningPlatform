@@ -9,6 +9,7 @@
             :questionClass="$style.questionClass"
             :dropClasses="[$style.redDrop, $style.blueDrop]"
             :instructions="instructions"
+            :answerNums="answerNums"
           />
         </section>
       </div>
@@ -47,6 +48,7 @@ export default {
       ],
       instructions:
         "Please select five plants pollinated by each of these animals and drop them in the corresponding box. Please note that some plants are pollinated by only a specific animal and some plants can be pollinated by multiple animals.",
+      answerNums: 5,
     };
   },
   computed: {
