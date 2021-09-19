@@ -5,9 +5,26 @@
       <div :class="$style.closeBtn" @click="closeGlossary()">
         <i class="fas fa-times"></i>
       </div>
-      <div :class="$style.titleBar">
-        <h1 class="title is-1" :class="$style.mainTitle">Glossary</h1>
+      <div class="split-pair">
+        <div></div>
         <DropDownGlossaryLang />
+      </div>
+      <div class="split-pair">
+        <h4 class="lesson" :class="$style.mainTitle">Glossary</h4>
+        <div class="panel-block" :class="$style.paddingRightZero">
+          <p class="control has-icons-left">
+            <input
+              class="input is-info"
+              :class="$style.rounded"
+              type="text"
+              placeholder="Search"
+              @input="handleSearch($event)"
+            />
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
+        </div>
       </div>
       <div :class="$style.albhapeticalSearch">
         <span
@@ -19,21 +36,7 @@
           {{ letter }}
         </span>
       </div>
-
-      <div class="panel-block">
-        <p class="control has-icons-left">
-          <input
-            class="input is-info"
-            type="text"
-            placeholder="Search"
-            @input="handleSearch($event)"
-          />
-          <span class="icon is-left">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </span>
-        </p>
-      </div>
-
+      <hr :class="$style.hardRule" />
       <section class="section" :class="$style.glossaryContent">
         <div :class="$style.wordList">
           <div
@@ -42,7 +45,7 @@
             :class="$style.wordItem"
             @click="setCurrentWord(word)"
           >
-            <h2 class="title is-6">{{ getWordTitle(word) }}</h2>
+            {{ getWordTitle(word) }}
           </div>
         </div>
 
@@ -141,7 +144,6 @@ export default {
       for (const [key, value] of Object.entries(this.display)) {
         words.push({ selector: key, desc: value });
       }
-      console.log(words)
       return words;
     },
     getWordTitle(word) {
@@ -153,8 +155,8 @@ export default {
       }
       return this.$style.letterSearch;
     },
-    setCurrentWord(word){
-      this.currentWord = word.desc
+    setCurrentWord(word) {
+      this.currentWord = word.desc;
     },
     filterWords(letter, idx) {
       this.activeLetterIdx = idx;
@@ -181,7 +183,7 @@ export default {
         }
         this.display = this.findAllWords();
         this.currentWord = this.display[Object.keys(this.display)[0]];
-        this.activeLetterIdx = null
+        this.activeLetterIdx = null;
       }
     },
     findAllWords() {
@@ -194,9 +196,9 @@ export default {
       }
       return output;
     },
-    closeGlossary(){
-      this.$emit('closeGlossary', true)
-    }
+    closeGlossary() {
+      this.$emit("closeGlossary", true);
+    },
   },
 };
 </script>
@@ -234,7 +236,7 @@ export default {
   width: 100%;
   overflow: hidden;
 }
-.closeBtn{
+.closeBtn {
   position: absolute;
   z-index: 10;
   font-size: 1.5rem;
@@ -242,7 +244,7 @@ export default {
   right: 2%;
   cursor: pointer;
 }
-.closeBtn:hover{
+.closeBtn:hover {
   color: red;
 }
 .titleBar {
@@ -259,7 +261,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .letterSearch {
   padding: 0 0.25rem;
@@ -286,32 +288,41 @@ export default {
 }
 .wordItem {
   padding: 0.5rem;
-  background-color: lightsteelblue;
+  background-color: var(--green-secondary);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
-  margin: 0.5rem 0rem;
+  border: 2px solid var(--green-secondary);
+  margin: 0.25rem 0rem;
   cursor: pointer;
 }
 .wordItem:hover {
   filter: brightness(125%);
 }
-.wordItem h2 {
-  text-transform: uppercase;
-}
 .meaningSection {
   margin: 1rem;
   width: 100%;
 }
-.meaningItem{
+.meaningItem {
   padding: 0.5rem;
   border: 1px solid black;
 }
-.meaningTitle{
-  text-transform: capitalize;
+.meaningTitle {
   font-size: 1.3rem;
   font-weight: bold;
+}
+.rounded {
+  border-radius: 20px;
+}
+.paddingRightZero {
+  padding-right: 0em;
+}
+.hardRule {
+  margin: 1rem 0;
+  background-color: black;
+}
+.glossWord {
+  color: white;
 }
 </style>
