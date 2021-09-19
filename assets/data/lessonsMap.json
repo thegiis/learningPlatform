@@ -1,141 +1,121 @@
 {
-    "lessons": [{
-        "food": {
-            "pages": [
-                "",
-                "page1",
-                "quiz",
-                "quiz2"
-            ],
-            "en": {
-                "title": "Food",
-                "pageNames": [
-                    "index___xFqecEtdGZ0",
-                    "Parts of a Flower",
-                    "Test Time",
-                    "Drag and Drop"
-                ]
-            },
-            "np": {
-                "title": "food",
-                "pageNames": [
-                    "index___xFqecEtdGZ0",
-                    "फूलका विभिन्‍न भागहरू",
-                    "परिक्षण समय",
-                    "Drag and Drop"
-                ]
-            }
+  "lessons": [
+    {
+      "food": {
+        "pages": ["", "page1", "quiz", "quiz2"],
+        "en": {
+          "title": "Food",
+          "pageNames": [
+            "index___xFqecEtdGZ0",
+            "Parts of a Flower",
+            "Test Time",
+            "Drag and Drop"
+          ]
+        },
+        "np": {
+          "title": "food",
+          "pageNames": [
+            "index___xFqecEtdGZ0",
+            "फूलका विभिन्‍न भागहरू",
+            "परिक्षण समय",
+            "Drag and Drop"
+          ]
         }
-    }, {
-        "inspiration_and_learning": {
-            "pages": [
-                "",
-                "page1",
-                "quiz",
-                "quiz2"
-            ],
-            "en": {
-                "title": "Inspiration & Learning",
-                "pageNames": [
-                    "index___5a_2T6Mo7-k",
-                    "Parts of a Flower",
-                    "Test Time",
-                    "Drag and Drop"
-                ]
-            },
-            "np": {
-                "title": "Inspiration & Learning",
-                "pageNames": [
-                    "index___5a_2T6Mo7-k",
-                    "फूलका विभिन्‍न भागहरू",
-                    "परिक्षण समय",
-                    "Drag and Drop"
-                ]
-            }
+      }
+    },
+    {
+      "inspiration_and_learning": {
+        "pages": ["", "page1", "quiz", "quiz2"],
+        "en": {
+          "title": "Inspiration & Learning",
+          "pageNames": [
+            "index___5a_2T6Mo7-k",
+            "Parts of a Flower",
+            "Test Time",
+            "Drag and Drop"
+          ]
+        },
+        "np": {
+          "title": "Inspiration & Learning",
+          "pageNames": [
+            "index___5a_2T6Mo7-k",
+            "फूलका विभिन्‍न भागहरू",
+            "परिक्षण समय",
+            "Drag and Drop"
+          ]
         }
-    }, {
-        "pollination": {
-            "pages": [
-                "",
-                "page1",
-                "quiz",
-                "quiz2"
-            ],
-            "en": {
-                "title": "Pollination",
-                "pageNames": [
-                    "index___eqsXc_aefKI",
-                    "Parts of a Flower",
-                    "Test Time",
-                    "Drag and Drop"
-                ]
-            },
-            "np": {
-                "title": "परागकण",
-                "pageNames": [
-                    "index___eqsXc_aefKI",
-                    "फूलका विभिन्‍न भागहरू",
-                    "परिक्षण समय",
-                    "Drag and Drop"
-                ]
-            }
+      }
+    },
+    {
+      "pollination": {
+        "pages": ["", "page1", "quiz", "quiz2"],
+        "en": {
+          "title": "Pollination",
+          "pageNames": [
+            "index___eqsXc_aefKI",
+            "Parts of a Flower",
+            "Test Time",
+            "Drag and Drop"
+          ]
+        },
+        "np": {
+          "title": "परागकण",
+          "pageNames": [
+            "index___eqsXc_aefKI",
+            "फूलका विभिन्‍न भागहरू",
+            "परिक्षण समय",
+            "Drag and Drop"
+          ]
         }
-    }, {
-        "regulation_of_air_quality": {
-            "pages": [
-                "",
-                "page1",
-                "page2",
-                "page3",
-                "quizGame"
-            ],
-            "en": {
-                "title": "Regulation of Air Quality",
-                "pageNames": [
-                    "index___5a_2T6Mo7-k",
-                    "Air Pollution",
-                    "Effects of Air Pollution",
-                    "Nature as regulators of Air Quality",
-                    "Quiz"
-                ]
-            },
-            "np": {
-                "title": "वायु गुणवत्ताको नियमन",
-                "pageNames": [
-                    "index___5a_2T6Mo7-k",
-                    "वायु प्रदूषण",
-                    "वायु प्रदूषण को प्रभाव",
-                    "प्रकृति वायु गुणवत्ताको नियामक",
-                    "अभ्यास"
-                ]
-            }
+      }
+    },
+    {
+      "regulation_of_air_quality": {
+        "pages": ["", "page1", "page2", "page3", "quizGame"],
+        "en": {
+          "title": "Regulation of Air Quality",
+          "pageNames": [
+            "index___5a_2T6Mo7-k",
+            "Air Pollution",
+            "Effects of Air Pollution",
+            "Nature as regulators of Air Quality",
+            "Quiz"
+          ]
+        },
+        "np": {
+          "title": "वायु गुणवत्ताको नियमन",
+          "pageNames": [
+            "index___5a_2T6Mo7-k",
+            "वायु प्रदूषण",
+            "वायु प्रदूषण को प्रभाव",
+            "प्रकृति वायु गुणवत्ताको नियामक",
+            "अभ्यास"
+          ]
         }
-    }, {
-        "companionship": {
-            "pages": [
-                "",
-                "page1",
-                "quiz",
-                "quiz2"
-            ],
-            "en": {
-                "title": "Companionship",
-                "pageNames": [
-                    "index___fiPaD8o6gt0",
-                    "Parts of a Flower",
-                    "Test Time",
-                    "Drag and Drop"
-                ]
-            },
-            "np": {
-                "title": "Companionship",
-                "pageNames": [
-                    "index___fiPaD8o6gt0",
-                    "फूलका विभिन्‍न भागहरू",
-                    "परिक्षण समय",
-                    "Drag and Drop"
-                ]
-            }
+      }
+    },
+    {
+      "companionship": {
+        "pages": ["", "page1", "quiz", "quiz2"],
+        "en": {
+          "title": "Companionship",
+          "pageNames": [
+            "index___fiPaD8o6gt0",
+            "Parts of a Flower",
+            "Test Time",
+            "Drag and Drop"
+          ]
+        },
+        "np": {
+          "title": "Companionship",
+          "pageNames": [
+            "index___fiPaD8o6gt0",
+            "फूलका विभिन्‍न भागहरू",
+            "परिक्षण समय",
+            "Drag and Drop"
+          ]
         }
-    }]
+      }
+    }
+  ]
 }
