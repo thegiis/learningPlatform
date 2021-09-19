@@ -1,14 +1,11 @@
 <template>
   <div class="dragdropquizWrapper">
-    <h1 class="dragdropTitle" :class="instruction.class">
+    <h4 class="lesson" :class="instruction.class">
       {{ instruction.text }}
-    </h1>
-    <div class="instructions">
+    </h4>
+    <div class="instructions" v-if="instructions">
       <p>
-        Please select five plants pollinated by each of these animals and drop
-        them in the corresponding box. Please note that some plants are
-        pollinated by only a specific animal and some plants can be pollinated
-        by multiple animals.
+        {{ instructions }}
       </p>
     </div>
 
@@ -101,6 +98,10 @@ export default {
     instruction: {
       type: Object,
       required: true,
+    },
+    instructions: {
+      type: String,
+      required: false,
     },
     itemList: {
       // for list of items to be dropped
@@ -406,5 +407,8 @@ export default {
 .button.is-primary.is-focused {
   color: black;
   border-color: var(--green-secondary);
+}
+h4.lesson {
+  color: var(--green-secondary);
 }
 </style>

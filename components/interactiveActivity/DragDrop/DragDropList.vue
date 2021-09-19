@@ -14,6 +14,7 @@
     <div :class="$style.questionContainer" v-if="!completed">
       <DragDrop
         :instruction="instruction"
+        :instructions="instructions"
         :itemList="questions"
         :dropList="dropList"
         @answer="handleAnswer"
@@ -50,6 +51,10 @@ export default {
     },
     dropClasses: {
       type: Array,
+      required: false,
+    },
+    instructions: {
+      type: String,
       required: false,
     },
   },
