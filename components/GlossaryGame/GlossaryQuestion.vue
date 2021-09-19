@@ -1,70 +1,81 @@
 <template>
   <div class="dragdropGameWrapper">
-    <h1 class="dragdropInstruction" :class="instruction.class">
-      {{ instruction.text }}
-    </h1>
+    <div class="instruction">
+      <h4 class="lesson" :class="instruction.class">
+        {{ instruction.text }}
+      </h4>
 
-    <div class="questionContainer">
-      <div class="correctCheckIcon" ref="correctIcon">
-        <i class="fas fa-check"></i>
-      </div>
-      <div class="incorrectCheckIcon" ref="incorrectIcon">
-        <i class="fas fa-times"></i>
-      </div>
-      <draggable
-        :disabled="!enabled"
-        :list="dropAns"
-        class="questionStructure"
-        :class="getShape(question.shape)"
-        data-type="dropBox"
-        revertOnSpill="true,"
-        group="activity"
-        ref="questionList"
-        @change="checkDrop"
-      >
-        <div>
-          {{ question.text }}
+      <div class="questionContainer">
+        <div class="correctCheckIcon" ref="correctIcon">
+          <i class="fas fa-check"></i>
         </div>
-        <div
-          class="selectedOption"
-          :class="questionOutineClass"
-          v-for="element in dropAns"
-          :key="element.name"
+        <div class="incorrectCheckIcon" ref="incorrectIcon">
+          <i class="fas fa-times"></i>
+        </div>
+        <draggable
+          :disabled="!enabled"
+          :list="dropAns"
+          class="questionStructure"
+          :class="getShape(question.shape)"
+          data-type="dropBox"
+          revertOnSpill="true,"
+          group="activity"
+          ref="questionList"
+          @change="checkDrop"
         >
-          <p
-            v-if="checkFillQuestion(question.shape)"
-            v-html="fillBlanks(question.text, element.name)"
-          ></p>
-          <p v-else>{{ element.name }}</p>
-        </div>
-      </draggable>
-    </div>
-
-    <draggable
-      :disabled="!enabled"
-      v-for="(option, idx) in options"
-      revertOnSpill="true,"
-      data-type="option"
-      :key="idx"
-      :list="answers[idx]"
-      :ref="option.name"
-      class="optionContainer"
-      chosen-class="onDragClass"
-      drag-class="onDragging"
-      :class="getPosition(idx, option.class)"
-      group="activity"
-      @end="checkDrop"
-    >
-      <div
-        class="optionText"
-        v-for="element in answers[idx]"
-        :key="element.name"
-      >
-        <p>{{ element.name }}</p>
+          <div>
+            {{ question.text }}
+          </div>
+          <div
+            class="selectedOption"
+            :class="questionOutineClass"
+            v-for="element in dropAns"
+            :key="element.name"
+          >
+            <p
+              v-if="checkFillQuestion(question.shape)"
+              v-html="fillBlanks(question.text, element.name)"
+            ></p>
+            <p v-else>{{ element.name }}</p>
+          </div>
+        </draggable>
       </div>
-    </draggable>
-    <div class="nextBtn" ref="nextBtn" @click="goNext()">
-      <i class="fas fa-arrow-right centeredArrow"></i>
+
+      <div>
+        <draggable
+          :disabled="!enabled"
+          v-for="(option, idx) in options"
+          revertOnSpill="true,"
+          data-type="option"
+          :key="idx"
+          :list="answers[idx]"
+          :ref="option.name"
+          class="optionContainer"
+          chosen-class="onDragClass"
+          drag-class="onDragging"
+          :class="getPosition(idx, option.class)"
+          group="activity"
+          @end="checkDrop"
+        >
+          <div
+            class="optionText"
+            v-for="element in answers[idx]"
+            :key="element.name"
+          >
+            <p>{{ element.name }}</p>
+          </div>
+        </draggable>
+      </div>
+      <div
+        class="nextBtn button is-uppercase is-primary"
+        ref="nextBtn"
+        @click="goNext()"
+      >
+        <span>NEXT</span>
+        <span class="rightArrow">
+          <i class="far fa-arrow-alt-circle-right"></i>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -141,7 +152,7 @@ export default {
             this.questionOutineClass = "incorrect-ques-answer";
             this.$emit("answer", { result: false, val: this.dropAns[0].name });
           }
-          this.$refs["nextBtn"].style.display = "block";
+          this.$refs["nextBtn"].style.display = "inline-flex";
         }
       }
     },
@@ -193,7 +204,8 @@ export default {
       }
     },
     fillBlanks(question, option) {
-      const optHtml = '<span style="border-bottom: 1px solid black;">' + option + '</span>'
+      const optHtml =
+        '<span style="border-bottom: 1px solid black;">' + option + "</span>";
       return question.replace("_____", optHtml);
     },
   },
@@ -203,18 +215,20 @@ export default {
 <style scoped>
 .dragdropGameWrapper {
   display: flex;
-  padding: 0.5rem;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 500px;
   position: relative;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: white;
 }
 .dragdropInstruction {
   font-size: 2rem;
   margin: 0.5rem 0;
   color: #1e4d63;
-  text-align: center;
+  text-align: left;
 }
 .optionContainer {
   position: relative;
@@ -260,6 +274,7 @@ export default {
 }
 .questionContainer {
   position: relative;
+  margin: 1.2em 0;
 }
 .questionStructure {
   background-color: lightgray;
@@ -268,6 +283,7 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-radius: 10px;
 }
 .correctCheckIcon,
 .incorrectCheckIcon {
@@ -308,18 +324,10 @@ export default {
   padding: 30px 20px;
 }
 .nextBtn {
+  color: var(--green-secondary);
+  top: 200px;
+  left: 205px;
   display: none;
-  position: absolute;
-  cursor: pointer;
-  z-index: 50;
-  right: 0%;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
-  background-color: navy;
-  color: white;
 }
 .centeredArrow {
   position: absolute;
@@ -330,24 +338,24 @@ export default {
 }
 .position-1 {
   position: absolute;
-  right: 70%;
+  right: 5%;
   left: auto;
-  top: 40%;
+  top: 50%;
 }
 .position-2 {
   position: absolute;
-  right: 55%;
+  right: 51.75%;
   left: auto;
-  top: 65%;
+  top: 50%;
 }
 .position-3 {
   position: absolute;
-  left: 55%;
-  top: 45%;
+  left: 5%;
+  top: 50%;
 }
 .position-4 {
   position: absolute;
-  left: 70%;
+  left: 51.75%;
   top: 50%;
 }
 .correct-ques-answer {
@@ -355,5 +363,16 @@ export default {
 }
 .incorrect-ques-answer {
   background-color: lightpink;
+}
+.instruction {
+  width: 100%;
+  padding: 2em;
+}
+.lesson {
+  color: var(--green-secondary);
+}
+.rightArrow {
+  padding-left: 0.5rem;
+  padding-top: 0.1rem;
 }
 </style>

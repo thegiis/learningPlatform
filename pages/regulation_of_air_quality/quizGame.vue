@@ -1,24 +1,26 @@
 <template>
   <LessonIndex>
     <div class="wrapper" data-variant="more-padding">
-      <GlossaryHead
-        :answers="answers"
-        :key="glossaryScore"
-        v-if="!isLastPage"
-      />
-      <GlossaryQuestion
-        :questionItem="getQuestionItem"
-        @answer="handleAnswer"
-        @next="handleNext"
-        v-if="!isLastPage"
-      />
-      <GlossarySummary
-        :answers="getAnswers"
-        :questionList="questions"
-        :userAnswers="selectedAns"
-        v-if="isLastPage"
-        @repeat="playAgain()"
-      />
+      <div :class="$style.gameContainer">
+        <GlossaryQuestion
+          :questionItem="getQuestionItem"
+          @answer="handleAnswer"
+          @next="handleNext"
+          v-if="!isLastPage"
+        />
+        <GlossaryHead
+          :answers="answers"
+          :key="glossaryScore"
+          v-if="!isLastPage"
+        />
+        <GlossarySummary
+          :answers="getAnswers"
+          :questionList="questions"
+          :userAnswers="selectedAns"
+          v-if="isLastPage"
+          @repeat="playAgain()"
+        />
+      </div>
     </div>
   </LessonIndex>
 </template>
@@ -123,6 +125,9 @@ export default {
 .glossaryGameContainer {
   min-width: 800px;
   min-height: 600px;
+}
+.gameContainer {
+  display: flex;
 }
 </style>
 <style scoped>

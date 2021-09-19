@@ -1,12 +1,9 @@
 <template>
   <div :class="$style.glossaryHeader">
-    <GlossaryScore
-      :class="$style.scoreSection"
-      :answers="answers"
-    />
+    <GlossaryScore :class="$style.scoreSection" :answers="answers" />
     <div :class="$style.questionIndicator">
-      <p :class="$style.questionIndicatorText">Questions Left</p>
-      <p :class="$style.questionLeft">{{remainingQuestions}}</p>
+      <p :class="$style.questionIndicatorText">QUESTION</p>
+      <p :class="$style.questionLeft">{{ remainingQuestions }}</p>
     </div>
   </div>
 </template>
@@ -24,10 +21,10 @@ export default {
     },
   },
   computed: {
-      remainingQuestions() {
-        return this.answers.filter((x) => x == 0).length;
-      }
-  }
+    remainingQuestions() {
+      return this.answers.filter((x) => x == 0).length;
+    },
+  },
 };
 </script>
 

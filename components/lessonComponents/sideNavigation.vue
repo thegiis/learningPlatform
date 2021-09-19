@@ -195,7 +195,7 @@ export default {
 
 .expandContent {
   position: relative;
-  top: 61px;
+  top: 63px;
   transform: translateY(-50%);
   color: black;
   cursor: pointer;
