@@ -71,7 +71,7 @@
     },
     {
       "regulation_of_air_quality": {
-        "pages": ["", "page1", "page2", "page3", "quizGame"],
+        "pages": ["", "page1", "page2", "page3", "page4", "quizGame"],
         "en": {
           "title": "Regulation of Air Quality",
           "pageNames": [
@@ -79,6 +79,7 @@
             "Air Pollution",
             "Effects of Air Pollution",
             "Nature as regulators of Air Quality",
+            "Conserving nature for clean air and good health",
             "Quiz"
           ]
         },
@@ -89,6 +90,7 @@
             "वायु प्रदूषण",
             "वायु प्रदूषण को प्रभाव",
             "प्रकृति वायु गुणवत्ताको नियामक",
+            "Conserving nature for clean air and good health",
             "अभ्यास"
           ]
         }
