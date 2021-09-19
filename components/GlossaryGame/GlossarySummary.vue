@@ -60,27 +60,31 @@
         </div>
       </div>
       <div class="wrapper split-pair width-100">
-        <div
-          :class="$style.prevBtn"
-          class="button is-primary is-uppercase"
-          ref="prevButton"
-          @click="goPrev()"
-        >
-          <span>PREVIOUS</span>
-          <span class="leftArrow">
-            <i class="far fa-arrow-alt-circle-left"></i>
-          </span>
+        <div>
+          <div
+            :class="$style.prevBtn"
+            class="button is-primary is-uppercase"
+            ref="prevButton"
+            @click="goPrev()"
+          >
+            <span class="leftArrow">
+              <i class="far fa-arrow-alt-circle-left"></i>
+            </span>
+            <span>PREVIOUS</span>
+          </div>
         </div>
-        <div
-          :class="$style.nextBtn"
-          class="button is-primary is-uppercase"
-          ref="nextButton"
-          @click="goNext()"
-        >
-          <span>NEXT</span>
-          <span class="rightArrow">
-            <i class="far fa-arrow-alt-circle-right"></i>
-          </span>
+        <div>
+          <div
+            :class="$style.nextBtn"
+            class="button is-primary is-uppercase"
+            ref="nextButton"
+            @click="goNext()"
+          >
+            <span>NEXT</span>
+            <span class="rightArrow">
+              <i class="far fa-arrow-alt-circle-right"></i>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -289,11 +293,6 @@ export default {
 .prevBtn {
   color: var(--green-secondary);
 }
-.nextBtn:hover,
-.prevBtn:hover {
-  opacity: 0.8;
-  transform: translateY(-50%) scale(1.1);
-}
 
 .centeredArrow {
   position: absolute;
@@ -305,11 +304,14 @@ export default {
 .playAgain {
   position: absolute;
   cursor: pointer;
-  bottom: -3em;
-  border-radius: 1rem;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid var(--green-secondary);
-  font-size: 1.5rem;
+  bottom: -3.45em;
+  border-radius: 4px;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  border: 3px solid var(--green-secondary);
+  font-size: 1rem;
   transition: 0.3s;
 }
 .playAgain:hover {
@@ -374,11 +376,11 @@ export default {
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: green;
-  color: white;
+  background-color: white;
+  border: 2px solid var(--green-secondary);
 }
 .incorrectCheckIcon {
-  background-color: red;
+  background-color: white;
 }
 .summaryContainer {
   height: 500px;
@@ -399,7 +401,10 @@ p {
   position: absolute;
   bottom: 1em;
 }
-.leftArrow,
+.leftArrow {
+  padding-right: 0.5rem;
+  padding-top: 0.1rem;
+}
 .rightArrow {
   padding-left: 0.5rem;
   padding-top: 0.1rem;
