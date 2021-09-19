@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.glossaryHeader">
+  <div>
     <GlossaryScore :class="$style.scoreSection" :answers="answers" />
     <div :class="$style.questionIndicator">
       <p :class="$style.questionIndicatorText">QUESTION</p>
@@ -37,9 +37,6 @@ export default {
 </script>
 
 <style module>
-.glossaryHeader {
-  width: 100%;
-}
 .scoreSection {
   width: 85%;
   display: flex;

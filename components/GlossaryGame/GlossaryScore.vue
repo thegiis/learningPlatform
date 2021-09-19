@@ -1,9 +1,6 @@
 <template>
   <div :class="$style.scoreSection">
-    <p :class="$style.scoreIndicator">
-      <span :class="$style.scoreIndicatorText">Score</span>
-      <span :class="$style.currentScore">{{ scoreDisplay }}</span>
-    </p>
+    <p :class="$style.scoreIndicator">SCORE</p>
     <div :class="$style.progressDotsContainer">
       <span
         v-for="idx in totalQuestions"
@@ -71,6 +68,7 @@ export default {
   color: gray;
   font-size: 1rem;
   margin: 0.5rem;
+  text-align: center;
 }
 .currentScore {
   color: black;
@@ -80,6 +78,7 @@ export default {
 }
 .progressDotsContainer {
   display: flex;
+  flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: space-around;
@@ -89,13 +88,15 @@ export default {
   display: inline-block;
 }
 .progressDotCommon {
+  border: 2px solid var(--green-secondary);
   display: inline-block;
   position: relative;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   background-color: #888;
   border-radius: 50%;
   margin: 0.25rem;
+  background-color: transparent;
 }
 .correctDot {
   background-color: lime;

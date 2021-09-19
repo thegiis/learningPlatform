@@ -219,6 +219,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 500px;
+  width: 566px;
   position: relative;
   border: 1px solid gray;
   border-radius: 10px;
