@@ -13,8 +13,8 @@
       :class="$style.paddingTopBottom"
     >
       <div :class="$style.subHeading" class="flow" style="--flow-space: -0.5em">
-        <div>We're getting more</div>
-        <div>than what we know</div>
+        <div>Plants and animals</div>
+        <div>are part of nature, just like us</div>
       </div>
       <p :class="$style.byLine">
         Pick a Topic and watch how nature is an irreplaceable part of our
