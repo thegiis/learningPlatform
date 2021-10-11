@@ -10,14 +10,22 @@
         <img src="/img/trees-message.png" :class="$style.imgRight" />
       </div>
     </div>
-    <div class="green-secondary green-secondary-border">
+    <div class="green-secondary-border">
       <div
         class="wrapper split-pair"
-        :class="[$style.paddingTopBottom, $style.logosWidth]"
+        :class="[$style.paddingTopBottom, $style.logosWidth, $style.alignTop]"
       >
-        <img src="/img/GIIS.png" />
-        <img src="/img/NEA.png" />
-        <img src="/img/ipbes.png" />
+        <div>
+          <p :class="$style.byTitle">Developed By</p>
+          <img src="/img/GIIS.png" :class="$style.margins" />
+        </div>
+        <div>
+          <p :class="$style.byTitle">Financial Support</p>
+          <img src="/img/NEA.png" :class="$style.margins" />
+          <p :class="$style.disclaimer">
+            NEA is not responsible for the content of the website
+          </p>
+        </div>
       </div>
     </div>
   </footer>
@@ -51,5 +59,18 @@
 }
 .logosWidth {
   max-width: 50rem;
+}
+.byTitle {
+  font-size: 1.2rem;
+}
+.disclaimer {
+  font-size: 0.8rem;
+}
+.alignTop {
+  align-items: flex-start;
+}
+.margins {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 </style>
