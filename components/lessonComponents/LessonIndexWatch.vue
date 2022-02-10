@@ -4,6 +4,8 @@
       <YoutubeIframe
         :video-id="currentLessonLang.videoId"
         class="videoPlayer"
+        player-width="900"
+        player-height="506.25"
       />
     </div>
   </LessonIndex>
