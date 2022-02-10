@@ -5,7 +5,8 @@
     v-if="prevPage.type"
   >
     <span :class="$style.leftArrow"><i class="fas fa-angle-left"></i></span>
-    <span>{{ prevPage.type }}</span>
+    <span v-if="prevPage.type === currPage.type">PREVIOUS</span>
+    <span v-else>{{ prevPage.type }}</span>
   </nuxt-link>
 </template>
 
@@ -21,6 +22,12 @@ export default {
         prevPage = currentLessonLang.pages[currIdx - 1];
       }
       return prevPage;
+    },
+    currPage() {
+      const currentLessonLang = this.$store.state.lesson.currentLessonLang;
+      const currIdx = currentLessonLang.currentPage.id;
+
+      return currentLessonLang.pages[currIdx];
     },
   },
 };

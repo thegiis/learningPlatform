@@ -4,7 +4,8 @@
     class="button is-uppercase is-primary"
     v-if="nextPage.type"
   >
-    <span>{{ nextPage.type }}</span>
+    <span v-if="nextPage.type === currPage.type">NEXT</span>
+    <span v-else>{{ nextPage.type }}</span>
     <span :class="$style.rightArrow"><i class="fas fa-angle-right"></i></span>
   </nuxt-link>
 </template>
@@ -21,6 +22,12 @@ export default {
         nextPage = currentLessonLang.pages[currIdx + 1];
       }
       return nextPage;
+    },
+    currPage() {
+      const currentLessonLang = this.$store.state.lesson.currentLessonLang;
+      const currIdx = currentLessonLang.currentPage.id;
+
+      return currentLessonLang.pages[currIdx];
     },
   },
 };
