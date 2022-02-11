@@ -34,6 +34,8 @@
               {{ $t("chapters") }}
             </nuxt-link>
             <a href="#" class="navbar-item" :class="$style.divider">|</a>
+            <ChaptersDropdown class="navbar-item" />
+            <a href="#" class="navbar-item" :class="$style.divider">|</a>
             <a @click="openGlossary()" class="navbar-item">{{
               $t("glossary")
             }}</a>
@@ -49,10 +51,12 @@
 <script>
 import LangSwitch from "@/components/baseComponents/LangSwitch.vue";
 import GlossaryLangSwitch from "@/components/baseComponents/GlossaryLangSwitch.vue";
+import ChaptersDropdown from "@/components/baseComponents/ChaptersDropdown.vue";
 export default {
   components: {
     LangSwitch,
     GlossaryLangSwitch,
+    ChaptersDropdown,
   },
   computed: {
     lessons() {
