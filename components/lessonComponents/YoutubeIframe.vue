@@ -5,6 +5,7 @@
       frameborder="0"
       allowfullscreen="1"
       class="box-shadow-glow"
+      :class="youtubeSizing"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       title="YouTube video player"
       :width="playerWidth"
@@ -28,6 +29,10 @@ export default {
     playerHeight: {
       type: String,
       default: "360",
+    },
+    youtubeSizing: {
+      type: String,
+      default: "",
     },
   },
 };

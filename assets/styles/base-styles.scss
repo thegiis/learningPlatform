@@ -229,3 +229,11 @@ a.navbar-item:hover {
 .fas {
   color: var(--green-secondary);
 }
+// Sizings
+// iframe sizing for youtube
+.youtube-size-large {
+  max-width: 900px;
+  max-height: 506.25px;
+  width: 100vw;
+  height: 56.25vw;
+}
