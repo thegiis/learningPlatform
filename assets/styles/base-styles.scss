@@ -244,3 +244,34 @@ a.navbar-item:hover {
   width: 100vw;
   height: 56.25vw;
 }
+// Font styles
+.title2 {
+  font-size: 2rem;
+  text-align: left;
+  margin: 1rem 0;
+  color: #555;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: left;
+}
+.description p {
+  margin: 1rem 0;
+}
+
+.imgContainer {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+.imgContainer img {
+  position: relative;
+  margin: 0 1rem;
+  width: 100%;
+  max-width: 1280px;
+}

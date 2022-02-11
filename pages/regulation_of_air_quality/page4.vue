@@ -1,7 +1,7 @@
 <template>
   <LessonIndex>
     <div class="wrapper" data-variant="more-padding">
-      <div :class="$style.description">
+      <div class="description">
         <p>
           Trees play a crucial role to maintain clean air and improve human
           health. Living close to trees makes human beings healthier and
@@ -91,51 +91,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-.lesson {
-  padding: 2rem;
-  position: relative;
-}
-
-.title {
-  font-size: 2.25rem;
-  text-align: left;
-  margin: 1rem 0;
-  color: black;
-  text-decoration: underline;
-}
-.title2 {
-  font-size: 2rem;
-  text-align: left;
-  margin: 1rem 0;
-  color: #555;
-}
-
-.description {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  text-align: left;
-}
-.description p {
-  margin: 1rem 0;
-}
-
-.imgContainer {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 2rem;
-  width: 100%;
-}
-.imgContainer img {
-  position: relative;
-  margin: 0 1rem;
-  width: 100%;
-  max-width: 1280px;
-}
-.testClass {
-  color: red;
-}
-</style>
