@@ -23,7 +23,11 @@
           <h2 class="lesson" :class="$style.h2">Learn</h2>
           <div :class="$style.listContainer">
             <ol class="flow" :class="$style.list" style="--flow-space: 0.5rem">
-              <li v-for="(page, idx) in currentChapterLearnPages" :key="idx">
+              <li
+                v-for="(page, idx) in currentChapterLearnPages"
+                :key="idx"
+                class="font-secondary font-weight-bold"
+              >
                 <nuxt-link :to="{ name: page.i18nRoute }">
                   {{ page.name }}
                 </nuxt-link>
@@ -35,7 +39,11 @@
           <h2 class="lesson" :class="$style.h2">Quiz</h2>
           <div :class="$style.listContainer">
             <ol class="flow" :class="$style.list" style="--flow-space: 0.5rem">
-              <li v-for="(page, idx) in currentChapterQuizPages" :key="idx">
+              <li
+                v-for="(page, idx) in currentChapterQuizPages"
+                :key="idx"
+                class="font-secondary font-weight-bold"
+              >
                 <nuxt-link :to="{ name: page.i18nRoute }">
                   {{ page.name }}
                 </nuxt-link>
