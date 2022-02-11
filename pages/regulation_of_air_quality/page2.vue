@@ -14,11 +14,6 @@
         <BaseText :textdata="getText('p2text9')" :highlight="true" />
         <BaseText :textdata="getText('p2text10')" :highlight="true" />
       </div>
-
-      <div class="imgContainer">
-        <img src="@/assets/images/regulation_of_air_quality/img2.png" alt="" />
-      </div>
-
       <h2 class="title2">{{ getText("p2text11") }}</h2>
       <div class="description">
         <BaseText :textdata="getText('p2text12')" :highlight="true" />
