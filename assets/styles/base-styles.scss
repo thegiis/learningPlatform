@@ -30,8 +30,7 @@ picture {
 }
 
 .default-vocab-word {
-  color: var(--green-secondary);
-  border-bottom: 1px dotted var(--green-secondary);
+  text-decoration: underline;
   cursor: pointer;
   font-weight: bold;
 }
@@ -253,10 +252,10 @@ a.navbar-item:hover {
 }
 
 .description {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 2rem;
   text-align: left;
-  font-weight: bold;
+  color: #000;
 }
 .description p {
   margin: 1rem 0;
