@@ -1,8 +1,8 @@
 <template>
   <LessonIndex>
     <div class="wrapper" data-variant="more-padding">
-      <h2 :class="$style.title2">What is Pollination?</h2>
-      <div :class="$style.description">
+      <h2 class="title2">What is Pollination?</h2>
+      <div class="description">
         <p>
           Pollination is one of the most fascinating processes in our nature.
           Pollination is how flowering plants reproduce. To produce offspring, a
@@ -29,8 +29,8 @@
         width="640"
         alt=""
       />
-      <h2 :class="$style.title2">Plants and their pollinators</h2>
-      <div :class="$style.description">
+      <h2 class="title2">Plants and their pollinators</h2>
+      <div class="description">
         <p>
           When a mature plant is ready to reproduce, its buds swell and open
           into flowers. A pollinator visits a flower to eat nectar and pollen.
@@ -135,7 +135,7 @@
           width="640"
           alt=""
         />
-        <div :class="$style.description">
+        <div class="description">
           <p>
             Plants and pollinators evolved together side by side over millions
             of years. Plants developed many complex ways of attracting
@@ -203,53 +203,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-.lesson {
-  padding: 2rem;
-  /* background-color: #efefef; */
-  position: relative;
-}
-.nextButton {
-  position: relative;
-  left: 90%;
-  margin: 0.5rem;
-}
-.title {
-  font-size: 2.25rem;
-  text-align: center;
-  margin: 1rem;
-  color: darkblue;
-  text-decoration: underline;
-}
-.imgContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  height: 300px;
-}
-.imgContainer img {
-  position: relative;
-  margin: 0 1rem;
-  height: 100%;
-}
-.description {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  text-align: left;
-}
-.testClass {
-  color: red;
-}
-.description p {
-  margin: 1rem 0;
-}
-.title2 {
-  font-size: 2rem;
-  text-align: left;
-  margin: 1rem 0;
-  color: #555;
-}
-</style>

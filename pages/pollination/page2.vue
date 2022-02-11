@@ -1,9 +1,9 @@
 <template>
   <LessonIndex>
     <div class="wrapper" data-variant="more-padding">
-      <h2 :class="$style.title2">We need Pollinators</h2>
-      <h2 :class="$style.title2">Pollinators providing us food</h2>
-      <div :class="$style.description">
+      <h2 class="title2">We need Pollinators</h2>
+      <h2 class="title2">Pollinators providing us food</h2>
+      <div class="description">
         <p>
           Pollinator animals such as bees, birds, bats, butterflies, and flies
           are responsible for pollination of 75% of food crops we eat.
@@ -41,8 +41,8 @@
           pollinator services ranges from $195-387 billion annually.
         </p>
       </div>
-      <h2 :class="$style.title2">Pollinators in crisis</h2>
-      <div :class="$style.description">
+      <h2 class="title2">Pollinators in crisis</h2>
+      <div class="description">
         <p>
           In recent times, there is a widespread decline in insect pollinators
           worldwide. Many pollinators, particularly bees and butterflies, are
@@ -76,8 +76,8 @@
           which cause plants to produce fewer flowers with less nectar.
         </p>
       </div>
-      <h2 :class="$style.title2">World without pollinators</h2>
-      <div :class="$style.description">
+      <h2 class="title2">World without pollinators</h2>
+      <div class="description">
         <p>
           If pollinator animals such as bees become extinct, there would be
           major rippling effects throughout ecosystems. We may lose all the
@@ -110,8 +110,8 @@
           ecosystem.
         </p>
       </div>
-      <h2 :class="$style.title2">Saving pollinators</h2>
-      <div :class="$style.description">
+      <h2 class="title2">Saving pollinators</h2>
+      <div class="description">
         <p>
           There is a lot we can do to save bees and other pollinator insects.
           First of all, we need to reduce our use of pesticides and ban the
@@ -180,65 +180,3 @@ export default {
   },
 };
 </script>
-
-<style module>
-.lesson {
-  padding: 2rem;
-  /* background-color: #efefef; */
-  position: relative;
-}
-.nextButton {
-  position: relative;
-  left: 90%;
-  margin: 0.5rem;
-}
-.title {
-  font-size: 2.25rem;
-  text-align: center;
-  margin: 1rem;
-  color: darkblue;
-  text-decoration: underline;
-}
-.imgContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  height: 300px;
-}
-.imgContainer img {
-  position: relative;
-  margin: 0 1rem;
-  height: 100%;
-}
-.description {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  text-align: left;
-}
-.testClass {
-  color: red;
-}
-.description p {
-  margin: 1rem 0;
-}
-.title2 {
-  font-size: 2rem;
-  text-align: left;
-  margin: 1rem 0;
-  color: #555;
-}
-</style>
-<style scoped>
-li {
-  margin: 1rem 0;
-  font-family: "Quicksand";
-  padding: 0;
-  font-size: 1.2rem;
-  line-height: 2rem;
-  text-align: left;
-  color: black;
-  font-weight: 400;
-}
-</style>
