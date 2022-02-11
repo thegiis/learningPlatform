@@ -8,7 +8,11 @@
       <nuxt-link :to="{ name: 'index___' + this.$i18n.locale }">
         <img src="/img/earthschool.png" />
       </nuxt-link>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav
+        class="navbar z-index-topmost"
+        role="navigation"
+        aria-label="main navigation"
+      >
         <div class="navbar-brand">
           <a
             role="button"
@@ -27,13 +31,6 @@
 
         <div id="navigationMenu" class="navbar-menu" ref="navMenu">
           <div class="navbar-end" :class="$style.navStyle">
-            <nuxt-link
-              :to="{ name: 'index___' + this.$i18n.locale }"
-              class="navbar-item"
-            >
-              {{ $t("chapters") }}
-            </nuxt-link>
-            <a href="#" class="navbar-item" :class="$style.divider">|</a>
             <ChaptersDropdown class="navbar-item" />
             <a href="#" class="navbar-item" :class="$style.divider">|</a>
             <a @click="openGlossary()" class="navbar-item">{{

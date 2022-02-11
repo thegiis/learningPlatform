@@ -180,7 +180,17 @@ picture {
 .ovalButton.is-active:after {
   content: "\32";
 }
-
+// nav link button style
+.nav-link-button {
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: white;
+  font-size: 16px;
+}
+.z-index-topmost {
+  z-index: 10000;
+}
 // general color configuration
 .green-primary {
   background-color: var(--green-primary);
