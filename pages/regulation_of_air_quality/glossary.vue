@@ -19,7 +19,7 @@
             <p :class="$style.meaningWord">
               {{ value[$store.state.lesson.vocabLocale].word }}
             </p>
-            <p>{{ value[$store.state.lesson.vocabLocale].meaning }}</p>
+            <p>- {{ value[$store.state.lesson.vocabLocale].meaning }}</p>
           </div>
           <div :class="$style.horizontalRule">&nbsp;</div>
         </div>
