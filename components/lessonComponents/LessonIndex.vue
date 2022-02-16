@@ -14,8 +14,12 @@
       <h3 class="lesson">{{ currentLessonLang.title.toUpperCase() }}</h3>
     </div>
     <slot></slot>
-    <LessonNavButtons />
-    <LessonMoreTopics />
+    <LessonNavButtons
+      v-if="currentLessonLang.currentPage.type !== 'glossary'"
+    />
+    <LessonMoreTopics
+      v-if="currentLessonLang.currentPage.type !== 'glossary'"
+    />
   </div>
 </template>
 <script>

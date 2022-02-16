@@ -143,6 +143,10 @@ export default {
     setCurrentPageToState() {
       const langPages = this.$store.state.lesson.allLessons[this.$i18n.locale];
       let currUrl = this.$route.name.split("-")[0].split("___")[0];
+      let currRoute;
+      if (this.$route.name.split("-")[1]) {
+        currRoute = this.$route.name.split("-")[1].split("___")[0];
+      }
       let currChapter = {};
 
       if (currUrl === "index") {
@@ -156,6 +160,15 @@ export default {
       }
       let currentPage = {};
       for (let i = 0; i < currChapter.pages.length; i++) {
+        if (currRoute == "glossary") {
+          currentPage = {
+            id: 1000,
+            name: "Glossary",
+            route: currUrl + "-" + currRoute,
+            type: "glossary",
+          };
+          break;
+        }
         if (currChapter.pages[i].i18nRoute === this.$route.name) {
           currentPage = { ...currChapter.pages[i], id: i };
           break;

@@ -13,11 +13,7 @@
           v-for="(module, idx) in currentModules"
           :key="idx"
         >
-          <li
-            class="dropdown"
-            :class="currentChapter(module.routes)"
-            @click="handleDropDown($event.currentTarget)"
-          >
+          <li class="dropdown" :class="currentChapter(module.routes)">
             <div class="dropdown-trigger">
               <button
                 :class="$style.customDropDownButton"
@@ -47,6 +43,18 @@
                   <span v-else
                     ><hr class="dropdown-divider" />
                     {{ page }}</span
+                  >
+                </nuxt-link>
+              </ul>
+              <ul
+                class="dropdown-item"
+                :id="currentTopic('glossary')"
+                @click="closePanel"
+              >
+                <nuxt-link to="/regulation_of_air_quality/glossary">
+                  <span>
+                    <hr class="dropdown-divider" />
+                    Glossary</span
                   >
                 </nuxt-link>
               </ul>
@@ -82,6 +90,12 @@ export default {
       const currentLesson = [this.$store.state.lesson.currentLessonLang];
       return currentLesson;
     },
+    currRoute() {
+      if (this.$route.name.split("-")[1]) {
+        return this.$route.name.split("-")[1].split("___")[0];
+      }
+      return "index";
+    },
   },
   methods: {
     closePanel() {
@@ -94,7 +108,10 @@ export default {
       return { name: route + "___" + this.$i18n.locale };
     },
     currentChapter(pages) {
-      if (pages.indexOf(this.currentPage) > -1) {
+      if (
+        pages.indexOf(this.currentPage) > -1 ||
+        this.currRoute === "glossary"
+      ) {
         return [
           this.$style.customDropDown,
           this.$style.activeChapter,
