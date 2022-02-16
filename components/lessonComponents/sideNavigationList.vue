@@ -51,7 +51,7 @@
                 :id="currentTopic('glossary')"
                 @click="closePanel"
               >
-                <nuxt-link to="/regulation_of_air_quality/glossary">
+                <nuxt-link :to="getGlossaryLink()">
                   <span>
                     <hr class="dropdown-divider" />
                     Glossary</span
@@ -106,6 +106,12 @@ export default {
     },
     getLink(route) {
       return { name: route + "___" + this.$i18n.locale };
+    },
+    getGlossaryLink() {
+      return {
+        name:
+          this.currentPage.split("-")[0] + "-glossary___" + this.$i18n.locale,
+      };
     },
     currentChapter(pages) {
       if (

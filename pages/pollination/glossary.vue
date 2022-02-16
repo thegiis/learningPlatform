@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import glossary from "@/assets/data/glossary/regulation_of_air_quality.json";
+import glossary from "@/assets/data/glossary/pollination.json";
 
 import DropDownGlossaryLang from "@/components/baseComponents/DropDownGlossaryLang2.vue";
 
