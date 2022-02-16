@@ -1,82 +1,35 @@
 <template>
   <div class="dragdropGameWrapper">
     <div class="instruction">
-      <h4 class="lesson" :class="instruction.class">
-        {{ instruction.text }}
-      </h4>
-
-      <div class="questionContainer">
-        <div class="correctCheckIcon" ref="correctIcon">
-          <i class="fas fa-check"></i>
-        </div>
-        <div class="incorrectCheckIcon" ref="incorrectIcon">
-          <i class="fas fa-times"></i>
-        </div>
-        <draggable
-          :disabled="!enabled"
-          :list="dropAns"
-          class="questionStructure"
-          :class="getShape(question.shape)"
-          data-type="dropBox"
-          revertOnSpill="true,"
-          group="activity"
-          ref="questionList"
-          @change="checkDrop"
+      <h1 class="lesson">Q. {{ current + 1 }} / {{ total }}</h1>
+      <h3 class="lesson">{{ question.text }}</h3>
+      <div
+        v-for="(option, idx) in options"
+        :key="idx"
+        :class="getPosition(idx, option.class)"
+      >
+        <label
+          class="radio-container"
+          v-for="element in answers[idx]"
+          :key="element.name"
         >
-          <div>
-            <p>
-              {{ question.text }}
-            </p>
-          </div>
-          <div
-            class="selectedOption"
-            :class="questionOutineClass"
-            v-for="element in dropAns"
-            :key="element.name"
-          >
-            <p
-              v-if="checkFillQuestion(question.shape)"
-              v-html="fillBlanks(question.text, element.name)"
-            ></p>
-            <p v-else>{{ element.name }}</p>
-          </div>
-        </draggable>
-      </div>
-
-      <div>
-        <draggable
-          :disabled="!enabled"
-          v-for="(option, idx) in options"
-          revertOnSpill="true,"
-          data-type="option"
-          :key="idx"
-          :list="answers[idx]"
-          :ref="option.name"
-          class="optionContainer"
-          chosen-class="onDragClass"
-          drag-class="onDragging"
-          :class="getPosition(idx, option.class)"
-          group="activity"
-          @end="checkDrop"
-        >
-          <div
-            class="optionText"
-            v-for="element in answers[idx]"
-            :key="element.name"
-          >
-            <p>{{ element.name }}</p>
-          </div>
-        </draggable>
+          {{ element.name }}
+          <input
+            type="radio"
+            :id="idx"
+            name="answer"
+            :value="element.name"
+            @click="radioClicked"
+          />
+          <span class="checkmark"></span>
+        </label>
       </div>
       <div
         class="nextBtn button is-uppercase is-primary"
         ref="nextBtn"
         @click="goNext()"
       >
-        <span>NEXT</span>
-        <span class="rightArrow">
-          <i class="far fa-arrow-alt-circle-right"></i>
-        </span>
+        <span class="color-primary">SUBMIT</span>
       </div>
     </div>
   </div>
@@ -95,6 +48,14 @@ export default {
       type: Object,
       required: true,
     },
+    current: {
+      type: Number,
+      required: true,
+    },
+    total: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
@@ -107,6 +68,7 @@ export default {
       hasAnswered: null,
       hint: false,
       questionOutineClass: "asdasd",
+      currentSelection: {},
     };
   },
   watch: {
@@ -118,6 +80,7 @@ export default {
   created() {
     shuffleArray(this.positions);
     this.answers = this.options.map((item) => [item]);
+    console.dir(this.options);
   },
   computed: {
     instruction() {
@@ -134,45 +97,30 @@ export default {
     resetAnswers() {
       this.answers = this.options.map((item) => [item]);
     },
-    checkDrop(evt) {
-      let correctIcon = this.$refs["correctIcon"];
-      let incorrectIcon = this.$refs["incorrectIcon"];
-      let nextBtn = this.$refs["nextBtn"];
-
-      if (evt.to !== undefined && evt.from !== undefined) {
-        if (evt.from.dataset.type === evt.to.dataset.type) {
-          this.resetAnswers();
-        } else {
-          this.enabled = false;
-          nextBtn.style.display = "block";
-          if (this.dropAns[0].isCorrect) {
-            correctIcon.style.display = "flex";
-            this.questionOutineClass = "correct-ques-answer";
-            this.$emit("answer", { result: true, val: this.dropAns[0].name });
-          } else {
-            incorrectIcon.style.display = "flex";
-            this.questionOutineClass = "incorrect-ques-answer";
-            this.$emit("answer", { result: false, val: this.dropAns[0].name });
-          }
-          this.$refs["nextBtn"].style.display = "inline-flex";
-        }
+    radioClicked(evt) {
+      this.$refs["nextBtn"].style.display = "inline-flex";
+      this.currentSelection.id = evt.target.id;
+      this.currentSelection.name = evt.target.value;
+    },
+    checkDrop() {
+      if (this.options[this.currentSelection.id].isCorrect) {
+        this.$emit("answer", { result: true, val: this.currentSelection.name });
+      } else {
+        this.$emit("answer", {
+          result: false,
+          val: this.currentSelection.name,
+        });
       }
     },
 
     goNext() {
-      let correctIcon = this.$refs["correctIcon"];
-      let incorrectIcon = this.$refs["incorrectIcon"];
-      let nextBtn = this.$refs["nextBtn"];
-
-      incorrectIcon.style.display = "none";
-      correctIcon.style.display = "none";
-      nextBtn.style.display = "none";
-
+      this.checkDrop();
       this.enabled = true;
       this.dropAns = [];
 
       this.resetAnswers();
       this.$emit("next", true);
+      this.$refs["nextBtn"].style.display = "none";
     },
 
     getPosition(idx, optClass) {
@@ -328,8 +276,9 @@ export default {
 }
 .nextBtn {
   color: var(--green-secondary);
-  top: 200px;
-  left: 205px;
+  position: absolute;
+  bottom: 5%;
+  left: 42.504%;
   display: none;
 }
 .centeredArrow {
@@ -341,25 +290,23 @@ export default {
 }
 .position-1 {
   position: absolute;
-  right: 5%;
-  left: auto;
+  left: 5%;
   top: 50%;
 }
 .position-2 {
   position: absolute;
-  right: 51.75%;
-  left: auto;
-  top: 50%;
+  left: 5%;
+  top: 57.5%;
 }
 .position-3 {
   position: absolute;
   left: 5%;
-  top: 50%;
+  top: 65%;
 }
 .position-4 {
   position: absolute;
-  left: 51.75%;
-  top: 50%;
+  left: 5%;
+  top: 72.5%;
 }
 .correct-ques-answer {
   background-color: lightgreen;
@@ -371,14 +318,14 @@ export default {
   width: 100%;
   padding: 2em;
 }
-.lesson {
-  color: var(--green-secondary);
-}
 .rightArrow {
   padding-left: 0.5rem;
   padding-top: 0.1rem;
 }
 p {
   font-weight: bold;
+}
+h3.lesson {
+  padding-top: 25px;
 }
 </style>
