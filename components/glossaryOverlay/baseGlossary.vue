@@ -37,8 +37,29 @@
         </span>
       </div>
       <hr :class="$style.hardRule" />
+      <div
+        :class="$style.meaningSectionAllLetters"
+        v-if="currentWord && !activeLetterIdx"
+      >
+        <div :class="$style.meaningItem">
+          <div>
+            <p :class="$style.meaningWord">{{ getBaseWord }}</p>
+            <p>- {{ getMeaning }}</p>
+          </div>
+          <div v-if="!isGlossaryLangSame">
+            <p :class="$style.meaningWord">{{ getTranslatedWord }}</p>
+            <p>{{ getMeaningTranslated }}</p>
+          </div>
+        </div>
+      </div>
+      <div
+        :class="$style.horizontalRule"
+        v-if="currentWord && !activeLetterIdx"
+      >
+        &nbsp;
+      </div>
       <section class="section" :class="$style.glossaryContent">
-        <div :class="$style.wordList">
+        <div :class="getWordListClass()">
           <div
             v-for="word in getWords()"
             :key="word.selector"
@@ -48,13 +69,17 @@
             <p :class="$style.glossWord">{{ getWordTitle(word) }}</p>
           </div>
         </div>
-        <div :class="$style.verticalRule" v-if="currentWord">&nbsp;</div>
-
-        <div :class="$style.meaningSection" v-if="currentWord">
+        <div :class="$style.verticalRule" v-if="currentWord && activeLetterIdx">
+          &nbsp;
+        </div>
+        <div
+          :class="$style.meaningSection"
+          v-if="currentWord && activeLetterIdx"
+        >
           <div :class="$style.meaningItem">
             <div>
               <p :class="$style.meaningWord">{{ getBaseWord }}</p>
-              <p>{{ getMeaning }}</p>
+              <p>- {{ getMeaning }}</p>
             </div>
             <div v-if="!isGlossaryLangSame">
               <p :class="$style.meaningWord">{{ getTranslatedWord }}</p>
@@ -104,7 +129,7 @@ export default {
     }
     this.filtered = this.allWords;
     this.display = this.all;
-    this.currentWord = this.display[Object.keys(this.display)[0]];
+    // this.currentWord = this.display[Object.keys(this.display)[0]];
   },
   computed: {
     getChapters() {
@@ -155,6 +180,13 @@ export default {
         return [this.$style.activeLetterSearch, this.$style.letterSearch];
       }
       return this.$style.letterSearch;
+    },
+    getWordListClass() {
+      if (this.activeLetterIdx !== null) {
+        return this.$style.wordList;
+      } else {
+        return this.$style.wordListFlex;
+      }
     },
     setCurrentWord(word) {
       this.currentWord = word.desc;
@@ -293,10 +325,23 @@ export default {
     min-width: 225px;
   }
 }
+.wordList > * {
+  width: 100%;
+}
+.wordListFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wordListFlex > * {
+  width: 45%;
+  @include media-query("sm") {
+    width: 30%;
+  }
+}
 .wordItem {
   padding: 0.5rem 1em;
   background-color: var(--green-secondary);
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -310,6 +355,9 @@ export default {
 .meaningSection {
   width: 100%;
   margin-left: 1rem;
+  &AllLetters {
+    margin: 2rem 1rem;
+  }
 }
 .meaningItem {
   padding: 0.5rem 0.5rem 0.5rem 0rem;
@@ -340,5 +388,10 @@ export default {
   background-color: gray;
   margin-top: -25px;
   height: calc(100vh - 300px);
+}
+.horizontalRule {
+  width: 100%;
+  background-color: gray;
+  height: 1px;
 }
 </style>

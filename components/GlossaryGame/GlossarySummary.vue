@@ -26,10 +26,6 @@
       </p>
     </div>
     <div :class="$style.summarySection">
-      <h4 class="quesInstruction lesson" :class="instruction.class">
-        {{ instruction.text }}
-      </h4>
-
       <div class="questionContainer">
         <div class="questionStructure" :class="getShape(question.shape)">
           <p>

@@ -4,16 +4,11 @@
       <div :class="$style.gameContainer">
         <GlossaryQuestion
           :questionItem="getQuestionItem"
+          :current="currentQuestion"
+          :total="totalQuestions"
           @answer="handleAnswer"
           @next="handleNext"
           v-if="!isLastPage"
-        />
-        <GlossaryHead
-          :answers="answers"
-          :key="glossaryScore"
-          v-if="!isLastPage"
-          :current="currentQuestion"
-          :total="totalQuestions"
         />
         <GlossarySummary
           :answers="getAnswers"
@@ -130,6 +125,7 @@ export default {
 }
 .gameContainer {
   display: flex;
+  justify-content: center;
 }
 </style>
 <style scoped>
