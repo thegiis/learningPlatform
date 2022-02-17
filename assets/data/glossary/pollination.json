@@ -11,7 +11,7 @@
       },
       "image": ""
     },
-    "Fertilize": {
+    "fertilised": {
       "en": {
         "word": "Fertilize",
         "meaning": "combine make and female cell to produce new seed or baby"
@@ -22,7 +22,7 @@
       },
       "image": ""
     },
-    "Nectar": {
+    "nectar": {
       "en": {
         "word": "Nectar",
         "meaning": "sweet liquid in the middle of a flower"
@@ -55,7 +55,7 @@
       },
       "image": ""
     },
-    "evolve": {
+    "evolved": {
       "en": {
         "word": "evolve",
         "meaning": "develop gradually from earlier forms to more advanced forms"
@@ -66,7 +66,7 @@
       },
       "image": ""
     },
-    "Extinction": {
+    "extinction": {
       "en": {
         "word": "Extinction",
         "meaning": "dying out and complete disappearance of species"
@@ -77,7 +77,7 @@
       },
       "image": ""
     },
-    "Diverse": {
+    "diverse": {
       "en": {
         "word": "Diverse",
         "meaning": "showing a great deal of variety"
@@ -88,7 +88,7 @@
       },
       "image": ""
     },
-    "Habitat": {
+    "habitat": {
       "en": {
         "word": "Habitat",
         "meaning": "natural home or environment of an animal or plant"
@@ -99,7 +99,7 @@
       },
       "image": ""
     },
-    "Accumulate": {
+    "accumulate": {
       "en": {
         "word": "Accumulate",
         "meaning": "gather together"
@@ -110,7 +110,7 @@
       },
       "image": ""
     },
-    "Ecosystem": {
+    "ecosystems": {
       "en": {
         "word": "Ecosystem",
         "meaning": "a system that includes all living organisms in an area as well as its physical environment functioning together as a unit"
@@ -121,7 +121,7 @@
       },
       "image": ""
     },
-    "Food Chain": {
+    "food chain": {
       "en": {
         "word": "Food Chain",
         "meaning": "an order in which organisms, or living things, depend on each other for food"

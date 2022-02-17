@@ -11,9 +11,7 @@
         v-bind:key="index"
         >{{ word.text }}
       </span>
-      <span v-else :class="getClass(word.isHighlight)" v-bind:key="index">{{
-        word.text
-      }}</span>
+      <span v-else :class="getClass(word.isHighlight)" v-bind:key="index" v-html="word.text"></span>
     </template>
   </p>
 </template>
@@ -160,7 +158,6 @@ export default {
     onOver(data, index) {
       // get word position and decide where vocab card shows up
       const vocabItem = this.$refs['vocabItem-'+index][0];
-      console.log(vocabItem)
       const rect = vocabItem.getBoundingClientRect();
       this.$store.dispatch("lesson/setVocab");
       this.$store.dispatch("lesson/setCurrentWord", data);

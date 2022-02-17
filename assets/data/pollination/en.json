@@ -1,14 +1,81 @@
 {
-    "title": "Pollination",
-    "data": {
-        "text0": "Parts of a Flower",
-        "text1": "Flowers are the most beautiful parts of a plant.",
-        "text2": "Flowers vary in shape, size and colors.",
-        "text3": "But all flowers have the same basic parts.",
-        "text4": "The flower is the reproductive organ of many flowering plants.",
-        "text5": "Some flowers may have only male reproductive parts.",
-        "text6": "Some flowers may have only female reproductive parts.",
-        "text7": "They are called #incomplete flowers@.",
-        "text8": "An incomplete flower has either male parts or female parts, but never both. Such as pumpkin flowers."
-    }
+  "title": "Pollination",
+  "data": {
+    "p1text1": "What is Pollination?",
+    "p1text2": "Pollination is one of the most fascinating processes in our nature. Pollination is how flowering plants reproduce. To produce offspring, a plant needs to be fertilised, which allows it to develop seeds that will grow into new plants.",
+    "p1text3": "Flowers have both male and female parts. The male part is called stamen and is a long slender stalk with pollens at the end. Pollens are small, powdery substance that are normally yellowish in colour. The female part is called stigma and sits normally at the centre of the flower. During pollination, the pollens from the stamen, the male part are transferred to the stigma, the female part. Through this fertilization, fruits and seeds are developed.",
+    "p1text4": "Flowers need external agents to move pollens from the male parts to female parts. Normally, pollen are transferred by wind, water, birds, bees, butterflies, bats, and other animals that visit flowers. We call animals or insects that transfer pollen from male organ to female organ “pollinators”.",
+    "p1text5": "Plants and their pollinators",
+    "p1text6": "When a mature plant is ready to reproduce, its buds swell and open into flowers. A pollinator visits a flower to eat nectar and pollen. The pollen grains from the flower will rub onto the pollinator and stick to its body. As the pollinator moves from flower to flower, its body collects more pollen. As the pollinator continues to visit more flowers, its body is rubbed off against the female part of the flower, and pollen is deposited on the stigma facilitating fertilization to occur.",
+    "p1text7": "There are approximately 350,000 species of known pollinators (bees, flies, butterflies, moths, wasps, beetles, birds, and bats) serving approximately 352,000 species of flowering plants. The vast majority of pollinator species are wild while some species such as honeybees are managed by humans.",
+    "p1text8": "Let’s look at some of the most common pollinators:",
+    "p1text9": "<b>Bees:</b> Bees are the most well known pollinators. Bees collect pollen and nectar not only for themselves but also to feed their young larvae. For this reason bees have developed a number of adaptive features that make them particularly good pollen carriers. Bees are fuzzy and carry an electrostatic charge. Both features help pollen grains attach to their bodies, but they also have specialized pollen-carrying structures. They have special hairs that are arranged to form “pollen baskets' on their hind legs and the underside of their abdomen. Bees are not picky and frequently visit a large variety of flowers. These adaptive characters allow bees to gather and carry large volumes of pollen and make them one of the most successful pollinators.",
+    "p1text10": "We are benefiting from the hard work of bees, when we are eating foods such as apples, grapes, pears, peaches, almonds, pumpkins, watermelons, cabbage, cauliflower, coffee, berries, mustard, onions and potatoes. Seventy out of the top 100 human food crops are pollinated by both domesticated and wild bees.",
+    "p1image2src": "/img/pollination/flowersAndBees.jpg",
+    "p1image2caption": "Image: https://www.xerces.org/sites/default/files/inline-images/solitary%20bees%201_1.jpg",
+
+    "p1text11": "<b>Butterflies:</b> Butterflies like to sit on larger flower heads when they hunt nectar, collecting pollen on their legs and body as they search for food. The legs and the butterfly's proboscis are longer and farther away from the flower's pollen so less pollen collects on its body parts than it does on bees, but still they are very effective pollinators. Butterflies pollinate vegetables and herbs such as carrots, peas, beans, fennel and cilantro.",
+    "p1text12": "<b>Flies:</b> Flies are primary pollinators for many plant species such as pears, apples, strawberries, cherries, plums, apricots, peaches, rowanberries, raspberries, blackberries, roses, mangoes, fennel, coriander, caraway, kitchen onions, parsley, and carrots. Without flies, there would be no chocolate. Chocolate midge flies pollinate cacao trees native to Central America, South America, Africa, and Asia. The tiny insects are about one to three millimetres long, allowing them to fit inside the plant's small flowers.",
+    "p1text13": "Compared to bees, which need to collect nectar not only for themselves but also their hives, adult flies have low requirements. Although this makes flies less devoted to the task of moving quickly between flowers, it also frees them to bask in flowers and remain active at low temperatures.",
+    "p1text14": "Some plant’s flowers have adapted putrid smelling blossoms to attract certain fly pollinators looking for rotting meat. Some flowers have even adapted to look like rotting meat, usually having a brownish red color.",
+    "p1image3src": "/img/pollination/flowersAndFlies.jpg",
+    "p1image3caption": "Image: https://static.nationalgeographic.co.uk/files/styles/image_3200/public/05-waq-animals-thankful-for-NationalGeographic_1374004.webp?w=1450&h=816",
+    "p1text15": "<b>Bats:</b> Bats are very important pollinators in tropical and desert climates. They feed on the insects in the flowers as well as on the nectar and flower parts. Over 300 species of fruit depend on bats for pollination. Over 300 species of fruit depend on bats for pollination. These fruits include: mangoes, bananas,  guavas, durian and dragonfruits.  Bats are attracted to dull white, green or purple flowers that emit strong, musty odors at night.",
+    "p1image4src": "/img/pollination/batPollination.jpg",
+    "p1image4caption": "Bat pollinating illustration courtesy Anushri Lama",
+
+    "p1text16": "<b>Hummingbirds:</b> Because hummingbirds feed frequently and have a long needle like beak, they are ideal pollinators for many flowers. Hummingbirds have long, slender bills (beak) and tube-like tongues that they use to drink nectar from brightly-colored flowers. Hummingbirds are attracted to scarlet, orange, red or white tubular-shaped flowers with no distinct odors.",
+    "p1image5src": "/img/pollination/flowersAndHummingbird.jpg",
+    "p1image5caption": "https://www.thespruce.com/thmb/c2nIgf45er8mxLEFT44WyHCBpdw=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/hummer-pollen-58a6d2b05f9b58a3c90885df.jpg",
+
+    "p1text17": "<b>Sunbirds:</b> Sunbird species can drink nectar while hovering, but usually perch to feed. Their long curved beaks and long, brush-tipped tongues make these birds particularly suited to feeding on and pollinating tubular flowers.",
+    "p1text18": "Sunbirds play a major role in pollinating rhododendrons, common species of the Himalayas.",
+    "p1image6src": "/img/pollination/flowersAndSunbird.jpg",
+    "p1image6caption": "https://upload.wikimedia.org/wikipedia/commons/6/64/Olive_sunbird%2C_Cyanomitra_olivacea%2C_at_Seldomseen%2C_Vumba%2C_Zimbabwe_%2821961553392%29.jpg",
+
+    "p1text19": "Plants and pollinators evolved together side by side over millions of years. Plants developed many complex ways of attracting pollinators. The great variety in color, form, and scent we see in flowers is a direct result of the intimate relationship of flowers with pollinators. Similarly, pollinators evolved with specialized physical traits and behaviors that enhance their pollination efforts. These methods include visual cues, scent, food, mimicry, and entrapment.",
+    "p1text20": "Likewise, many pollinators have evolved specialized structures and behaviors to assist in plant pollination such as the fur on the face of the black and white ruffed lemur or a bat. Animal pollinated flowering plants produce pollen that is sticky and barbed to attach to the animal and thus be transferred to the next flower.",
+    "p1text21": "[Plants don’t always need pollination for reproduction.  There are many plants (around 6% of total plant species) that reproduce asexually. This method does not require the plants to produce a flower, attract pollinators, or find a means of seed dispersal. ]",
+
+    "p2text1": "We need Pollinators",
+    "p2text2": "Pollinators providing us food",
+    "p2text3": "Pollinator animals such as bees, birds, bats, butterflies, and flies are responsible for pollination of 75% of food crops we eat.",
+    "p2text4": "Pollinated crops include those that provide fruit, vegetables, seeds, nuts and oils. Many of these are important sources of vitamins and minerals.",
+
+    "p2text5": "List of the species pollinated by bees and other animals",
+    "p2text6": "Fruits: Apple, Mango, Avocado, Kiwi, Strawberry, Papaya, watermelon, orange , grapefruit, Coconut, Cantaloupe, Plum, Cherry, Peach, Guava, Pomegranate, Grape",
+    "p2text7": "Nuts: Cashew, Chestnut, Almond, Macadamia",
+    "p2text8": "Berries: Raspberry, Blackberry, Blueberry",
+    "p2text9": "Vegetables: Cauliflower, Cabbage, Broccoli, Onion, Potato, Turnip, Chilli pepper, red pepper, pumpkin, groud, zucchini, Squash, Carrot, Eggplant, Tomato",
+    "p2text10": "Legumes: Pigeon pea, Cajan pea, beans, Kidney bean, green bean",
+    "p2text11": "Oil: Canola, Mustard, Flex, palm oil",
+    "p2text12": "Grains: Buckwheat",
+    "p2text13": "Fibers: Cotton, linen made from flax",
+    "p2text14": "Currently, the pollination services provided by the insects and other pollinators are free. However, scientists have estimated the values of pollination services in monetary terms. In 2020, the estimated cost of pollinator services ranges from $195-387 billion annually.",
+
+    "p2text15": "Pollinators in crisis",
+    "p2text16": "In recent times, there is a widespread decline in insect pollinators worldwide. Many pollinators, particularly bees and butterflies,  are being driven toward extinction by diverse pressures, many of them human-made. We are seeing entire bee colonies dying away at an alarming rate. ",
+    "p2text17": "There are several causes of declines:",
+    "p2text18": "Habitat loss is one of the major culprits responsible for pollinator decline and impacts on their health. There is loss of abundance and diversity of flowers and decline in suitable habitat for them to build nets due to agricultural expansion and other human activities.",
+    "p2text19": "Exposure to pesticides: Pesticides are chemical compounds that are used to kill pests, including insects, rodents, fungi and weeds. But they are also harmful to pollinator insects such as bees. Pesticide groups such as Pyrethroids are particularly harmful to bees. Some bees die when they feed on these pesticides.  They can also take the pesticides along with pollen in to their hives, which accumulate over time and eventually cause entire colonies to die.",
+    "p2text20": "Infection by parasites and pathogens, many of them accidentally spread by the actions of humans.",
+    "p2text21": "Climate change is also affecting the quantity and quality of floral resources for pollinators. There is increase in drought frequency which cause plants to produce fewer flowers with less nectar.",
+
+    "p2text22": "World without pollinators",
+    "p2text23": "If pollinator animals such as bees become extinct, there would be major rippling effects throughout ecosystems. We may lose all the plants that bees pollinate and all of the animals that eat those plants in the food chain.",
+    "p2text24": "It will also dramatically disrupt human food systems.",
+    "p2text25": "While many plants such as cereal grains such as rice, wheat and soybean are wind-pollinated and are therefore unaffected by decline in pollinator populations, many fruits and vegetables, however, are insect-pollinated and could not be grown at such a large scale, or so cheaply, without them.",
+    "p2text26": "There are artificial pollination techniques using humans and machines to do the work of animal pollinators.  Hand-pollination by humans is being used in some farms where bees are unavailable. But it is incredibly labor-intensive and expensive.",
+    "p2text27": "Robotic bees are also being developed that are tiny drones with cameras and sensors and fly flowers to flowers like bees. This is again very expensive and not accessible to everyone.",
+    "p2text28": "Even if we are able to have artificial means for pollination, we cannot let bees and other pollinators die from our human actions. They are part of nature just like us and have an important role to maintain the ecosystem.",
+
+    "p2text29": "Saving pollinators",
+    "p2text30": "There is a lot we can do to save bees and other pollinator insects. First of all, we need to reduce our use of pesticides and ban the harmful pesticides that kill pollinators.",
+    "p2text31": "We should protect wild and native habitat of the pollinators. In our landscapes, we can plant diverse plants making sure something is blooming each season.",
+    "p2text32": "Even in our homes and communities, we can do many things to save them.",
+    "p2text33": "We can create gardens that are safe for the bees. We can plant pollinator-friendly blooming plants without any use of pesticides. We can make such gardens in your backyard, windowsills, balconies and also roadsides. We can also let patches of land to grow wild letting grasses and wildflowers grow and make great nesting and feeding sites for bees.",
+    "p2text34": "Planting trees is also important. When a tree blooms, it supplies hundreds and thousands of flowers for bees and other pollinators.",
+    "p2image1src": "/img/pollination/beeGarden.jpg",
+    "p2image1caption": "Bee garden illustration courtesy Anushri Lama"
+  }
 }
