@@ -256,6 +256,19 @@ h4.lesson {
   color: #000000;
   font-family: "Mortina";
 }
+h5.lesson {
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--green-secondary);
+  font-family: var(--font-family-secondary);
+  font-weight: bold;
+}
+h5.title {
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: var(--font-family-secondary);
+  margin-top: 5px;
+}
 // Linking
 a.navbar-item:hover {
   color: var(--green-secondary);
@@ -390,4 +403,31 @@ a.navbar-item:hover {
 /* Show the indicator (dot/circle) when checked */
 .radio-container input:checked ~ .checkmark:after {
   display: block;
+}
+/* Drag and drop quiz styles */
+.sub-question {
+  display: block;
+  font-family: $family-secondary;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.sub-question .sub-question-dot {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: var(--green-secondary);
+}
+/* spacing */
+.spacer-25 {
+  height: 25px;
 }

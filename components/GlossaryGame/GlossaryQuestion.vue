@@ -1,7 +1,7 @@
 <template>
   <div class="dragdropGameWrapper">
     <div class="instruction">
-      <h1 class="lesson">Q. {{ current + 1 }} / {{ total }}</h1>
+      <h5 class="lesson">Q. {{ current + 1 }} / {{ total }}</h5>
       <h3 class="lesson">{{ question.text }}</h3>
       <div
         v-for="(option, idx) in options"

@@ -1,16 +1,11 @@
 <template>
   <div :class="$style.questionListDiv">
-    <div :class="$style.progressWrapper" v-if="!completed">
-      <progress
-        class="progress is-success"
-        :class="$style.progressBar"
-        :value="questionNum - 1"
-        :max="totalQuestions"
-      ></progress>
-      <span :class="$style.progressText">{{
-        questionNum - 1 + "/" + totalQuestions
-      }}</span>
-    </div>
+    <h5 class="lesson" v-if="!completed">
+      Q.
+      <span :value="questionNum - 1" :max="totalQuestions"></span>
+      <span>{{ questionNum - 1 + " / " + totalQuestions }}</span>
+    </h5>
+    <h5 class="title">DRAG AND DROP</h5>
     <div :class="$style.questionContainer" v-if="!completed">
       <DragDrop
         :instruction="instruction"
@@ -147,7 +142,7 @@ export default {
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
-  color: white;
+  color: black;
 }
 .completedMessage {
   position: relative;

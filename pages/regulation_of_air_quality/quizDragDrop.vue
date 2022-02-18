@@ -68,6 +68,8 @@ export default {
   display: flex;
   justify-content: center;
   background-color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
   width: 90%;
 }
 .quizSection {
@@ -75,7 +77,7 @@ export default {
   background-color: #f8f9fa;
 }
 .instruction {
-  color: navy;
+  margin-bottom: 1.5rem;
 }
 .questionClass {
   display: flex;

@@ -1,8 +1,8 @@
 <template>
   <div class="dragdropquizWrapper">
-    <h4 class="lesson" :class="instruction.class">
+    <h3 class="lesson" :class="instruction.class">
       {{ instruction.text }}
-    </h4>
+    </h3>
     <div class="instructions" v-if="instructions">
       <p>
         {{ instructions }}
@@ -11,7 +11,9 @@
 
     <div class="dragdropAnsDiv">
       <div v-for="(dropContainer, idx) in dropList" :key="idx" class="dropDiv">
-        <h1 class="title is-5">{{ dropContainer.label }}</h1>
+        <label class="sub-question"
+          >{{ dropContainer.label }} <span class="sub-question-dot"></span
+        ></label>
         <draggable
           :disabled="!enabled"
           :list="ansList[idx]"
@@ -19,7 +21,7 @@
           :ref="dropContainer.name"
           :id="'drop-' + dropContainer.name"
           class="dropContainer"
-          :class="allClasses(dropContainer.class)"
+          :class="allClasses()"
           group="activity"
           @change="checkDrop"
           :move="checkMove"
@@ -52,12 +54,12 @@
     >
       {{ submitText }}
     </button>
-
+    <div class="spacer-25"></div>
+    <h5 class="title">CLICK AND DRAG THE CORRECT ABOVE</h5>
     <draggable
       :disabled="!enabled"
       :list="questionList"
       class="questionList"
-      :class="itemList.class"
       group="activity"
       ref="questionList"
       @change="handleExtraDrop"
@@ -65,6 +67,7 @@
     >
       <div
         class="card dndItem"
+        data-variant="options"
         v-for="element in questionList"
         :key="element.id"
       >
@@ -354,33 +357,49 @@ export default {
 }
 .questionList {
   display: flex;
-  padding: 1rem;
   cursor: pointer;
   min-height: 8vh;
-  align-items: center;
+  align-items: stretch;
+  align-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16.5px;
+}
+.questionList > * {
+  width: 32%;
 }
 .dndItem {
-  margin: 0.25rem 0.5rem;
   padding: 0.5rem;
+  border: 2px solid var(--green-primary);
+  border-radius: 0;
+  min-height: 100px;
+  font-family: var(--font-family-secondary);
+  font-size: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+.dndItem[data-variant="options"] {
+  border-width: 0px;
+  background-color: #fafafa;
 }
 .dragdropAnsDiv {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 .dropDiv {
   margin: 0.25rem;
   padding: 0.25rem;
   width: 45%;
+  height: 360px;
+  position: relative;
 }
 .dropContainer {
-  position: relative;
-  background-color: lightsalmon;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   cursor: pointer;
-  padding: 0.25em;
-  border: 1px solid var(--green-primary);
-  border-radius: 4px;
+  border: 2px solid var(--green-primary);
   overflow: hidden;
 }
 .dndSubmitBtn {
