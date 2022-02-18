@@ -9,6 +9,8 @@
             :questionClass="$style.questionClass"
             :dropClasses="[$style.redDrop, $style.blueDrop]"
             :answerNums="answerNums"
+            questionNumber="2"
+            questionHeight="100"
           />
         </section>
       </div>

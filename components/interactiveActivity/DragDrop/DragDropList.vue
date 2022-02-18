@@ -16,6 +16,8 @@
         @goNext="handleNext"
         :key="componentKey"
         :answerNums="answerNums"
+        :questionNumber="questionNumber"
+        :questionHeight="questionHeight"
       />
     </div>
     <div :class="$style.completedMessage" v-else>
@@ -56,6 +58,16 @@ export default {
     answerNums: {
       type: Number,
       required: true,
+    },
+    questionNumber: {
+      type: String,
+      required: false,
+      default: 2,
+    },
+    questionHeight: {
+      type: String,
+      required: false,
+      default: 100,
     },
   },
   data() {

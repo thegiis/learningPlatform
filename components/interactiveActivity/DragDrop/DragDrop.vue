@@ -10,7 +10,12 @@
     </div>
 
     <div class="dragdropAnsDiv">
-      <div v-for="(dropContainer, idx) in dropList" :key="idx" class="dropDiv">
+      <div
+        v-for="(dropContainer, idx) in dropList"
+        :key="idx"
+        class="dropDiv"
+        :style="getHeightStyle()"
+      >
         <label class="sub-question"
           >{{ dropContainer.label }} <span class="sub-question-dot"></span
         ></label>
@@ -31,6 +36,7 @@
             :class="getClass(element)"
             v-for="element in ansList[idx]"
             :key="element.id"
+            :style="`height:${questionHeight}px`"
           >
             {{ element.name }}
           </div>
@@ -39,6 +45,7 @@
             v-for="index in maxNum(idx)"
             :key="index + 1000"
             style="color: white"
+            :style="`height:${questionHeight}px`"
           >
             A
           </div>
@@ -70,6 +77,7 @@
         data-variant="options"
         v-for="element in questionList"
         :key="element.id"
+        :style="`height:${questionHeight}px`"
       >
         {{ element.name }}
       </div>
@@ -119,6 +127,16 @@ export default {
     answerNums: {
       type: Number,
       required: true,
+    },
+    questionNumber: {
+      type: String,
+      required: false,
+      default: 2,
+    },
+    questionHeight: {
+      type: String,
+      required: false,
+      default: 100,
     },
   },
   data() {
@@ -339,6 +357,12 @@ export default {
         }
       }
     },
+    getHeightStyle() {
+      let calcHeight =
+        parseInt(this.questionHeight) * (parseInt(this.questionNumber) + 2);
+      console.log(calcHeight);
+      return "height: " + calcHeight + "px";
+    },
   },
 };
 </script>
@@ -372,7 +396,8 @@ export default {
   padding: 0.5rem;
   border: 2px solid var(--green-primary);
   border-radius: 0;
-  min-height: 100px;
+  height: 100px;
+  overflow-y: scroll;
   font-family: var(--font-family-secondary);
   font-size: 16px;
   text-align: left;
