@@ -390,6 +390,9 @@ export default {
 .questionList > * {
   width: 32%;
 }
+.dndItem:last-child {
+  margin-bottom: 0;
+}
 .dndItem {
   padding: 0.5rem;
   border: 2px solid var(--green-primary);
@@ -400,6 +403,7 @@ export default {
   font-size: 16px;
   text-align: left;
   vertical-align: middle;
+  margin-bottom: -2px;
 }
 .dndItem[data-variant="options"] {
   border-width: 0px;
@@ -422,7 +426,6 @@ export default {
   bottom: 0;
   width: 100%;
   cursor: pointer;
-  border: 2px solid var(--green-primary);
   overflow: hidden;
 }
 .dndSubmitBtn {
