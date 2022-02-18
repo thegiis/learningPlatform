@@ -421,8 +421,7 @@ export default {
 }
 .dropDiv {
   margin: 0.25rem;
-  padding: 0.25rem;
-  width: 45%;
+  width: 100%;
   height: 360px;
   position: relative;
 }
