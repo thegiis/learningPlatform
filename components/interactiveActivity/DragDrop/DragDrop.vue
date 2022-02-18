@@ -218,7 +218,6 @@ export default {
       const dropName = evt.to.dataset.name;
       const listIdx = this.dropMap.indexOf(dropName);
       const currList = this.ansList[listIdx];
-      console.log(dropName, currList);
       if (currList.length >= this.answerNums) {
         return false;
       }
@@ -360,7 +359,6 @@ export default {
     getHeightStyle() {
       let calcHeight =
         parseInt(this.questionHeight) * (parseInt(this.questionNumber) + 2);
-      console.log(calcHeight);
       return "height: " + calcHeight + "px";
     },
   },
