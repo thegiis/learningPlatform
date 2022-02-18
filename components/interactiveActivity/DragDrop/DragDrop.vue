@@ -30,6 +30,7 @@
           group="activity"
           @change="checkDrop"
           :move="checkMove"
+          :style="getTopStyle()"
         >
           <div
             class="card dndItem"
@@ -153,7 +154,7 @@ export default {
       hint: false,
       usedIds: [],
       dropCount: 0,
-      showQuestions: 7,
+      showQuestions: 9,
     };
   },
   created() {
@@ -361,6 +362,10 @@ export default {
         parseInt(this.questionHeight) * (parseInt(this.questionNumber) + 2);
       return "height: " + calcHeight + "px";
     },
+    getTopStyle() {
+      let calcHeight = parseInt(this.questionHeight) * 1.5;
+      return "top: " + calcHeight + "px";
+    },
   },
 };
 </script>
@@ -423,7 +428,7 @@ export default {
 }
 .dropContainer {
   position: absolute;
-  bottom: 0;
+  top: 150px;
   width: 100%;
   cursor: pointer;
   overflow: hidden;
