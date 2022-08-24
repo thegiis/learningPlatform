@@ -1,5 +1,7 @@
 # learningPlatform
 
+Learning platform
+
 ## Build Setup
 
 ```bash
