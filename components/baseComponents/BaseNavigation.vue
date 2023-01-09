@@ -2,7 +2,6 @@
   <div class="bg-white">
     <div
       class="wrapper split-pair"
-      data-variant="more-padding"
       :class="$style.paddingTopBottom"
     >
       <nuxt-link :to="{ name: 'index___' + this.$i18n.locale }">
@@ -37,7 +36,7 @@
               $t("glossary")
             }}</a>
             <!-- <GlossaryLangSwitch class="navbar-item" /> -->
-            <LangSwitch class="navbar-item" />
+             <!-- <LangSwitch class="navbar-item" />-->
           </div>
         </div>
       </nav>

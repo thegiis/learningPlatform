@@ -1,6 +1,21 @@
 <template>
-  <nuxt-link :to="link" class="card" :class="$style.cardContainer">
-    <div class="card-image">
+  <nuxt-link :to="lesson.link"  :class="">
+    <div class="card custom_card">
+      <div class="card-header" style="position:relative">
+       <img
+          :src="require(`@/assets/images/${lesson.filename}`)"
+          :alt="lesson.alt"
+          class="thumbImg"
+        />
+        <p class="card_header_text">{{ lesson.title }}</p>
+      </div>
+      <div class="card" :style="lesson.boxShadow">
+        <div class="card_body_inner" :style="lesson.bgColor"  >
+            <span>Watch <i class="fa fa-play-circle"></i></span>
+        </div>
+      </div>
+    </div>
+     <!-- <div class="card-image">
       <figure class="image is-4by3">
         <img
           :src="require(`@/assets/images/${filename}`)"
@@ -15,36 +30,42 @@
           <p class="title is-4 has-text-centered">{{ title }}</p>
         </div>
       </div>
-      <!--<div class="content"  :class="$style.cardDesc">
-        {{ description }}
-      </div>-->
-    </div>
+    </div>-->
   </nuxt-link>
 </template>
 
 <script>
 export default {
   props: {
-    filename: {
-      required: true,
-      type: String,
-    },
-    alt: {
-      required: false,
-      type: String,
-    },
-    title: {
-      required: true,
-      type: String,
-    },
-    description: {
-      required: true,
-      type: String,
-    },
-    link: {
+    // filename: {
+    //   required: true,
+    //   type: String,
+    // },
+    // alt: {
+    //   required: false,
+    //   type: String,
+    // },
+    // title: {
+    //   required: true,
+    //   type: String,
+    // },
+    // bgcolor: {
+    //   required: true,
+    //   type: String,
+    // },
+    // description: {
+    //   required: true,
+    //   type: String,
+    // },
+    // link: {
+    //   required: true,
+    //   type: Object,
+    // },
+    lesson:{
       required: true,
       type: Object,
-    },
+    }
+    
   },
 };
 </script>

@@ -1,35 +1,32 @@
 <template>
   <div>
-    <article class="bg-img-vector">
-      <div :class="$style.heading" class="flow" style="--flow-space: -0.5em">
-        <div>Nature's</div>
-        <div>Contributions</div>
-        <div>To People</div>
-      </div>
-    </article>
+    <div class="main_banner">
+      <div :class="" class="banner_content" style="--flow-space: -0.5em">
+          <h2>Nature's</h2>
+          <h2>Contributions</h2>
+          <h2>To People</h2>
+        </div>
+      <img style="width:100%" src="/img/earthschoool-banner.jpg" />
+        
+    </div>
     <div
-      class="wrapper split-pair"
-      data-variant="more-padding"
-      :class="$style.paddingTopBottom"
+      class="wrapper_container"
+   
     >
       <div :class="$style.subHeading" class="flow" style="--flow-space: -0.5em">
-        <div>Plants and animals</div>
-        <div>are part of nature, just like us</div>
+        <div>We are getting more</div>
+        <div>than what we know</div>
       </div>
       <p :class="$style.byLine">
         Pick a Topic and watch how nature is an irreplaceable part of our
         lifeline.
       </p>
     </div>
-    <div :class="$style.cardContainer" class="container is-wide-screen">
+    <div class="wrapper_container is-wide-screen lesson_container">
       <LessonCard
         v-for="lesson in lessons"
+        :lesson="lesson"
         :key="lesson.title"
-        :filename="lesson.filename"
-        :title="lesson.title"
-        :description="lesson.description"
-        :alt="lesson.title"
-        :link="lesson.link"
       />
     </div>
   </div>
@@ -47,36 +44,46 @@ export default {
       lessons: [
         {
           title: this.$t("lesson4"),
+          bgColor: "background: #37b955",
           description: this.$t("description4"),
-          filename: "index/air-quality.png",
+          filename: "lesson_cards/pollution.jpg",
           link: {
             name: allLessons[this.$i18n.locale][3].pages[0].i18nRoute,
           },
+          boxShadow:"box-shadow: 0px -20px 79px 23px #37b955;"
         },
         {
           title: this.$t("lesson3"),
           description: this.$t("description3"),
-          filename: "index/pollination.png",
+          filename: "lesson_cards/pollination.jpg",
           link: { name: allLessons[this.$i18n.locale][2].pages[0].i18nRoute },
+          bgColor: "background: #8db850",
+          boxShadow:"box-shadow: 0px -20px 79px 23px #8db850;"
+
+        },
+         {
+          title: this.$t("lesson2"),
+          description: this.$t("description2"),
+          filename: "lesson_cards/inspiration.jpg",
+          link: { name: allLessons[this.$i18n.locale][1].pages[0].i18nRoute },
+          bgColor: "background: #4f7840",
+          boxShadow:"box-shadow: 0px -20px 79px 23px #4f7840;"
         },
         {
           title: this.$t("lesson1"),
           description: this.$t("description1"),
-          filename: "index/food.png",
+          filename: "lesson_cards/food.jpg",
           link: { name: allLessons[this.$i18n.locale][0].pages[0].i18nRoute },
+          bgColor: "background: #a18442",
+          boxShadow:"box-shadow: 0px -20px 79px 23px #a18442;"
         },
-        {
-          title: this.$t("lesson2"),
-          description: this.$t("description2"),
-          filename: "index/inspiration.png",
-          link: { name: allLessons[this.$i18n.locale][1].pages[0].i18nRoute },
-        },
-        {
-          title: this.$t("lesson5"),
-          description: this.$t("description5"),
-          filename: "index/companionship.png",
-          link: { name: allLessons[this.$i18n.locale][4].pages[0].i18nRoute },
-        },
+       
+        // {
+        //   title: this.$t("lesson5"),
+        //   description: this.$t("description5"),
+        //   filename: "index/companionship.png",
+        //   link: { name: allLessons[this.$i18n.locale][4].pages[0].i18nRoute },
+        // },
       ],
     };
   },
@@ -92,6 +99,7 @@ export default {
 
 <style module lang="scss">
 @import "@/assets/styles/config";
+
 .cardContainer {
   position: relative;
   width: 100%;
@@ -102,6 +110,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  grid-gap:7px;
 }
 .heading {
   font-family: "Mortina";

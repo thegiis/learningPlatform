@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.sidePanel">
     <div :class="$style.contentHeader">
-      <div class="subtitle is-4" :id="$style.toc">Table of Contents</div>
+      <div class="subtitle is-4 text-primary" :id="$style.toc">Table of Contents</div>
       <span @click="closePanel" :class="$style.closeButton">
         <i class="fas fa-times" :class="$style.iconFont"></i>
       </span>
@@ -13,6 +13,7 @@
           v-for="(module, idx) in currentModules"
           :key="idx"
         >
+        
           <li class="dropdown" :class="currentChapter(module.routes)">
             <div class="dropdown-trigger">
               <button
@@ -20,7 +21,7 @@
                 aria-haspopup="true"
                 aria-controls="dropdown-menu"
               >
-                <span class="subtitle is-5">{{ module.title }}</span>
+                <span class="subtitle is-5 nav_subtitle">{{ module.title }}</span>
               </button>
             </div>
             <div
@@ -40,10 +41,9 @@
                   <div v-if="checkThumb(page)">
                     <VideoThumb :youtubeId="getVid(page)"> </VideoThumb>
                   </div>
-                  <span v-else
+                  <span class="nav_subtitle2" v-else
                     ><hr class="dropdown-divider" />
-                    {{ page }}</span
-                  >
+                    {{ page }}</span>
                 </nuxt-link>
               </ul>
               <ul
@@ -52,7 +52,7 @@
                 @click="closePanel"
               >
                 <nuxt-link :to="getGlossaryLink()">
-                  <span>
+                  <span class="nav_subtitle2">
                     <hr class="dropdown-divider" />
                     Glossary</span
                   >
@@ -180,7 +180,7 @@ export default {
   cursor: pointer;
   position: relative;
   right: 3px;
-  top: -10px;
+  top: -3px;
 }
 .linkContainer {
   position: relative;

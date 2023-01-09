@@ -198,6 +198,7 @@ export default {
 }
 .openPanel {
   left: 0px;
+  padding-left: 16%;
 }
 .closePanel {
   left: -420px;
@@ -215,8 +216,8 @@ export default {
   font-size: 25px;
   padding: 0 0.25rem;
   max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 16%;
+  margin-right: 16%;
   @include media-query("lg") {
     padding-left: 100px;
     padding-right: 100px;

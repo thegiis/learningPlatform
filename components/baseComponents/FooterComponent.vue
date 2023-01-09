@@ -1,13 +1,18 @@
 <template>
   <footer>
     <div class="green-primary">
-      <div class="wrapper split-pair" :class="$style.paddingTop">
-        <div :class="$style.footing" class="flow" style="--flow-space: -0.5em">
-          <div>Trees are like</div>
-          <div>giant air purifiers.</div>
-          <div>Let's save them!</div>
+      <div class="footer_wrapper">
+        <div class="footer_text">
+          <h2>Trees are like</h2>
+          <h2>giant air purifiers.</h2>
+          <h2>Let's save them!</h2>
+          <p>
+          Learn how you can make a difference and contribute to creating a healthy and sustainable planet.
+          </p>
         </div>
-        <img src="/img/trees-message.png" :class="$style.imgRight" />
+        <div class="footer_img">
+          <img src="/img/tree.png" />
+        </div>
       </div>
     </div>
     <div class="green-secondary-border">
